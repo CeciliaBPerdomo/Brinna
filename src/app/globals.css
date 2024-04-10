@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.banner-header {
+    background-image: url('/images/banner_home.png');
+  }
