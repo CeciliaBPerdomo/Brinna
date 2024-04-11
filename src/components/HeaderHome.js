@@ -1,18 +1,50 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 
 const HeaderHome = () => {
+    const pathname = usePathname()
+    const links = [
+        {
+            label: "INICIO",
+            href: "/"
+        },
+
+        {
+            label: "CATÁLOGO",
+            href: "/catalogo"
+        },
+
+        {
+            label: "SOBRE NOSOTROS",
+            href: "/nosotros"
+        },
+
+        {
+            label: "CONTACTO",
+            href: "/contacto"
+        }
+    ]
+
     return (
-        <div className="w-full border-b border-white banner-header">
-            <div className='container m-auto flex justify-between items-center '>
-                <p className='text-4xl text-bold text-slate-100 mt-2 mr-2 '>
-                    <Image
-                        src={"/LogoBrinnaNegro.png"}
-                        alt="Logo"
-                        width={160}
-                        height={200}
-                    />
-                </p>
+        <div className="w-full bannerHome">
+            <div className='flex justify-between items-center '>
+                <nav className='flex justify-between gap-2 mt-12 ml-auto mr-10'>
+                    {links.map(link => {
+                        return (
+                            <Link
+                                key={link.label}
+                                href={link.href}
+                                className={`${pathname === link.href ?
+                                        'font-bold underline underline-offset-8 decoration-red-600' : ''} 
+                                        text-base p-3 text-white text-4xl`}>
+                                {link.label}
+                            </Link>
+                        )
+                    })}
+                </nav>
             </div>
         </div>
     )

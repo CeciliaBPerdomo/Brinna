@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.banner-header {
-    background-image: url('/images/banner_home.png');
-  }
+.bannerHome {
+  background-image: url("../../public/images/banner_home.png");
+  width: 100%;
+  height: 1080px;
+  background-size: cover;
+  background-position: center;
+}
