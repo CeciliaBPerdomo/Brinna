@@ -17,6 +17,18 @@
    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
 </p>
 
+## 🛠️ Tecnologías
+<table>
+    <tr>
+        <td>React</td>
+        <td>React</td>
+    </tr>
+    <tr>
+        <td>React</td>
+        <td>React</td>
+    </tr>
+</table>
+
 
 ## Developers
 Realizado por <a href="https://www.linkedin.com/in/cecilia-perdomo/" style="text-decoration: none; color: inherit;">Cecilia Perdomo</a> y <a href="https://www.linkedin.com/in/danieljmartinezdev/" style="text-decoration: none; color: inherit;">Daniel Martinez</a>, primera versión desde el 02 de Abril.
