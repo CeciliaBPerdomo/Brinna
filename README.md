@@ -23,13 +23,12 @@
         <td>
             <img src="https://i0.wp.com/blog.knoldus.com/wp-content/uploads/2020/10/React-featured.png?fit=700%2C300&ssl=1" width="20%" />
         </td>
-        <td>React</td>
-    </tr>
-    <tr>
         <td>
             <img src="https://www.dongee.com/tutoriales/content/images/2022/12/image-82.png" width="20%" />
         </td>
-        <td>Next</td>
+        <td>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Firebase_Logo.svg/800px-Firebase_Logo.svg.png" width="20%" />
+        </td>
     </tr>
 </table>
 
