@@ -29,7 +29,9 @@ const HeaderHome = () => {
     ]
 
     return (
-        <div className="w-full bannerHome">
+        <div className="w-full bannerHome"
+            style={{ paddingTop: "35px" }}
+        >
             <div className='flex justify-between items-center '>
                 <nav className='flex justify-between gap-2 mt-12 ml-auto mr-10'>
                     {links.map(link => {
@@ -38,7 +40,7 @@ const HeaderHome = () => {
                                 key={link.label}
                                 href={link.href}
                                 className={`${pathname === link.href ?
-                                        'font-bold underline underline-offset-8 decoration-red-600' : ''} 
+                                    'font-bold underline underline-offset-8 decoration-red-600' : ''} 
                                         text-base p-3 text-white text-4xl`}>
                                 {link.label}
                             </Link>
@@ -46,6 +48,17 @@ const HeaderHome = () => {
                     })}
                 </nav>
             </div>
+
+            <Link href={"https://api.whatsapp.com/send?phone=59899387921&text=Hola! ¿Qué%20tal? Te escribo desde la aplicación web de Brinna!"}>
+                <Image
+                    src={"/images/icono_whatsapp.png"}
+                    alt="Contacto whatsapp"
+                    width={130}
+                    height={50}
+                    className='float-right'
+                    style={{ paddingTop: "1000px" }}
+                />
+            </Link>
         </div>
     )
 }
