@@ -11,7 +11,7 @@
 
 .logoWhatsapp {
   float: right;
-  margin-top: 780px;
+  margin-top: 1100px;
 }
 
 .menuInicio {
@@ -27,7 +27,14 @@
   }
 
   .logoWhatsapp {
-    margin-top: 50px; 
+    margin-top: 220px; 
+    width: 80px;
+    float: left;
+  }
+
+  .menuInicio {
+    font-size: medium;
+    margin-top: 50px;
   }
 }
 
@@ -35,8 +42,13 @@
 @media (min-width: 640px) and (max-width: 1024px) {
   .bannerHome {
     height: 1350px;
-    width: 1050px;
+    width: 100%;
+  }
 
+  .logoWhatsapp {
+    float: left;
+    margin-top: 350px;
+    width: 80px;
   }
 }
 
@@ -44,6 +56,6 @@
 @media (min-width: 1024px) {
   .bannerHome {
     height: 1350px; 
-    width: 1050px;
+    width: 100%;
   }
 }
