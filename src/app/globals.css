@@ -22,7 +22,8 @@
   .bannerHome {
     background-size: cover; 
     background-repeat: no-repeat;
-    height: 450px;
+    /* height: 450px; */
+    width: auto;
   }
 
   .logoWhatsapp {
