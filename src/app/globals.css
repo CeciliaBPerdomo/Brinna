@@ -4,8 +4,41 @@
 
 .bannerHome {
   background-image: url("../../public/images/banner_home.png");
-  width: 100%;
-  height: 1300px;
   background-size: cover;
-  background-position: center;
+  background-position: center; 
+  background-repeat: no-repeat
+}
+
+.menuInicio {
+  font-size: larger;
+}
+
+/* Añade estas clases para hacer la imagen responsive en diferentes tamaños de pantalla */
+@media (max-width: 640px) {
+  /* Para dispositivos móviles */
+  .bannerHome {
+    height: 500px; 
+    width: 700px;
+  }
+}
+
+/* Para pantallas de TV a partir de 1024px */
+@media (min-width: 1024px) {
+  .bannerHome {
+    height: 1350px; 
+  }
+}
+
+/* Para dispositivos de escritorio entre 640px y 1023px */
+@media (min-width: 640px) and (max-width: 1024px) {
+  .bannerHome {
+    height: 1350px;
+  }
+}
+
+/* Para pantallas de TV a partir de 1024px */
+@media (max-width: 1024px) {
+  .bannerHome {
+    height: auto 
+  }
 }

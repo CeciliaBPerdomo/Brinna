@@ -29,7 +29,7 @@ const HeaderHome = () => {
     ]
 
     return (
-        <div className="w-full bannerHome"
+        <div className="bannerHome"
             style={{ paddingTop: "35px" }}
         >
             <div className='flex justify-between items-center '>
@@ -41,7 +41,7 @@ const HeaderHome = () => {
                                 href={link.href}
                                 className={`${pathname === link.href ?
                                     'font-bold underline underline-offset-8 decoration-red-600' : ''} 
-                                        text-base p-3 text-white text-4xl`}>
+                                        text-base p-3 text-white menuInicio`}>
                                 {link.label}
                             </Link>
                         )
