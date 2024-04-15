@@ -4,32 +4,32 @@
 
 .bannerHome {
   background-image: url("../../public/images/banner_home.png");
-  background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.logoWhatsapp {
+  float: right;
+  margin-top: 1100px;
 }
 
 .menuInicio {
   font-size: larger;
 }
 
-/* Añade estas clases para hacer la imagen responsive en diferentes tamaños de pantalla */
+/* Para dispositivos móviles */
 @media (max-width: 640px) {
-  /* Para dispositivos móviles */
   .bannerHome {
-    height: 500px; 
-    width: 700px;
+    background-size: contain; 
+    background-repeat: no-repeat;
+  }
+
+  .logoWhatsapp {
+    margin-top: 50px; 
   }
 }
 
-/* Para pantallas de TV a partir de 1024px */
-@media (min-width: 1024px) {
-  .bannerHome {
-    height: 1350px; 
-  }
-}
-
-/* Para dispositivos de escritorio entre 640px y 1023px */
+/* Para dispositivos de escritorio entre 640px y 1024px */
 @media (min-width: 640px) and (max-width: 1024px) {
   .bannerHome {
     height: 1350px;
@@ -37,8 +37,8 @@
 }
 
 /* Para pantallas de TV a partir de 1024px */
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .bannerHome {
-    height: auto 
+    height: 1350px; 
   }
 }
