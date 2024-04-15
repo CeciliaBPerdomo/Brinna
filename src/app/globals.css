@@ -6,6 +6,7 @@
   background-image: url("../../public/images/banner_home.png");
   background-size: contain;
   background-repeat: no-repeat;
+  width: max-content;
 }
 
 .logoWhatsapp {
@@ -18,12 +19,11 @@
 }
 
 /* Para dispositivos móviles */
-@media only screen and (max-width: 640px) {
+@media screen and (max-width: 640px) {
   .bannerHome {
     background-size: cover; 
     background-repeat: no-repeat;
-    /* height: 450px; */
-    width: auto;
+    height: 450px;
   }
 
   .logoWhatsapp {
@@ -35,6 +35,8 @@
 @media (min-width: 640px) and (max-width: 1024px) {
   .bannerHome {
     height: 1350px;
+    width: 1050px;
+
   }
 }
 
@@ -42,5 +44,6 @@
 @media (min-width: 1024px) {
   .bannerHome {
     height: 1350px; 
+    width: 1050px;
   }
 }
