@@ -18,10 +18,11 @@
 }
 
 /* Para dispositivos móviles */
-@media (max-width: 640px) {
+@media only screen and (max-width: 640px) {
   .bannerHome {
-    background-size: contain; 
+    background-size: cover; 
     background-repeat: no-repeat;
+    height: 450px;
   }
 
   .logoWhatsapp {
