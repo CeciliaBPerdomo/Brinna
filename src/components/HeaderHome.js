@@ -31,7 +31,7 @@ const HeaderHome = () => {
     return (
         <div className="bannerHome">
 
-            <div class="grid grid-cols-6 mr-4 pt-12 text-center justify-items-center">
+            <div class="grid grid-cols-6 mr-4 pt-12 text-center justify-items-center barraBotones">
 
                 {/* Registro e inicio de sesion */}
                 <div></div>
@@ -50,14 +50,16 @@ const HeaderHome = () => {
 
                 <div>
                     <Image
-                        src={"/images/botones/inicio_sesion.png"}
+                        src={"/images/botones/registrarse.png"}
                         alt="Registrarse"
                         width={160}
                         height={50}
                     />
                 </div>
+            </div>
 
-
+            
+            <div class="grid grid-cols-6 mr-4 pt-12 text-center justify-items-center barraNavegacion">
                 {/* Menu de navegacion */}
                 <div></div>
                 <div></div>

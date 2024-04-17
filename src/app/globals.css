@@ -11,11 +11,19 @@
 
 .logoWhatsapp {
   float: right;
-  margin-top: 850px;
+  margin-top: 750px;
 }
 
 .menuInicio {
   font-size: larger;
+}
+
+.barraNavegacion{
+  padding-top: 20px;
+}
+
+.barraBotones{
+  padding-top: 100px;
 }
 
 /* Para dispositivos móviles */
