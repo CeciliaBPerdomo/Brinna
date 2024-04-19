@@ -7,12 +7,11 @@
   background-image: url("../../public/images/banner_home.png");
   background-size: cover;
   background-repeat: no-repeat;
-  /* width: max-content; */
 }
 
 .logoWhatsapp {
+  /* padding-top: 650px; */
   float: right;
-  margin-top: 650px;
 }
 
 .menuInicio {
@@ -20,11 +19,11 @@
   color: white;
 }
 
-.barraNavegacion{
+.barraNavegacion {
   padding-top: 20px;
 }
 
-.barraBotones{
+.barraBotones {
   padding-top: 100px;
   margin-right: 100px;
 }
@@ -42,7 +41,7 @@
 .menuNav {
   display: flex;
   flex-direction: row-reverse;
-  margin-top: 18px;
+  padding-top: 18px;
   gap: 4px;
 }
 
@@ -54,55 +53,73 @@
   }
 
   .logoWhatsapp {
-    margin-top: 10px; 
-    width: 80px;
     float: left;
+    margin-top: -75px;
+    width: 60px;
   }
 
+  /* Menu de incio, catalago, sobre nosotros, contacto */
   .menuInicio {
     font-size: medium;
-    margin-top: 5px;
     color: white;
   }
 
-  .botonera {
+  /* div principal */
+  .menuHeader {
+    margin-right: 0px;
+    padding-bottom: 15px;
     display: flex;
-    flex-direction: column-reverse;
-    align-items: end;
+    justify-content: flex-end;
+    width: 95%;
   }
 
   .menuNav {
+    padding-top: 470px;
+    align-items: center;
+  }
+
+  /* ------------------- */
+
+  /* Registro e inicio de sesion */
+  .botonera {
     display: flex;
     flex-direction: column-reverse;
-    gap: 2px;
-    align-items: end;
+    align-items: center;
   }
+
+  .barraBotones {
+    float: inline-end;
+    margin-right: 3px;
+    padding-top: 125px;
+  }
+
+  /* ------------------- */
 }
 
 /* Para dispositivos de escritorio entre 640px y 1024px */
 @media (min-width: 640px) and (max-width: 1024px) {
   .bannerHome {
-    /* height: 1250px; */
+    height: 1350px;
     width: 100%;
   }
 
   .logoWhatsapp {
     float: left;
-    margin-top: 180px;
+    margin-top: -85px;
     width: 80px;
   }
 
-  .botonera {
+  /* .botonera {
     display: flex;
     flex-direction: column-reverse;
     align-items: end;
-  }
+  } */
 
-  .menuNav {
+  /* .menuNav {
     display: flex;
     flex-direction: column-reverse;
     align-items: end;
-  }
+  } */
 
   .menuInicio {
     font-size: medium;
@@ -113,7 +130,7 @@
 /* Para pantallas de TV a partir de 1024px */
 @media (min-width: 1024px) {
   .bannerHome {
-    height: 1350px; 
+    height: 1350px;
     width: 100%;
   }
 }
