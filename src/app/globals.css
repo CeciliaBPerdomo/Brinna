@@ -5,9 +5,9 @@
 /* Navbar */
 .bannerHome {
   background-image: url("../../public/images/banner_home.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  width: max-content;
+  /* width: max-content; */
 }
 
 .logoWhatsapp {
@@ -82,7 +82,7 @@
 /* Para dispositivos de escritorio entre 640px y 1024px */
 @media (min-width: 640px) and (max-width: 1024px) {
   .bannerHome {
-    height: 1250px;
+    /* height: 1250px; */
     width: 100%;
   }
 
