@@ -25,8 +25,8 @@ const Menu = () => {
     ]
 
     return (
-        <div style={{marginRight: "100px"}}>
-        <nav className="flex flex-row-reverse mt-8 gap-4 md:flex md:flex-grow">
+        <div className='menuHeader'>
+        <nav className="menuNav">
             {links.map(link => {
                 return (
                     <Link
@@ -34,7 +34,7 @@ const Menu = () => {
                         href={link.href}
                         className={`${pathname === link.href ?
                             'font-bold underline underline-offset-8 decoration-red-600' : ''} 
-                                        text-base p-3 text-white menuInicio`}>
+                                        text-base p-3 menuInicio`}>
                         {link.label}
                     </Link>
                 )

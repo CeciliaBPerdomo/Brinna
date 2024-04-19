@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Navbar */
 .bannerHome {
   background-image: url("../../public/images/banner_home.png");
   background-size: contain;
@@ -16,6 +17,7 @@
 
 .menuInicio {
   font-size: larger;
+  color: white;
 }
 
 .barraNavegacion{
@@ -24,25 +26,58 @@
 
 .barraBotones{
   padding-top: 100px;
+  margin-right: 100px;
 }
+
+.botonera {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 4px;
+}
+
+.menuHeader {
+  margin-right: 100px;
+}
+
+.menuNav {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 18px;
+  gap: 4px;
+}
+
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 640px) {
   .bannerHome {
     background-size: cover; 
     background-repeat: no-repeat;
-    height: 450px;
+    height: 370px;
   }
 
   .logoWhatsapp {
-    margin-top: 220px; 
+    margin-top: 10px; 
     width: 80px;
     float: left;
   }
 
   .menuInicio {
-    font-size: medium;
-    margin-top: 50px;
+    font-size: small;
+    margin-top: 5px;
+    color: black;
+  }
+
+  .botonera {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: end;
+  }
+
+  .menuNav {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2px;
+    align-items: start;
   }
 }
 
@@ -55,8 +90,27 @@
 
   .logoWhatsapp {
     float: left;
-    margin-top: 350px;
+    margin-top: 180px;
     width: 80px;
+  }
+
+  .botonera {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: end;
+  }
+
+  .menuNav {
+    display: flex;
+    flex-direction: column-reverse;
+    /* gap: 4px; */
+    align-items: start;
+  }
+
+  .menuInicio {
+    font-size: smaller;
+    /* margin-top: 5px; */
+    color: white;
   }
 }
 

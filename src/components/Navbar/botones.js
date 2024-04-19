@@ -16,7 +16,7 @@ const BotonesSesion = () => {
         {
             id: 2,
             srcImagen: "/images/botones/inicio_sesion.png",
-            alt: "Iniciar sesión",
+            altImagen: "Iniciar sesión",
             widthImagen: 160,
             heightImagen: 50,
             linkImagen: "/telodeboaun"
@@ -24,8 +24,8 @@ const BotonesSesion = () => {
     ]
 
     return (
-        <div style={{marginRight: "100px", paddingTop: "100px"}}>
-            <nav className="flex flex-row-reverse gap-4 md:flex md:flex-grow">
+        <div className='barraBotones'>
+            <nav className="botonera">
                 {botones.map(boton => {
                     return (
                         <Link
