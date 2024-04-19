@@ -50,9 +50,6 @@
 /* Para dispositivos móviles */
 @media screen and (max-width: 640px) {
   .bannerHome {
-    background-size: cover; 
-    background-repeat: no-repeat;
-    height: 550px;
     width: 100%;
   }
 
@@ -116,8 +113,7 @@
 /* Para pantallas de TV a partir de 1024px */
 @media (min-width: 1024px) {
   .bannerHome {
-    /* height: 1350px;  */
-    height: 1350px;
+    height: 1350px; 
     width: 100%;
   }
 }
