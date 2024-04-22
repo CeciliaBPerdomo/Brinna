@@ -17,6 +17,7 @@
     .bannerHome {
       min-width: 450px;
       max-width: 640px;
+      height: 350px;
     }
 
     .logoWhatsapp {

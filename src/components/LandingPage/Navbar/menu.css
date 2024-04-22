@@ -18,21 +18,19 @@
   @media screen and (max-width: 640px) {
     /* Menu de incio, catalago, sobre nosotros, contacto */
     .menuInicio {
-        font-size: medium;
-        color: white;
+        font-size: small;
+        color: black;
+        align-content: center;
       }
     
       /* div principal */
       .menuHeader {
-        display: block;
-        width: 95%;
+        /* display: block; */
+        width: 80%;
       }
     
       .menuNav {
-        flex-direction: column-reverse;
         align-items: center;
-        gap: 0px;
-        padding-top: 10px;
       }
 
   }

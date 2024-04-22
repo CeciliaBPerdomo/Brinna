@@ -16,6 +16,11 @@
    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
 </p>
 
+## :hammer: Información acerca del proyecto
+<p>Se trata de una aplicación diseñada a medida para Brinna, una empresa dedicada a la venta de ropa de segunda mano.</p>
+<p>Cada usuario podrá comprar y vender las prendas de ropa que no utilice más. Así mismo podrá ver un historial de las ventas y las compras realizadas. Cómo poder comunicarse con el vendedor y dejar una reseña del mismo. </p>
+<p>Además de poder consultar el status de su compra. </p>
+
 ## 🛠️ Tecnologías
 - HTML
 - CSS
