@@ -3,10 +3,54 @@
     background-repeat: no-repeat;
 }
 
+.logoWhatsapp {
+    padding-top: 950px;
+    float: right;
+  }
+  
+  .barraNavegacion {
+    padding-top: 20px;
+  }
+  
+
 @media screen and (max-width: 640px) {
     .bannerHome {
       min-width: 450px;
       max-width: 640px;
     }
+
+    .logoWhatsapp {
+        float: left;
+        padding-top: 5px;
+        margin-top: -75px;
+        width: 60px;
+      }    
 }
+
+/* Para dispositivos de escritorio entre 640px y 1024px */
+@media (min-width: 640px) and (max-width: 1024px) {
+    .bannerHome {
+      height: 1350px;
+      width: 100%;
+    }
+  
+    .logoWhatsapp {
+      float: left;
+      margin-top: -85px;
+      width: 80px;
+    }
+  
+    .menuInicio {
+      font-size: medium;
+      color: white;
+    }
+  }
+  
+  /* Para pantallas de TV a partir de 1024px */
+  @media (min-width: 1024px) {
+    .bannerHome {
+      height: 1350px;
+      width: 100%;
+    }
+  }
   

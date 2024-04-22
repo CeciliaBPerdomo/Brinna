@@ -3,6 +3,9 @@
 import Image from 'next/image'
 import Link from 'next/link';
 
+// CSS
+import "../Navbar/botones.css"
+
 const BotonesSesion = () => {
     const botones = [
         {
@@ -42,33 +45,6 @@ const BotonesSesion = () => {
                     )
                 })}
             </nav>
-
-
-            {/* <div class="grid grid-cols-6 mr-4 pt-12 barraBotones">
-
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-
-                <div className='flex justify-end mr-4'>
-                    <Image
-                        src={"/images/botones/inicio_sesion.png"}
-                        alt="Iniciar sesion"
-                        width={160}
-                        height={50}
-                    />
-                </div>
-
-                <div>
-                    <Image
-                        src={"/images/botones/registrarse.png"}
-                        alt="Registrarse"
-                        width={160}
-                        height={50}
-                    />
-                </div>
-            </div> */}
         </div>
     )
 }

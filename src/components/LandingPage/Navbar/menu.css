@@ -1,0 +1,40 @@
+.menuHeader {
+    margin-right: 100px;
+  }
+  
+  .menuNav {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 18px;
+    gap: 4px;
+  }
+
+  .menuInicio {
+    font-size: larger;
+    color: white;
+  }
+
+
+  @media screen and (max-width: 640px) {
+    /* Menu de incio, catalago, sobre nosotros, contacto */
+    .menuInicio {
+        font-size: medium;
+        color: white;
+      }
+    
+      /* div principal */
+      .menuHeader {
+        margin-right: 0px;
+        padding-top: 15px;
+        padding-bottom: 5px;
+        padding-left: 45px;
+        display: flex;
+        width: 50%;
+      }
+    
+      .menuNav {
+        padding-top: 470px;
+        align-items: center;
+      }
+
+  }

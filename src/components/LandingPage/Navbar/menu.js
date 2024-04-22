@@ -3,6 +3,9 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 
+// CSS
+import "../Navbar/menu.css"
+
 const Menu = () => {
     const pathname = usePathname()
     const links = [

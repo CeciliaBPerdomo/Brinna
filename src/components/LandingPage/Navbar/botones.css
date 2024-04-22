@@ -1,0 +1,28 @@
+/* Botones de inicio de sesion y registro */
+
+/* Div principal */
+.barraBotones {
+    padding-top: 100px;
+    margin-right: 100px;
+}
+
+.botonera {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+}
+
+@media screen and (max-width: 640px) {
+    .botonera {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    /* Div principal */
+    .barraBotones {
+        width: 95%;
+        margin-right: 3px;
+        padding-top: 200px;
+        display: block;
+    }
+}
