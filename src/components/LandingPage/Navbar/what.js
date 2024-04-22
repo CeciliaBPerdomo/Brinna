@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link';
 
+// CSS
+import "../Navbar/what.css"
+
 const LogoWhatsapp = () => {
     return (
         <div>
