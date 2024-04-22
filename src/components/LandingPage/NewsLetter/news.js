@@ -15,11 +15,13 @@ const sub_jost = Jost({
 const News = () => {
     return (
         <div className="bg-newsletter bannerNewsLetter">
+            <div className="divMantente">
             <p className={`mantente ${jost.className}`}>
                 ¡Mantente al tanto!
             </p>
+            </div>
 
-            <div className="flex mb-4 justify-center">
+            <div className="flex mb-4 justify-center principal">
                 <div className="w-1/2 suscribite">
                     <p className={`letraSuscribite ${sub_jost.className}`}>
                         Suscríbite a nuestro newsletter
@@ -31,16 +33,17 @@ const News = () => {
                     <div className="w-1/2 inputDiv">
                         <input
                             type="text"
-                            className="rounded inputNews"
+                            className="inputNews"
                             placeholder="Ingresa tu correo electrónico"
                         />
                     </div>
-                    <div className="w-1/2 divBoton">
+                    <div className="divBoton">
                         <Image
                             src={"/images/botones/suscribirme.png"}
                             alt={"Suscribirme"}
                             width={122}
                             height={42}
+                            className="botonSuscribite"
                         />
                     </div>
                 </div>
