@@ -14,15 +14,16 @@
 
 @media screen and (max-width: 640px) {
     .botonera {
+        width: 95%;
         flex-direction: column-reverse;
-        align-items: center;
+        align-items: end;
     }
 
     /* Div principal */
     .barraBotones {
         width: 95%;
         margin-right: 3px;
-        padding-top: 100px;
+        padding-top: 90px;
         display: block;
     }
 }
