@@ -1,7 +1,7 @@
 <p align=center>
     <img 
         src="./public/LogoBrinnaNegro.png"
-        width="20%"
+        width="35%"
     >
 </p>
 
