@@ -3,11 +3,6 @@
 @tailwind utilities;
 
 /* Navbar */
-.bannerHome {
-  background-image: url("../../public/images/banner_home.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 .logoWhatsapp {
   padding-top: 950px;
@@ -48,10 +43,6 @@
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 640px) {
-  .bannerHome {
-    min-width: 450px;
-    max-width: 640px;
-  }
 
   .logoWhatsapp {
     float: left;

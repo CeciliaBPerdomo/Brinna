@@ -65,7 +65,7 @@
     }
 
     .divMantente{
-        width: 80%;
+        width: 95%;
     }
 
 
@@ -83,7 +83,7 @@
     /* Suscribite a nuestro newsletter*/
     .suscribite {
         height: 100%;
-        width: 80%;
+        width: 95%;
     }
 
     .letraSuscribite {
@@ -95,7 +95,7 @@
 
     /* input de email */
     .inputDiv {
-        width: 80%;
+        width: 95%;
     }
 
     .inputNews { 
@@ -108,7 +108,7 @@
     .divBoton {
         padding-left: 0px;
         display: flex;
-        width: 80%;
+        width: 95%;
     }
 
     .botonSuscribite{

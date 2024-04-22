@@ -4,10 +4,13 @@ import Menu from './Navbar/menu';
 import BotonesSesion from './Navbar/botones';
 import LogoWhatsapp from './Navbar/what';
 
+// CSS
+import "../LandingPage/Navbar/navbar.css"
+
 const HeaderHome = () => {
 
     return (
-        <div className="bannerHome">
+        <div className="bg-portada bannerHome">
 
             {/* Registro e inicio de sesion */}
             <BotonesSesion />

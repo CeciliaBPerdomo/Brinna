@@ -1,0 +1,12 @@
+.bannerHome {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 640px) {
+    .bannerHome {
+      min-width: 450px;
+      max-width: 640px;
+    }
+}
+  
