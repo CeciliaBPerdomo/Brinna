@@ -1,9 +1,11 @@
-import Image from "next/image";
+import News from "@/components/LandingPage/NewsLetter/news";
 
 export default function Home() {
   return (
-    <h1>
-      
-    </h1>
+    <div>
+
+      {/* NewLetter */}
+      <News />
+    </div>
   );
 }
