@@ -1,6 +1,6 @@
 import "../NewsLetter/newsLetter.css"
-import { Jost } from "next/font/google"
 import Image from "next/image"
+import { Jost } from "next/font/google"
 
 const jost = Jost({
     weight: "700",
