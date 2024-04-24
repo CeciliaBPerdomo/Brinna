@@ -77,13 +77,13 @@
 
     .fondoPrincipal {
         height: 195px;
-    }   
-    
+    }
+
     .fondo {
         height: 195px;
         width: 100%;
     }
-    
+
     .ropa {
         font-size: 12px;
     }
@@ -93,9 +93,10 @@
         color: white;
         font-size: 12px;
     }
-    
+
     .catalogo {
-        width: 400px;
+        width: 425px; 
+        display: block;
     }
-    
+
 }
