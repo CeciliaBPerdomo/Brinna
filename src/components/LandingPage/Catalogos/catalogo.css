@@ -51,10 +51,43 @@
 .subtitulo {
     padding-left: 128px;
     padding-bottom: 34px;
-
     color: #5D717C;
     font-size: 23px;
     font-style: normal;
-    font-weight: 600;
     line-height: 40px;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 640px) {
+    /* Encabezado */
+    .titulo {
+        text-align: center;
+        font-size: 18px;
+        line-height: 20px;
+        padding-left: 5px;
+        padding-top: 32px;
+    }
+
+    .subtitulo {
+        text-align: center;
+        padding-bottom: 14px;
+        font-size: 16px;
+        padding-left: 5px;
+    }
+
+    .fondoPrincipal {
+        height: 150px;
+    }   
+    
+    .ropa {
+        font-size: 12px;
+    }
+
+    .boton {
+        padding: 2px;
+        color: white;
+        font-size: 12px;
+    }
+    
+    
 }

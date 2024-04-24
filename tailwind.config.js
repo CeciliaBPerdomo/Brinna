@@ -9,8 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "newsletter": "url('../../public/images/fondos/newsletter.png')",
         "el": "url('../../public/images/fondos/el.png')",
         "ella": "url('../../public/images/fondos/ella.png')",

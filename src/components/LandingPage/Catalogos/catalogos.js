@@ -10,14 +10,15 @@ const jost = Jost({
 const Catalago = () => {
 
     return (
-        <div className="">
+        <div>
             <p className={`titulo ${jost}`}>
-            ¡Mirá nuestro catálogo!
+                ¡Mirá nuestro catálogo!
             </p>
 
             <p className={`subtitulo ${jost}`}>
-            Explora en las diferentes categorías.
+                Explora en las diferentes categorías.
             </p>
+
             <div className="w-full grid grid-cols-3">
                 <div className="bg-el fondoPrincipal">
                     <CatalagoPara para={"él"} />
