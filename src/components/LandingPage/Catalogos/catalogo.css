@@ -76,8 +76,12 @@
     }
 
     .fondoPrincipal {
-        height: 150px;
+        height: 195px;
     }   
+
+    .fondo {
+        height: 195px;
+    }
     
     .ropa {
         font-size: 12px;
