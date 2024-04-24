@@ -77,6 +77,7 @@
 
     .fondoPrincipal {
         height: 195px;
+        align-content: center;
     }
 
     .fondo {
@@ -95,8 +96,9 @@
     }
 
     .catalogo {
-        width: 425px; 
+        width: 435px; 
         display: block;
+        padding: 2px;
     }
 
 }
