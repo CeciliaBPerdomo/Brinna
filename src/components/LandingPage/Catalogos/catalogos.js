@@ -10,7 +10,7 @@ const jost = Jost({
 const Catalago = () => {
 
     return (
-        <div>
+        <div className="catalogo">
             <p className={`titulo ${jost}`}>
                 ¡Mirá nuestro catálogo!
             </p>
