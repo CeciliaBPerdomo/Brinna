@@ -19,7 +19,7 @@ const Catalago = () => {
                 Explora en las diferentes categorías.
             </p>
 
-            <div className="w-full grid grid-cols-3">
+            <div className="w-full grid grid-cols-3 md:grid-cols-1 sm:grid-cols-1">
                 <div className="bg-el fondoPrincipal">
                     <CatalagoPara para={"él"} />
                 </div>
