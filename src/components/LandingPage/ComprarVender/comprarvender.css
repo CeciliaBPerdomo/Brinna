@@ -35,12 +35,18 @@
 /* Para dispositivos móviles */
 @media screen and (max-width: 640px) {
     .fondo_cv {
-        height: 145px;
+        height: 135px;
+        width: 180px;
+    }
+
+    .principal_cv{
+       position: relative;
     }
 
     .grid_cv {
         margin-top: 10px;
-        margin-left: 10px;
+        margin-left: 6px;
+        gap: 2px
     }
 
     .boton_cv {
