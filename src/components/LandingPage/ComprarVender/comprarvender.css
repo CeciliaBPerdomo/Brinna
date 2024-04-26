@@ -34,9 +34,18 @@
 /* Para dispositivos móviles */
 @media screen and (max-width: 640px) {
     .fondo_cv {
-        height: 135px;
-        width: 180px;
+        height: 130px;
     }
+
+    .principal_cv {
+        display: flex;
+        justify-content: center;
+        min-width: 375px;
+        margin: 0 auto;
+        margin-left: 5px;
+        gap: 1px
+    }
+    
 
     .boton_cv {
         margin-top: 65px;
