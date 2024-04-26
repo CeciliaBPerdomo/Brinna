@@ -2,12 +2,11 @@
     background-repeat: no-repeat;
     background-size: contain;
     height: 500px;
-    justify-content: center;
+    width: 714px;
 }
 
-
-.grid_cv {
-    margin-left: 35px;
+.principal_cv {
+    display: flex;
     justify-content: center;
 }
 
@@ -37,16 +36,6 @@
     .fondo_cv {
         height: 135px;
         width: 180px;
-    }
-
-    .principal_cv{
-       position: relative;
-    }
-
-    .grid_cv {
-        margin-top: 10px;
-        margin-left: 6px;
-        gap: 2px
     }
 
     .boton_cv {

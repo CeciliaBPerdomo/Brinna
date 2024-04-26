@@ -11,7 +11,7 @@ const ComprarVender = () => {
 
     return (
         <div className="principal_cv">
-            <div className="grid grid-cols-2 grid_cv">
+            {/* <div className="grid grid-cols-2 grid_cv"> */}
 
                 <div className="bg-comprar fondo_cv">
                     <div className="boton_cv">
@@ -29,7 +29,7 @@ const ComprarVender = () => {
                     </div>
                 </div>
 
-            </div>
+            {/* </div> */}
         </div>
     )
 }
