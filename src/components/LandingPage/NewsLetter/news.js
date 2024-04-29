@@ -37,7 +37,7 @@ const News = () => {
                             placeholder="Ingresa tu correo electrónico"
                         />
                     </div>
-                    <div className="divBoton">
+                    <div className="divBoton_news">
                         <Image
                             src={"/images/botones/suscribirme.png"}
                             alt={"Suscribirme"}

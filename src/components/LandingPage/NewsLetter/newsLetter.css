@@ -56,6 +56,10 @@
     justify-content: center;
 }
 
+.divBoton_news {
+    padding-left: 15px;
+}
+
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 640px) {
