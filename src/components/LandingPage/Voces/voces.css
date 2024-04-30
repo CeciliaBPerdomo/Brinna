@@ -1,0 +1,19 @@
+.titulo_voces {
+    color: #CA4E3C;
+    font-size: 28px;
+    font-style: normal;
+    line-height: 40px;
+
+}
+
+.sub_voces {
+    color: #5D717C;
+    font-size: 23px;
+    font-style: normal;
+    line-height: 40px;
+}
+
+.encabezado_voces {
+    padding-left: 128px;
+    margin-top: 43px;
+}
