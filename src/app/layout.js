@@ -11,7 +11,7 @@ import HeaderHome from "../components/LandingPage/HeaderHome";
 import FooterHome from "../components/LandingPage/Footer";
 
 export const metadata = {
-  title: "Brinna, dale a tu ropa una segunda oportunidad",
+  title: "Brinna",
   description: "Realizado con 💛 por Cecilia, Daniel, Noelia",
 };
 

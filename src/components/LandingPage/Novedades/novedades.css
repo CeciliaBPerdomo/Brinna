@@ -1,3 +1,4 @@
+/* Encabezado */
 .titulo_novedades {
     color: #CA4E3C;
     font-size: 28px;
@@ -13,6 +14,46 @@
 }
 
 .encabezado_novedades {
-    padding-left: 128px;
     margin-top: 35px;
+    padding-left: 128px;
+}
+
+/* ------------------------------------------------------- */
+
+/* Tarjetas */
+
+.card_individual_novedades {
+    height: 488px;
+    background-color: #DAEBEB;
+    max-width: 28rem;
+}
+
+.imagen_novedades {
+    height: 400px;
+    width: 100%;
+}
+
+.titulo_novedades_card {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 500;
+}
+
+.talle_novedades {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.precio_novedades {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 10px;
 }
