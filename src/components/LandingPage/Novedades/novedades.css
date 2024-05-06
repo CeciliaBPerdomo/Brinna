@@ -23,15 +23,17 @@
 /* Tarjetas */
 
 .card_individual_novedades {
-    height: 488px;
+    height: 495px;
     background-color: #DAEBEB;
     max-width: 28rem;
+    border-radius: 15px;
 }
 
 .imagen_novedades {
     padding: 5px;
     height: 400px;
     width: 100%;
+    border-radius: 15px;
 }
 
 .titulo_novedades_card {
@@ -61,7 +63,7 @@
 
 /* ------------------------------------------------------- */
 
-/* Icono */
+/* Icono  de corazon */
 .corazon_novedades{
     display: flex;
     position: absolute;
