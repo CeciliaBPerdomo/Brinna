@@ -29,6 +29,7 @@
 }
 
 .imagen_novedades {
+    padding: 5px;
     height: 400px;
     width: 100%;
 }
@@ -56,4 +57,22 @@
     font-weight: 600;
     line-height: normal;
     margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------- */
+
+/* Icono */
+.corazon_novedades{
+    display: flex;
+    position: absolute;
+    right: 0;
+
+    width: 70px;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_individual_novedades {
+    position: relative; 
 }
