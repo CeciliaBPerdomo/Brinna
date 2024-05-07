@@ -20,7 +20,7 @@ const FooterHome = () => {
             <p className="font-bold text-brinna">Enlaces rápidos </p>
             <div className="my-5">
               {enlaces.map((enlace, id) => (
-                <p className="my-3" id={id}>
+                <p className="my-3" key={id}>
                   {enlace}
                 </p>
               ))}
@@ -32,7 +32,7 @@ const FooterHome = () => {
             <p className="font-bold text-brinna">Datos útiles </p>
             <div className="my-5">
               {datos.map((enlace, id) => (
-                <p className="my-3" id={id}>
+                <p className="my-3" key={id}>
                   {enlace}
                 </p>
               ))}
@@ -44,7 +44,7 @@ const FooterHome = () => {
             <p className="font-bold text-brinna">Contáctanos </p>
             <div className="my-5">
               {contactanos.map((enlace, id) => (
-                <div className="my-3 flex" id={id}>
+                <div className="my-3 flex" key={id}>
                   <span className="text-brinna text-2xl mr-2">
                     {enlace.logo}
                   </span>
