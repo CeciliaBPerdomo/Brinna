@@ -29,37 +29,43 @@ const nov = [
         "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera1.jpg?alt=media&token=9787afb9-8ca8-4991-ad10-00625c137bb6",
         "titulo": "Remera Indian",
         "talle": "L",
-        "precio": "350"
+        "precio": "350",
+        "etiqueta": "si"
     },
     {
         "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera3.jpg?alt=media&token=d0367ff2-5325-4efe-aead-b4e1b7893a45",
         "titulo": "Remera Rosada",
         "talle": "M",
-        "precio": "300"
+        "precio": "300",
+        "etiqueta": "si"
     },
     {
         "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera4.jpg?alt=media&token=e4bd9de3-c453-4bcf-98c6-5bc77fb6f48d",
         "titulo": "Musculosa Amarilla con flores",
         "talle": "M",
-        "precio": "300"
+        "precio": "300",
+        "etiqueta": "no"
     },
     {
         "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera1.jpg?alt=media&token=9787afb9-8ca8-4991-ad10-00625c137bb6",
         "titulo": "Remera 1",
         "talle": "M",
-        "precio": "300"
+        "precio": "300",
+        "etiqueta": "no"
     },
     {
         "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera3.jpg?alt=media&token=d0367ff2-5325-4efe-aead-b4e1b7893a45",
         "titulo": "Remera 3",
         "talle": "M",
-        "precio": "300"
+        "precio": "300",
+        "etiqueta": "no"
     },
     {
         "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera4.jpg?alt=media&token=e4bd9de3-c453-4bcf-98c6-5bc77fb6f48d",
         "titulo": "Remera 4",
         "talle": "M",
-        "precio": "300"
+        "precio": "300",
+        "etiqueta": "si"
     },
 ]
 
@@ -103,6 +109,13 @@ const Novedades = () => {
                     {nov.map((novedades, index) => (
                         <div className="max-w-sm rounded overflow-hidden shadow-md mt-4 card_individual_novedades"
                             key={index}>
+                            
+                            {novedades.etiqueta == "si" ? 
+                                <button className="etiqueta_novedades">
+                                    <p className={`nuevo_novedades ${precio_jost}`}>Nuevo ¡con etiqueta!</p>
+                                </button>
+                            : null
+                            }
 
                             <button className="corazon_novedades"
                                 onClick={() => cambiarCorazon(index)}
@@ -112,7 +125,7 @@ const Novedades = () => {
                                     viewBox="0 0 24 24"
                                     strokeWidth={1.5}
                                     stroke="currentColor"
-                                    className="w-10 h-10 text-red-400">
+                                    className="w-10 h-10">
                                     <path strokeLinecap="round"
                                         strokeLinejoin="round"
                                         d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
