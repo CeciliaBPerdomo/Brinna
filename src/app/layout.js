@@ -1,5 +1,8 @@
-import HeaderHome from "@/components/HeaderHome";
 import "./globals.css";
+
+// Encabezado y pie de pagina
+import HeaderHome from "@/components/HeaderHome";
+import FooterHome from "@/components/Footer";
 
 export const metadata = {
   title: "Brinna",
@@ -12,6 +15,7 @@ export default function RootLayout({ children }) {
       <body>
         <HeaderHome />
           {children}
+        <FooterHome />
         </body>
     </html>
   );
