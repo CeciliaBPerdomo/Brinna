@@ -1,0 +1,80 @@
+/* Encabezado */
+.titulo_novedades {
+    color: #CA4E3C;
+    font-size: 28px;
+    font-style: normal;
+    line-height: 40px;
+}
+
+.sub_novedades {
+    color: #5D717C;
+    font-size: 23px;
+    font-style: normal;
+    line-height: 40px;
+}
+
+.encabezado_novedades {
+    margin-top: 35px;
+    padding-left: 128px;
+}
+
+/* ------------------------------------------------------- */
+
+/* Tarjetas */
+
+.card_individual_novedades {
+    height: 495px;
+    background-color: #DAEBEB;
+    max-width: 28rem;
+    border-radius: 15px;
+}
+
+.imagen_novedades {
+    padding: 5px;
+    height: 400px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.titulo_novedades_card {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 500;
+}
+
+.talle_novedades {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.precio_novedades {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------- */
+
+/* Icono  de corazon */
+.corazon_novedades{
+    display: flex;
+    position: absolute;
+    right: 0;
+
+    width: 70px;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_individual_novedades {
+    position: relative; 
+}

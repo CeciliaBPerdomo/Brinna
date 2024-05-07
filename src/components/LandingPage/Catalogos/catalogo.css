@@ -1,0 +1,105 @@
+.fondoPrincipal {
+    height: 720px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-content: center;
+}
+
+.fondo {
+    height: 720px;
+    align-content: center;
+}
+
+.ropa {
+    text-align: center;
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 32px;
+    font-style: normal;
+    line-height: normal;
+}
+
+.divBoton {
+    display: flex;
+    padding: 10px;
+}
+
+.boton {
+    align-self: center;
+    padding: 10px;
+    color: white;
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+}
+
+.boton:hover {
+    color: #CA4E3C;
+    background-color: #FFF;
+}
+
+.titulo {
+    padding-left: 128px;
+    color: #CA4E3C;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    padding-top: 72px;
+}
+
+.subtitulo {
+    padding-left: 128px;
+    padding-bottom: 34px;
+    color: #5D717C;
+    font-size: 23px;
+    font-style: normal;
+    line-height: 40px;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 640px) {
+    /* Encabezado */
+    .titulo {
+        text-align: center;
+        font-size: 18px;
+        line-height: 20px;
+        padding-left: 5px;
+        padding-top: 32px;
+    }
+
+    .subtitulo {
+        text-align: center;
+        padding-bottom: 14px;
+        font-size: 16px;
+        padding-left: 5px;
+    }
+
+    .fondoPrincipal {
+        height: 195px;
+        align-content: center;
+    }
+
+    .fondo {
+        height: 195px;
+        width: 100%;
+    }
+
+    .ropa {
+        font-size: 12px;
+    }
+
+    .boton {
+        padding: 2px;
+        color: white;
+        font-size: 12px;
+    }
+
+    .catalogo {
+        width: 435px; 
+        display: block;
+        padding: 2px;
+        margin-left: 5px;
+    }
+
+}

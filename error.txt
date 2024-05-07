@@ -1,0 +1,10 @@
+[Error: EINVAL: invalid argument, readlink 'C:\Users\cecil\OneDrive\Documents\Brinna\brinna\.next\app-build-manifest.json'] {
+  errno: -4071,
+  code: 'EINVAL',
+  syscall: 'readlink',
+  path: 'C:\\Users\\cecil\\OneDrive\\Documents\\Brinna\\brinna\\.next\\app-build-manifest.json'
+}
+
+En la terminal: 
+rm .next    --> S
+npm install 

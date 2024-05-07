@@ -1,0 +1,33 @@
+.bannerHome {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.barraNavegacion {
+    padding-top: 20px;
+}
+
+
+@media screen and (max-width: 640px) {
+    .bannerHome {
+        min-width: 450px;
+        max-width: 640px;
+        height: 350px;
+    }
+}
+
+/* Para dispositivos de escritorio entre 640px y 1024px */
+@media (min-width: 640px) and (max-width: 1024px) {
+    .bannerHome {
+        height: 1350px;
+        width: 100%;
+    }
+}
+
+/* Para pantallas de TV a partir de 1024px */
+@media (min-width: 1024px) {
+    .bannerHome {
+        height: 1350px;
+        width: 100%;
+    }
+}

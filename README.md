@@ -1,7 +1,7 @@
 <p align=center>
     <img 
         src="./public/LogoBrinnaNegro.png"
-        width="20%"
+        width="35%"
     >
 </p>
 
@@ -16,21 +16,20 @@
    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
 </p>
 
-## 🛠️ Tecnologías
-<table>
-    <tr>
-        <td align="center">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Pjqc8uidAlebb1b57SEWhJ_1C5ZbwIoGS3o3ORRt7g&s" width="60%" />
-        </td>
-        <td align="center">
-            <img src="https://www.dongee.com/tutoriales/content/images/2022/12/image-82.png" width="60%" />
-        </td>
-        <td align="center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Firebase_Logo.svg/800px-Firebase_Logo.svg.png" width="60%" />
-        </td>
-    </tr>
-</table>
+## :hammer: Información acerca del proyecto
+<p>Se trata de una aplicación diseñada a medida para Brinna, una empresa dedicada a la venta de ropa de segunda mano.</p>
+<p>Cada usuario podrá comprar y vender las prendas de ropa que no utilice más. Así mismo podrá ver un historial de las ventas y las compras realizadas. Cómo poder comunicarse con el vendedor y dejar una reseña del mismo. </p>
+<p>Además de poder consultar el status de su compra. </p>
 
+## 🛠️ Tecnologías
+- HTML
+- CSS
+- Tailwind CSS
+- JavaScript
+- React.js
+- Next.js
+- FireBase
+- Google Fonts (https://fonts.google.com/variablefonts?vfquery=jost)
 
 ## 🧑‍💻 Developers
 Realizado por <a href="https://www.linkedin.com/in/cecilia-perdomo/" style="text-decoration: none; color: inherit;">Cecilia Perdomo</a> y <a href="https://www.linkedin.com/in/danieljmartinezdev/" style="text-decoration: none; color: inherit;">Daniel Martinez</a>, primera versión desde el 02 de Abril.

@@ -1,0 +1,74 @@
+.texto_barra {
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+}
+
+.titulo_barra {
+    color: #CA4E3C;
+    font-size: 30px;
+    font-style: normal;
+    line-height: 40px;
+    text-align: center;
+}
+
+.barra_busqueda {
+    display: flex;
+    justify-content: center;
+    padding-top: 9px;
+}
+
+.input_container_barra{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input_barra {
+    width: 660px;
+    height: 52px;
+    padding: 10px;
+    border-width: 1;
+    border-color: black;
+    border-radius: 25px;
+    box-shadow: 0px 1.5px 3px 0px rgba(0, 0, 0, 0.25);
+
+    /* Letra */
+    color: #757575;
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+}
+
+.boton_lupa_barra {
+    display: flex;
+    width: 70px;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 80px;
+    background: #CA4E3C;
+
+    position: absolute;
+    right: 0;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 640px) {
+    .titulo_barra {
+        font-size: 16px;
+    }
+    
+    .input_barra {
+        width: 330px;
+        height: 27px;
+        font-size: 10px;
+    } 
+    
+    .boton_lupa_barra {
+        width: 35px;
+        height: 27px;
+    }
+}

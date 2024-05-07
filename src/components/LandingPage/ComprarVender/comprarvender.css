@@ -1,0 +1,61 @@
+.fondo_cv {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+    width: 714px;
+}
+
+.principal_cv {
+    display: flex;
+    justify-content: center;
+}
+
+.boton_cv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 192px;
+}
+
+.titulo_cv {
+    width: 400px;
+    height: 90px;
+    border-width: 1px;
+    border-color: white;
+
+    color: #FFF;
+    text-align: center;
+    text-shadow: 8px 8px 5px rgba(0, 0, 0, 0.70);
+    font-size: 40px;
+    font-style: normal;
+    line-height: normal;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 640px) {
+    .fondo_cv {
+        height: 130px;
+        display: flex; 
+        justify-content: center;
+    }
+
+    .principal_cv {
+        display: flex;
+        justify-content: center;
+        min-width: 375px;
+        margin: 0 auto;
+        margin-left: 40px;
+        gap: 1px
+    }
+    
+
+    .boton_cv {
+        margin-top: 65px;
+    }
+
+    .titulo_cv {
+        width: 120px;
+        height: 35px;
+        font-size: 20px;
+    }  
+}

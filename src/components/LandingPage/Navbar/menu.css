@@ -1,0 +1,43 @@
+.menuHeader {
+    margin-right: 100px;
+}
+
+.menuNav {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 18px;
+    gap: 4px;
+}
+
+.menuInicio {
+    font-size: larger;
+    color: white;
+}
+
+
+@media screen and (max-width: 640px) {
+
+    /* Menu de incio, catalago, sobre nosotros, contacto */
+    .menuInicio {
+        font-size: small;
+        color: white;
+        align-content: center;
+    }
+
+    /* div principal */
+    .menuHeader {
+        width: 95%;
+    }
+
+    .menuNav {
+        align-items: center;
+    }
+}
+
+/* Para dispositivos de escritorio entre 640px y 1024px */
+@media (min-width: 640px) and (max-width: 1024px) {
+    .menuInicio {
+        font-size: medium;
+        color: white;
+    }
+}
