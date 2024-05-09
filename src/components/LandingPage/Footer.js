@@ -1,9 +1,8 @@
 import React from "react";
-import Image from "next/image";
-import { CiMail } from "react-icons/ci";
 import { FaSquarePhone } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
-
+import Image from "next/image";
+import instagram from "../../../public/images/instagram.ico";
 const FooterHome = () => {
   const enlaces = ["Catálogo", "Sobre nosotros", " Contacto"];
   const datos = ["¿Como comprar?", "¿Como vender?", "Términos y condiciones"];
@@ -56,8 +55,9 @@ const FooterHome = () => {
         </div>
       </div>
       <div className="py-5 flex justify-center text-center font-bold text-brinna text-2xl">
-        <a href="https://www.instagram.com/Brinna">
-          Súmate a nuestro Instagram @Brinna
+        <a className="flex" href="https://www.instagram.com/Brinna">
+          <Image src={instagram} alt="Instagram" />
+          &nbsp;Súmate a nuestro Instagram @Brinna
         </a>
       </div>
       <div className="py-5 flex justify-center text-center bg-muted-cyan cyan">
