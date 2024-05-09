@@ -6,7 +6,7 @@ module.exports = withMT({
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],  
+  ],
   theme: {
     extend: {
       backgroundImage: {
@@ -20,7 +20,12 @@ module.exports = withMT({
         "comprar": "url('../../public/images/fondos/FondoComprar.png')",
         "vender": "url('../../public/images/fondos/FondoVender.png')",
       },
-  colors: {'brinna': '#CA4E3C', 'muted-cyan':'#CCE0E1', 'muted-blue': '#5D717C'},
+      colors: {
+        'brinna': '#CA4E3C',
+        'muted-cyan': '#CCE0E1',
+        'muted-blue': '#5D717C',
+        'fondo_cards': '#CCE0E1'
+      },
     },
   },
   plugins: [],
