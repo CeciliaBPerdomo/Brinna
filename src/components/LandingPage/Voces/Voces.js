@@ -18,19 +18,19 @@ const voces_inspiran = [
         id: 1,
         nombre: "Julia",
         estrellas: 5,
-        mensaje: "Lorem ipsum dolor sit amet consectetur. Vivamus at lorem fermentum tortor neque purus purus. Ultricies aliquet nulla nunc malesuada pharetra lacus commodo. Aliquam convallis pellentesque."
+        mensaje: "¡Excelente experiencia de compra! La selección de ropa usada es increíblemente variada y de gran calidad. Encontré piezas únicas que parecen prácticamente nuevas a precios muy razonables. Además, el servicio al cliente fue excepcional; respondieron rápidamente a mis preguntas y el envío fue rápido y eficiente. Definitivamente, recomendaría esta tienda a cualquier amante de la moda sostenible."
     },
     {
         id: 2,
         nombre: "Pedro",
         estrellas: 4,
-        mensaje: "Lorem ipsum dolor sit amet consectetur. Vivamus at lorem fermentum tortor neque purus purus."
+        mensaje: "Muy satisfecho con mi compra. La ropa usada está en muy buen estado y hay una amplia gama de estilos para elegir. Los precios son bastante competitivos y el proceso de compra fue sencillo. Me gustaría ver una descripción más detallada de cada prenda, especialmente sobre las medidas exactas. A pesar de eso, es una excelente opción para comprar ropa usada de calidad."
     },
     {
         id: 3,
         nombre: "Roberto",
         estrellas: 3,
-        mensaje: "Lorem ipsum dolor sit amet consectetur. Dictum neque dictum aenean mattis odio maecenas tincidunt. Accumsan maecenas auctor penatibus elit ut malesuada justo. Augue lectus et sit consectetur."
+        mensaje: "La tienda de ropa usada ofrece una excelente variedad de prendas a precios justos. Me encantó la diversidad de estilos y la posibilidad de encontrar piezas vintage únicas. La mayoría de los artículos estaban en muy buen estado y llegaron bien empaquetados. Estoy contento con mi compra y seguramente volveré a comprar en el futuro."
     }
 ]
 
