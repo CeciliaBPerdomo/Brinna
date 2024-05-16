@@ -1,6 +1,7 @@
 //"use client"
 import "../Voces/voces.css"
 import { Jost } from "next/font/google"
+import Review from "./Review"
 
 const jost = Jost({
     weight: "700",
@@ -28,7 +29,7 @@ const voces_inspiran = [
     {
         id: 3,
         nombre: "Roberto",
-        estrellas: 5,
+        estrellas: 3,
         mensaje: "Lorem ipsum dolor sit amet consectetur. Dictum neque dictum aenean mattis odio maecenas tincidunt. Accumsan maecenas auctor penatibus elit ut malesuada justo. Augue lectus et sit consectetur."
     }
 ]
@@ -42,12 +43,13 @@ const Voces = () => {
                 <p className={`sub_voces ${jost}`}>Descubre lo que dicen nuestros clientes sobre su experiencia con nosotros.</p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-3 lg:gap-12 p-6 md:p-10">                
+            <div className="grid gap-8 md:grid-cols-3 lg:gap-12 p-6 md:p-10">
                 {voces_inspiran.map((item) => (
                     <div key={item.id} className="flex flex-col p-6 space-y-2 
                     transition-all duration-500 bg-fondo_cards border border-indigo-100 rounded-lg 
                     shadow hover:shadow-xl lg:p-8 lg:flex-row lg:space-y-0 lg:space-x-6">
                         <div className="flex-1" >
+                            <Review rating={item.estrellas} />
                             <h5 className="mb-3 text-xl font-bold lg:text-2xl">{item.nombre}</h5>
                             <p className="mb-6 text-lg text-gray-600">{item.mensaje}</p>
                         </div>

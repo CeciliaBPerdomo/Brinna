@@ -24,7 +24,8 @@ module.exports = withMT({
         'brinna': '#CA4E3C',
         'muted-cyan': '#CCE0E1',
         'muted-blue': '#5D717C',
-        'fondo_cards': '#CCE0E1'
+        'fondo_cards': '#CCE0E1',
+        'ranking': "#FF7968", 
       },
     },
   },
