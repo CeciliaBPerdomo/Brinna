@@ -4,12 +4,13 @@
     height: 500px;
     width: 714px;
     transition: transform 0.3s ease;
-    overflow: hidden 
+    overflow: hidden
 }
 
 .bg-comprar:hover,
 .bg-vender:hover {
-    transform: scale(1.1); /* Ajustar el nivel de zoom */
+    transform: scale(1.1);
+    /* Ajustar el nivel de zoom */
 }
 
 .principal_cv {
@@ -39,25 +40,19 @@
 }
 
 /* Para dispositivos móviles */
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 350px) {
     .fondo_cv {
         height: 130px;
-        display: flex; 
+        display: flex;
         justify-content: center;
-        width: 100%; 
+        width: 100%;
     }
 
     .principal_cv {
         display: flex;
-        /* justify-content: center;
-        min-width: 375px;
-        margin: 0 auto;
-        margin-left: 40px; 
-        gap: 1px*/
         align-items: center;
         gap: 10px;
     }
-    
 
     .boton_cv {
         margin-top: 0;
@@ -67,5 +62,83 @@
         width: auto;
         height: 35px;
         font-size: 20px;
-    }  
+    }
+}
+
+/* Para dispositivos pequeños a medianos (por ejemplo, teléfonos grandes) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .fondo_cv {
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .principal_cv {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .boton_cv {
+        margin-top: 5px;
+    }
+
+    .titulo_cv {
+        width: auto;
+        height: 40px;
+        font-size: 22px;
+    }
+}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .fondo_cv {
+        height: 170px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .principal_cv {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .boton_cv {
+        margin-top: 10px;
+    }
+
+    .titulo_cv {
+        width: auto;
+        height: 45px;
+        font-size: 24px;
+    }
+}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) {
+    .fondo_cv {
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .principal_cv {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .boton_cv {
+        margin-top: 15px;
+    }
+
+    .titulo_cv {
+        width: auto;
+        height: 50px;
+        font-size: 26px;
+    }
 }
