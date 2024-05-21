@@ -55,14 +55,19 @@
     right: 0;
 }
 
+.svg_boton_lupa_barra {
+    width: 2rem;
+    height: 2rem;
+}
+
 /* Para dispositivos móviles */
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 350px) {
     .titulo_barra {
         font-size: 16px;
     }
     
     .input_barra {
-        width: 330px;
+        width: 250px;
         height: 27px;
         font-size: 10px;
     } 
@@ -70,5 +75,33 @@
     .boton_lupa_barra {
         width: 35px;
         height: 27px;
+        font-size: 24px;
     }
+
+    .texto_barra {
+        padding-top: 0px;
+    }
+
+    .svg_boton_lupa_barra {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .barra_busqueda_contenedor {
+        width: 100%;
+        margin-top: -10px;
+    }
+
+    .barra_busqueda {
+        padding-top: 3px;
+    }
+}
+
+@media screen and (min-width: 351px) and (max-width: 600px) {
+
+}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {
+
 }
