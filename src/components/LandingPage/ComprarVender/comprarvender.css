@@ -68,16 +68,14 @@
 /* Para dispositivos pequeños a medianos (por ejemplo, teléfonos grandes) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
     .fondo_cv {
-        height: 150px;
+        height: 110px;
         display: flex;
         justify-content: center;
-        width: 100%;
+        width: 165px;
     }
 
     .principal_cv {
-        display: flex;
-        align-items: center;
-        gap: 15px;
+        width: 550px;
     }
 
     .boton_cv {
@@ -85,9 +83,9 @@
     }
 
     .titulo_cv {
-        width: auto;
-        height: 40px;
-        font-size: 22px;
+        width: 100px;
+        height: 20px;
+        font-size: 16px;
     }
 }
 

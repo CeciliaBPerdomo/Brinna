@@ -58,7 +58,12 @@
 }
 
 /* Para dispositivos móviles */
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 350px) {
+
+}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
     /* Encabezado */
     .titulo {
         text-align: center;
@@ -102,4 +107,9 @@
         margin-left: 5px;
     }
 
+}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {
+    
 }
