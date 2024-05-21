@@ -75,7 +75,6 @@
     .boton_lupa_barra {
         width: 35px;
         height: 27px;
-        font-size: 24px;
     }
 
     .texto_barra {
@@ -98,6 +97,39 @@
 }
 
 @media screen and (min-width: 351px) and (max-width: 600px) {
+    .titulo_barra {
+        font-size: 16px;
+        padding-top: 1px;
+    }
+    
+    .barra_busqueda_contenedor {
+        width: 100%;
+        margin-top: -10px;
+    }
+
+    .barra_busqueda {
+        padding-top: 3px;
+    }
+
+    .input_barra {
+        width: 290px;
+        height: 29px;
+        font-size: 11px;
+    } 
+
+    .boton_lupa_barra {
+        width: 35px;
+        height: 29px;
+    }
+
+    .texto_barra {
+        padding-top: 2px;
+    }
+
+    .svg_boton_lupa_barra {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
 
 }
 
