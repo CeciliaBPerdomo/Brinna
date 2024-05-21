@@ -64,9 +64,11 @@
 @media screen and (max-width: 350px) {
     .titulo_barra {
         font-size: 16px;
+        margin-left: 60px;
     }
     
     .input_barra {
+        margin-left: 60px;
         width: 250px;
         height: 27px;
         font-size: 10px;
