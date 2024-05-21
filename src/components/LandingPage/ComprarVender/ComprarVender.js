@@ -1,15 +1,12 @@
 import "../ComprarVender/comprarvender.css"
 import { Jost } from "next/font/google"
-import Image from "next/image"
 
 const jost = Jost({
     weight: "800",
     subsets: ['latin'],
 })
 
-
 const ComprarVender = () => {
-
     return (
         <div className="principal_cv">
             <div class="grid grid-cols-2 gap-2">
