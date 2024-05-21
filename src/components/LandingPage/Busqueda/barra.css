@@ -102,6 +102,7 @@
     .titulo_barra {
         font-size: 16px;
         padding-top: 1px;
+        margin-left: 60px;
     }
     
     .barra_busqueda_contenedor {
@@ -117,6 +118,7 @@
         width: 290px;
         height: 29px;
         font-size: 11px;
+        margin-left: 60px;
     } 
 
     .boton_lupa_barra {
