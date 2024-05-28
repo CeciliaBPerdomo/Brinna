@@ -68,10 +68,14 @@
 /* Para dispositivos pequeños a medianos (por ejemplo, teléfonos grandes) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
     .fondo_cv {
-        height: 110px;
         display: flex;
+        height: 150px;
         justify-content: center;
-        width: 200px;
+        width: 250px;
+    }
+
+    .bg-comprar, .bg-vender {
+       background-size: cover;
     }
 
     .principal_cv {
