@@ -3,18 +3,22 @@
     float: right;
 }
 
-/* Dipositivos moviles */
-@media screen and (max-width: 640px) {
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {
+
+}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
     .logoWhatsapp {
-        float: left;
         padding-top: 5px;
-        margin-top: -10px;
-        width: 60px;
+        margin-top: 160px;
+        width: 55px;
     }
 }
 
-/* Para dispositivos de escritorio entre 640px y 1024px */
-@media (min-width: 640px) and (max-width: 1024px) {
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {
     .logoWhatsapp {
         float: left;
         margin-top: -85px;
