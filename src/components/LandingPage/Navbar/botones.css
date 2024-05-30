@@ -1,29 +1,39 @@
 /* Botones de inicio de sesion y registro */
 
 /* Div principal */
-.barraBotones {
+.barraBotones_menuHeaderHome {
     padding-top: 100px;
     margin-right: 100px;
 }
 
-.botonera {
+.botonera_menuHeaderHome {
     display: flex;
     flex-direction: row-reverse;
     gap: 4px;
 }
 
-@media screen and (max-width: 640px) {
-    .botonera {
-        width: 95%;
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {
+
+}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .botonera_menuHeaderHome {
         flex-direction: column-reverse;
         align-items: end;
     }
 
     /* Div principal */
-    .barraBotones {
-        width: 95%;
+    .barraBotones_menuHeaderHome {
+        width: 550px;
         margin-right: 3px;
-        padding-top: 90px;
-        display: block;
+        padding-top: 80px;
     }
+
+}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {
+    
 }

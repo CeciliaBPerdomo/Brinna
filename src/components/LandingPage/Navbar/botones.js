@@ -14,7 +14,8 @@ const BotonesSesion = () => {
             altImagen: "Registrarse",
             widthImagen: 160,
             heightImagen: 50,
-            linkImagen: "telodeboaun"
+            linkImagen: "telodeboaun",
+            clase: "images_botonRegistro_menuHeaderHome"
         },
         {
             id: 2,
@@ -22,13 +23,14 @@ const BotonesSesion = () => {
             altImagen: "Iniciar sesión",
             widthImagen: 160,
             heightImagen: 50,
-            linkImagen: "/telodeboaun"
+            linkImagen: "/telodeboaun",
+            clase: "images_botonInicio_menuHeaderHome"
         }
     ]
 
     return (
-        <div className='barraBotones'>
-            <nav className="botonera">
+        <div className='barraBotones_menuHeaderHome'>
+            <nav className="botonera_menuHeaderHome">
                 {botones.map(boton => {
                     return (
                         <Link
@@ -40,6 +42,7 @@ const BotonesSesion = () => {
                                 alt={boton.altImagen}
                                 width={boton.widthImagen}
                                 height={boton.heightImagen}
+                                className={boton.clase}
                             />
                         </Link>
                     )

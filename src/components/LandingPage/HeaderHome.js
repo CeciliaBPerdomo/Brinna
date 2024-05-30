@@ -13,7 +13,9 @@ const HeaderHome = () => {
         <div className="bg-portada bannerHome_header">
 
             {/* Registro e inicio de sesion */}
+            <div className='botonesSesion_HeaderHome'>
             <BotonesSesion />
+            </div>
 
             {/* Menu de navegacion */}
             <Menu />
