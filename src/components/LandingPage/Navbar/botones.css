@@ -20,7 +20,6 @@
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
     .botonera_menuHeaderHome {
-        flex-direction: column-reverse;
         align-items: end;
     }
 
@@ -28,7 +27,7 @@
     .barraBotones_menuHeaderHome {
         width: 550px;
         margin-right: 3px;
-        padding-top: 80px;
+        padding-top: 30px;
     }
 
 }
