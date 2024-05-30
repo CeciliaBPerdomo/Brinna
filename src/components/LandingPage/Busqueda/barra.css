@@ -99,23 +99,22 @@
 }
 
 @media screen and (min-width: 351px) and (max-width: 600px) {
+    /* Contenedor principal */
+    .barra_busqueda_contenedor {
+        width: 550px;
+    }
+
     .titulo_barra {
         font-size: 18px;
-        padding-top: 12px;
+        padding-top: 6px;
+        margin-left: 25px;
     }
 
     /* Div contenedor del titulo */
     .texto_barra {
-        justify-content: center;
         padding-top: 0px; /*Cancela el original */
-        margin-left: 20px;
     }
     
-    .barra_busqueda_contenedor {
-        width: 100%;
-        margin-top: -10px;
-    }
-
     .barra_busqueda {
         padding-top: 3px;
     }
