@@ -1,42 +1,49 @@
-.menuHeader {
+.menuHeader_menuHomePrincipal {
     margin-right: 100px;
 }
 
-.menuNav {
+.menuNav_menuHomePrincipal {
     display: flex;
     flex-direction: row-reverse;
     padding-top: 18px;
     gap: 4px;
 }
 
-.menuInicio {
+.menuInicio_menuHomePrincipal {
     font-size: larger;
     color: white;
 }
 
 
-@media screen and (max-width: 640px) {
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {
 
+}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
     /* Menu de incio, catalago, sobre nosotros, contacto */
-    .menuInicio {
-        font-size: small;
+    .menuInicio_menuHomePrincipal {
+        font-size: 14px;
         color: white;
         align-content: center;
     }
 
     /* div principal */
-    .menuHeader {
-        width: 95%;
+    .menuHeader_menuHomePrincipal {
+        width: 550px;
     }
 
-    .menuNav {
+    .menuNav_menuHomePrincipal {
         align-items: center;
+        padding-top: 0px;
+        margin-top: -130px;
     }
 }
 
-/* Para dispositivos de escritorio entre 640px y 1024px */
-@media (min-width: 640px) and (max-width: 1024px) {
-    .menuInicio {
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {
+    .menuInicio_menuHomePrincipal {
         font-size: medium;
         color: white;
     }
