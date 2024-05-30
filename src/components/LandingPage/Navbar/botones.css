@@ -30,6 +30,10 @@
         padding-top: 30px;
     }
 
+    .images_botonRegistro_menuHeaderHome, .images_botonInicio_menuHeaderHome {
+        width: 120px;
+    }
+
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
