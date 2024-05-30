@@ -101,8 +101,13 @@
 @media screen and (min-width: 351px) and (max-width: 600px) {
     .titulo_barra {
         font-size: 16px;
-        padding-top: 1px;
-        margin-left: 60px;
+        padding-top: 12px;
+    }
+
+    /* Div contenedor del titulo */
+    .texto_barra {
+        justify-content: center;
+        padding-top: 0px; /*Cancela el original */
     }
     
     .barra_busqueda_contenedor {
@@ -124,10 +129,6 @@
     .boton_lupa_barra {
         width: 35px;
         height: 29px;
-    }
-
-    .texto_barra {
-        padding-top: 2px;
     }
 
     .svg_boton_lupa_barra {
