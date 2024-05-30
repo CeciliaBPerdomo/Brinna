@@ -101,13 +101,13 @@
 @media screen and (min-width: 351px) and (max-width: 600px) {
     /* Contenedor principal */
     .barra_busqueda_contenedor {
-        width: 550px;
+        width: 525px;
     }
 
     .titulo_barra {
         font-size: 18px;
         padding-top: 6px;
-        margin-left: 25px;
+        margin-left: 55px;
     }
 
     /* Div contenedor del titulo */
