@@ -1,4 +1,4 @@
-.bannerHome {
+.bannerHome_header {
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -8,26 +8,38 @@
 }
 
 
-@media screen and (max-width: 640px) {
-    .bannerHome {
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {
+
+}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .bannerHome_header {
         min-width: 450px;
         max-width: 640px;
         height: 350px;
     }
+
+    .bg-portada {
+        background-size: cover;
+    }
 }
 
-/* Para dispositivos de escritorio entre 640px y 1024px */
-@media (min-width: 640px) and (max-width: 1024px) {
-    .bannerHome {
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {
+    .bannerHome_header {
         height: 1350px;
         width: 100%;
     }
 }
+
+
 
 /* Para pantallas de TV a partir de 1024px */
 @media (min-width: 1024px) {
-    .bannerHome {
+    .bannerHome_header {
         height: 1350px;
         width: 100%;
     }
-}
+} 

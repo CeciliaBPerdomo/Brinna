@@ -10,7 +10,7 @@ import "../LandingPage/Navbar/navbar.css"
 const HeaderHome = () => {
 
     return (
-        <div className="bg-portada bannerHome">
+        <div className="bg-portada bannerHome_header">
 
             {/* Registro e inicio de sesion */}
             <BotonesSesion />

@@ -41,11 +41,16 @@
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {
+    .bg-comprar, .bg-vender {
+        background-size: cover;
+     }
+ 
     .fondo_cv {
         height: 130px;
         display: flex;
         justify-content: center;
-        width: 100%;
+        margin-left: 10px;
+        width: 170px;
     }
 
     .principal_cv {
@@ -63,6 +68,7 @@
         height: 35px;
         font-size: 20px;
     }
+
 }
 
 /* Para dispositivos pequeños a medianos (por ejemplo, teléfonos grandes) */
@@ -99,7 +105,7 @@
         height: 170px;
         display: flex;
         justify-content: center;
-        width: 100%;
+        width: 250px;
     }
 
     .principal_cv {
@@ -117,6 +123,11 @@
         height: 45px;
         font-size: 24px;
     }
+
+    .bg-comprar, .bg-vender {
+        background-size: cover;
+     }
+ 
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
