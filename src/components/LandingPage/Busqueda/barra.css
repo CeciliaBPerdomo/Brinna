@@ -101,13 +101,13 @@
 @media screen and (min-width: 351px) and (max-width: 600px) {
     /* Contenedor principal */
     .barra_busqueda_contenedor {
-        width: 351px;
+        width: 385px;
     }
 
     .titulo_barra {
         font-size: 16px;
         padding-top: 6px;
-        margin-left: 40px;
+        margin-left: 10px;
     }
 
     /* Div contenedor del titulo */
@@ -116,14 +116,14 @@
     }
     
     .barra_busqueda {
-        padding-top: 3px;
+        padding-top: 1px;
     }
 
     .input_barra {
         width: 290px;
         height: 29px;
-        font-size: 11px;
-        margin-left: 40px;
+        font-size: 12px;
+        margin-left: 10px;
     } 
 
     .boton_lupa_barra {

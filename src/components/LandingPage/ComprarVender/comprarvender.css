@@ -76,7 +76,7 @@
     .fondo_cv {
         display: flex;
         justify-content: center;
-        height: 128px;
+        height: 115px;
         width: 165px;
     }
 
@@ -85,7 +85,7 @@
     }
 
     .principal_cv {
-        width: 375px;
+        width: 385px;
     }
 
     .boton_cv {
