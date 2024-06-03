@@ -75,9 +75,9 @@
 @media screen and (min-width: 351px) and (max-width: 600px) {
     .fondo_cv {
         display: flex;
-        height: 150px;
         justify-content: center;
-        width: 250px;
+        height: 150px;
+        width: 175px;
     }
 
     .bg-comprar, .bg-vender {
@@ -85,7 +85,7 @@
     }
 
     .principal_cv {
-        width: 550px;
+        width: 350px;
     }
 
     .boton_cv {
