@@ -16,7 +16,7 @@
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
     .bannerHome_header {
-        min-width: 350px;
+        min-width: 300px;
         max-width: 640px;
         height: 350px;
         margin-bottom: 5px;
