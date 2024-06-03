@@ -25,13 +25,13 @@
 
     /* Div principal */
     .barraBotones_menuHeaderHome {
-        width: 300px;
-        margin-right: 3px;
+        width: 351px;
+        margin-right: 1px;
         padding-top: 30px;
     }
 
     .images_botonRegistro_menuHeaderHome, .images_botonInicio_menuHeaderHome {
-        width: 120px;
+        width: 90px;
     }
 
 }
