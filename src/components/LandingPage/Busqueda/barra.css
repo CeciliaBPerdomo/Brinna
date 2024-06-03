@@ -107,7 +107,7 @@
     .titulo_barra {
         font-size: 16px;
         padding-top: 6px;
-        margin-left: 10px;
+        margin-left: 3px;
     }
 
     /* Div contenedor del titulo */
@@ -123,7 +123,7 @@
         width: 290px;
         height: 29px;
         font-size: 12px;
-        margin-left: 10px;
+        margin-left: 4px;
     } 
 
     .boton_lupa_barra {
