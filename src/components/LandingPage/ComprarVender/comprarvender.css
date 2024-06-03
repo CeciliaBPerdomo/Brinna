@@ -76,16 +76,16 @@
     .fondo_cv {
         display: flex;
         justify-content: center;
-        height: 150px;
-        width: 175px;
+        height: 128px;
+        width: 165px;
     }
 
     .bg-comprar, .bg-vender {
-       background-size: cover;
+       background-size: contain;
     }
 
     .principal_cv {
-        width: 350px;
+        width: 375px;
     }
 
     .boton_cv {
