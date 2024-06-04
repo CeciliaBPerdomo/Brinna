@@ -111,14 +111,13 @@
 }
 
 /* Para dispositivos móviles */
-@media screen and (max-width: 350px) {
-
-}
+@media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
-/* ------------------------------------------------------- */
-/* Encabezado */
+
+    /* ------------------------------------------------------- */
+    /* Encabezado */
     .titulo_novedades {
         font-size: 14px;
         line-height: 20px;
@@ -133,10 +132,41 @@
         font-size: 12px;
         line-height: 20px;
     }
-/* ------------------------------------------------------- */  
+
+    /* ------------------------------------------------------- */
+
+    /* Tarjetas */
+    .tarjetas_novedades {
+        width: 351px;
+    }
+
+    .card_individual_novedades {
+        height: 225px;
+        max-width: 160px;
+        border-radius: 10px;
+    }
+
+    .imagen_novedades {
+        height: 120px;
+        border-radius: 10px;
+    }
+
+    .titulo_novedades_card {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .talle_novedades {
+        font-size: 11px;
+    }
+    
+    .precio_novedades {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+    
+
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
-@media screen and (min-width: 901px) and (max-width: 1023px) {
-    
-}
+@media screen and (min-width: 901px) and (max-width: 1023px) {}
