@@ -74,11 +74,19 @@ let settings = {
     arrows: true,
     centerMode: true,
     infinite: true,
-    slidesToShow: 1.5, //1.5 para celulares, 3 para notebooks
+    slidesToShow: 3, //1.5 para celulares, 3 para notebooks
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
+    responsive: [
+        {
+            breakpoint: 600, // Celulares
+            settings: {
+                slidesToShow: 1.5,
+            },
+        },
+    ],
 };
 
 const Novedades = () => {
