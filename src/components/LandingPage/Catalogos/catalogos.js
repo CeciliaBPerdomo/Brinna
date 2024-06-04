@@ -11,24 +11,24 @@ const Catalago = () => {
 
     return (
         <div className="catalogo">
-            <p className={`titulo ${jost}`}>
+            <p className={`titulo_catalogo ${jost}`}>
                 ¡Mirá nuestro catálogo!
             </p>
 
-            <p className={`subtitulo ${jost}`}>
+            <p className={`subtitulo_catalogo ${jost}`}>
                 Explora en las diferentes categorías.
             </p>
 
             <div className="w-full grid grid-cols-3">
-                <div className="bg-el fondoPrincipal">
+                <div className="bg-el fondoPrincipal_catalogo">
                     <CatalagoPara para={"él"} />
                 </div>
 
-                <div className="bg-ella fondoPrincipal">
+                <div className="bg-ella fondoPrincipal_catalogo">
                     <CatalagoPara para={"ella"} />
                 </div>
 
-                <div className="bg-chicos fondoPrincipal">
+                <div className="bg-chicos fondoPrincipal_catalogo">
                     <CatalagoPara para={"los más chicos"} />
                 </div>
             </div>

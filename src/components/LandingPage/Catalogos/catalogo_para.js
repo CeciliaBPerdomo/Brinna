@@ -9,13 +9,13 @@ const jost = Jost({
 const CatalagoPara = ({ para }) => {
 
     return (
-        <div className="fondo">
-            <p className={`ropa ${jost}`}>
+        <div className="fondo_catalogo">
+            <p className={`ropa_catalogo ${jost}`}>
                 Ropa para {para}
             </p>
 
-            <div className="divBoton">
-                <button className={`boton border border-1 ${jost}`}>
+            <div className="divBoton_catalogo">
+                <button className={`boton_catalogo border border-1 ${jost}`}>
                     Ver catálogo
                 </button>
             </div>
