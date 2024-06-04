@@ -47,11 +47,11 @@ const Voces = () => {
                 {voces_inspiran.map((item) => (
                     <div key={item.id} className="flex flex-col p-6 space-y-2 
                     transition-all duration-500 bg-fondo_cards border border-indigo-100 rounded-lg 
-                    shadow hover:shadow-xl lg:p-8 lg:flex-row lg:space-y-0 lg:space-x-6">
+                    shadow hover:shadow-xl lg:p-8 lg:flex-row lg:space-y-0 lg:space-x-6 card_voces">
                         <div className="flex-1" >
                             <Review rating={item.estrellas} />
-                            <h5 className="mb-3 text-xl font-bold lg:text-2xl">{item.nombre}</h5>
-                            <p className="mb-6 text-lg text-gray-600">{item.mensaje}</p>
+                            <h5 className="mb-3 text-xl font-bold lg:text-2xl nombre_voces">{item.nombre}</h5>
+                            <p className="mb-6 text-lg text-gray-600 mensajes_voces">{item.mensaje}</p>
                         </div>
                     </div>
                 ))}

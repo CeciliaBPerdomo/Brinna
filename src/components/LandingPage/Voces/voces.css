@@ -18,10 +18,17 @@
 }
 
 
-/* Para dispositivos móviles */
-@media screen and (max-width: 350px) {
+/* ------------------------------------------------------- */
+/* Iconos de estrellas */
 
+.estrellas_voces {
+    width: 1.5rem;
+    height: 1.5rem;
 }
+
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
@@ -39,10 +46,36 @@
         font-size: 11px;
         line-height: 20px;
     }
-    
+
+    /* ------------------------------------------------------- */
+    /* Cards */
+    .card_voces {
+        height: 230px;
+    }
+
+    .mensajes_voces {
+        font-size: 11px;
+        margin-bottom: 0px;
+        line-height: 1.1rem;
+    }
+
+    .nombre_voces {
+        font-size: 14px;
+        margin-bottom: 0.55rem;
+        line-height: 1.1rem;
+        font-weight: 400;
+    }
+
+    /* ------------------------------------------------------- */
+    /* Iconos de estrellas */
+
+    .estrellas_voces {
+        width: 1rem;
+        height: 1rem;
+    }
+
+
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
-@media screen and (min-width: 901px) and (max-width: 1023px) {
-    
-}
+@media screen and (min-width: 901px) and (max-width: 1023px) {}

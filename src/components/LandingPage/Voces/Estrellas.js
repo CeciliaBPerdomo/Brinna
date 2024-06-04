@@ -7,7 +7,7 @@ const Star = ({ filled }) => {
       viewBox="0 0 24 24"
       fill={filled ? '#FF7968' : '#D1C4C5'}
       stroke="#FF7968"
-      className="w-6 h-6"
+      className="estrellas_voces" //1.5rem
     >
       <path
         strokeLinecap="round"
