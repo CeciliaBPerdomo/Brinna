@@ -4,7 +4,7 @@
     flex-shrink: 0;
 }
 
-.mantente {
+.mantente_newsLetter {
     color: #CA4E3C;
     text-align: center;
     font-size: 30px;
@@ -13,11 +13,11 @@
     padding-top: 108px;
 }
 
-.principal {
+.principal_newsLetter {
     display: flex;
 }
 
-.suscribite {
+.suscribite_newsLetter {
     display: flex;
     width: 527px;
     height: 111px;
@@ -26,7 +26,7 @@
     padding: 15px;
 }
 
-.letraSuscribite {
+.letraSuscribite_newsLetter {
     color: #5D717C;
     text-align: right;
     font-size: 28px;
@@ -34,7 +34,7 @@
     line-height: 50px;
 }
 
-.inputNews { 
+.inputNews {
     border-radius: 25px;
     border: 1px solid #6F6F6F;
     height: 45px;
@@ -42,7 +42,7 @@
     padding: 8px;
 }
 
-.inputDiv {
+.inputDiv_newsLetter {
     display: flex;
     width: 379px;
     padding: 10px;
@@ -51,10 +51,10 @@
     gap: 10px;
 }
 
-.divBoton {
+/* .divBoton {
     padding-left: 10px;
     justify-content: center;
-}
+} */
 
 .divBoton_news {
     padding-left: 15px;
@@ -62,61 +62,62 @@
 
 
 /* Para dispositivos móviles */
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 350px) {}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
+
+    /* Fondo */
     .bannerNewsLetter {
-        min-width: 450px;
-        max-width: 640px;
+        width: 351px;
+        height: 210px;
     }
 
-    .divMantente{
-        width: 95%;
+    .mantente_newsLetter {
+        font-size: 16px;
+        line-height: 10px;
+        padding-top: 40px;
     }
 
-
-    .mantente {
-        font-size: 24px;
-        font-style: normal;
-        line-height: 20px;
-        padding-top: 120px;
-    }
-
-    .principal{
+    .principal_newsLetter {
         display: block;
     }
 
     /* Suscribite a nuestro newsletter*/
-    .suscribite {
-        height: 100%;
-        width: 95%;
+    .suscribite_newsLetter {
+        height: 55px;
+        width: 351px;
+        padding: 10px;
     }
 
-    .letraSuscribite {
-        align-content: center;
-        font-size: 16px;
+    .letraSuscribite_newsLetter {
+        font-size: 14px;
         text-align: center;
-        line-height: 25px;
+        line-height: 16px;
     }
 
     /* input de email */
-    .inputDiv {
-        width: 95%;
+    .inputDiv_newsLetter {
+        width: 351px;
+        padding: 0px 0px 10px 0px;
     }
 
-    .inputNews { 
+    .inputNews {
         width: 220px;
-        padding: 8px;
-        font-size: 12px;
+        padding: 6px;
+        font-size: 11px;
+        height: 28px;
     }
 
     /* boton de suscribite*/
-    .divBoton {
+    .divBoton_news {
         padding-left: 0px;
+        width: 351px;
+        height: 37px;
         display: flex;
-        width: 95%;
+        justify-content: center;
     }
-
-    .botonSuscribite{
-        align-content: center;
-    }
-    
 }
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {}

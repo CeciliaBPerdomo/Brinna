@@ -15,22 +15,22 @@ const sub_jost = Jost({
 const News = () => {
     return (
         <div className="bg-newsletter bannerNewsLetter">
-            <div className="divMantente">
-            <p className={`mantente ${jost.className}`}>
+            <div className="divMantente_newsLetter">
+            <p className={`mantente_newsLetter ${jost.className}`}>
                 ¡Mantente al tanto!
             </p>
             </div>
 
-            <div className="flex mb-4 justify-center principal">
-                <div className="w-1/2 suscribite">
-                    <p className={`letraSuscribite ${sub_jost.className}`}>
+            <div className="flex mb-4 justify-center principal_newsLetter">
+                <div className="w-1/2 suscribite_newsLetter">
+                    <p className={`letraSuscribite_newsLetter ${sub_jost.className}`}>
                         Suscríbite a nuestro newsletter
                         y entérate de las últimas novedades.
                     </p>
                 </div>
 
                 <div className="my-auto">
-                    <div className="w-1/2 inputDiv">
+                    <div className="w-1/2 inputDiv_newsLetter">
                         <input
                             type="text"
                             className="inputNews"
@@ -43,7 +43,7 @@ const News = () => {
                             alt={"Suscribirme"}
                             width={122}
                             height={42}
-                            className="botonSuscribite"
+                            className="botonSuscribite_newsLetter"
                         />
                     </div>
                 </div>
