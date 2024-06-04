@@ -82,12 +82,12 @@
     }
 
     .fondoPrincipal_catalogo {
-        height: 195px;
+        height: 175px;
         align-content: center;
     }
 
     .fondo_catalogo {
-        height: 195px;
+        height: 175px;
         width: 100%;
     }
 
@@ -102,10 +102,11 @@
     }
 
     .catalogo {
-        width: 360px; 
+        width: 368px; 
         display: block;
+        justify-content: center;
         padding-left: 2px;
-        margin-left: 5px;
+        margin-left: -2px;
     }
 
 }
