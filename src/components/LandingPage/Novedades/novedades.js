@@ -74,7 +74,7 @@ let settings = {
     arrows: true,
     centerMode: true,
     infinite: true,
-    slidesToShow: 2,
+    slidesToShow: 1.5, //1.5 para celulares, 3 para notebooks
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,

@@ -3,7 +3,6 @@
     font-size: 28px;
     font-style: normal;
     line-height: 40px;
-
 }
 
 .sub_voces {
@@ -16,4 +15,34 @@
 .encabezado_voces {
     padding-left: 128px;
     margin-top: 43px;
+}
+
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {
+
+}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .titulo_voces {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .encabezado_voces {
+        padding-left: 20px;
+        margin-top: 10px;
+    }
+
+    .sub_voces {
+        font-size: 11px;
+        line-height: 20px;
+    }
+    
+}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {
+    
 }

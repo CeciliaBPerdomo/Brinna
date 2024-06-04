@@ -147,7 +147,7 @@
     }
 
     .imagen_novedades {
-        height: 120px;
+        height: 145px;
         border-radius: 10px;
     }
 
@@ -155,16 +155,41 @@
         font-size: 12px;
         font-weight: bold;
     }
-    
+
     .talle_novedades {
         font-size: 11px;
     }
-    
+
     .precio_novedades {
         font-size: 11px;
         margin-bottom: 10px;
     }
-    
+
+    /* ------------------------------------------------------- */
+
+    /* Nuevo con etiqueta */
+    .etiqueta_novedades {
+        margin: 8px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .nuevo_novedades {
+        padding: 1px;
+        font-size: 8px;
+        font-weight: 300;
+    }
+
+    /* ------------------------------------------------------- */
+
+    /* Icono  de corazon */
+    .corazon_novedades {
+        margin-top: 9px;
+        margin-right: 9px;
+
+        width: 15px;
+        height: 13px;
+    }
 
 }
 
