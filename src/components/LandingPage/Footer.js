@@ -3,6 +3,9 @@ import { FaSquarePhone } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 import Image from "next/image";
 import instagram from "../../../public/images/instagram.ico";
+
+import "../LandingPage/Footer/footer.css"
+
 const FooterHome = () => {
   const enlaces = ["Catálogo", "Sobre nosotros", " Contacto"];
   const datos = ["¿Como comprar?", "¿Como vender?", "Términos y condiciones"];
@@ -13,25 +16,26 @@ const FooterHome = () => {
 
   return (
     <footer>
-      <div className="grid place-content-center md:grid md:grid-cols-3 xl:flex xl:flex-row xl:justify-evenly xl:mx-5 text-norpe-green xl:text-left text-center text-muted-blue">
+      <div className="grid place-content-center md:grid md:grid-cols-3 xl:flex xl:flex-row xl:justify-evenly xl:mx-5 text-norpe-green xl:text-left text-center text-muted-blue divPrincipalFooter">
         <div className="m-10 p-5">
-          <div className="px-5">
-            <p className="font-bold text-brinna">Enlaces rápidos </p>
-            <div className="my-5">
+          <div className="px-5 enlaces_footer">
+            <p className="font-bold text-brinna enlaces_texto_footer">Enlaces rápidos</p>
+            <div className="my-5 enlacesrapidos_footer">
               {enlaces.map((enlace, id) => (
-                <p className="my-3" key={id}>
+                <p className="my-3 enlacesrapidos_footer" key={id}>
                   {enlace}
                 </p>
               ))}
             </div>
           </div>
         </div>
-        <div className="m-10 p-5">
+
+        <div className="m-10 p-5 datosutiles_footer">
           <div className="px-5">
-            <p className="font-bold text-brinna">Datos útiles </p>
-            <div className="my-5">
+            <p className="font-bold text-brinna enlaces_texto_footer">Datos útiles</p>
+            <div className="my-5 enlacesrapidos_footer">
               {datos.map((enlace, id) => (
-                <p className="my-3" key={id}>
+                <p className="my-3 enlacesrapidos_footer" key={id}>
                   {enlace}
                 </p>
               ))}

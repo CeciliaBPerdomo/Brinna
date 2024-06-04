@@ -1,0 +1,37 @@
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {
+
+}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .divPrincipalFooter {
+        height: 100%;
+    }
+
+    .enlaces_footer {
+        margin-top: -40px;
+        margin-bottom: 1px;
+    }
+
+    .enlaces_texto_footer{
+        font-size: 14px;
+    }
+
+    .enlacesrapidos_footer{
+        margin-top: 0.1rem;
+        margin-bottom: 0.2rem;
+        font-size: 12px;
+    }
+
+    .datosutiles_footer {
+        padding: 0.5rem;
+        margin-top: -2.5rem;
+    }
+}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {
+    
+}
