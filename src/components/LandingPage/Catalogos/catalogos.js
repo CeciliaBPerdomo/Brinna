@@ -21,15 +21,15 @@ const Catalago = () => {
 
             <div className="w-full grid grid-cols-3">
                 <div className="bg-el fondoPrincipal_catalogo">
-                    <CatalagoPara para={"él"} />
+                    <CatalagoPara para={"él"} targetPage="/catalogo-el"/>
                 </div>
 
                 <div className="bg-ella fondoPrincipal_catalogo">
-                    <CatalagoPara para={"ella"} />
+                    <CatalagoPara para={"ella"} targetPage="/catalogo-ella"  />
                 </div>
 
                 <div className="bg-chicos fondoPrincipal_catalogo">
-                    <CatalagoPara para={"los más chicos"} />
+                    <CatalagoPara para={"los más chicos"} targetPage="/catalogo-chicos"/>
                 </div>
             </div>
         </div>

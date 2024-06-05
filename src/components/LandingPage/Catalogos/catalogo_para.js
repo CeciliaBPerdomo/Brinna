@@ -1,3 +1,5 @@
+"use client"
+import { useRouter } from 'next/navigation';
 import "../Catalogos/catalogo.css"
 import { Jost } from "next/font/google"
 
@@ -6,7 +8,12 @@ const jost = Jost({
     subsets: ['latin'],
 })
 
-const CatalagoPara = ({ para }) => {
+const CatalagoPara = ({ para, targetPage }) => {
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push(targetPage);
+    };
 
     return (
         <div className="fondo_catalogo">
@@ -15,7 +22,8 @@ const CatalagoPara = ({ para }) => {
             </p>
 
             <div className="divBoton_catalogo">
-                <button className={`boton_catalogo border border-1 ${jost}`}>
+                <button className={`boton_catalogo border border-1 ${jost}`}
+                    onClick={handleClick}>
                     Ver catálogo
                 </button>
             </div>

@@ -5,9 +5,13 @@ import News from "@/components/LandingPage/NewsLetter/news";
 import Novedades from "@/components/LandingPage/Novedades/novedades";
 import Voces from "@/components/LandingPage/Voces/Voces";
 
+import HeaderHome from "@/components/LandingPage/HeaderHome";
+
 export default function Home() {
+
   return (
     <div>
+      <HeaderHome />
 
       {/* Compra o venta */}
       <ComprarVender />
