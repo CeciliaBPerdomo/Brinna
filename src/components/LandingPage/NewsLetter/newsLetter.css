@@ -69,8 +69,10 @@
 
     /* Fondo */
     .bannerNewsLetter {
-        width: 351px;
+        width: 360px;
         height: 210px;
+        margin: 0px;
+        padding: 0px;
     }
 
     .mantente_newsLetter {

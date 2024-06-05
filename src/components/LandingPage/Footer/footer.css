@@ -40,6 +40,10 @@
         margin-top: -70px;
         font-size: 14px;
     }
+
+    .equipo_footer {
+        font-size: 12px;
+    }
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
