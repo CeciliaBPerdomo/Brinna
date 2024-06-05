@@ -42,23 +42,25 @@ const FooterHome = () => {
             </div>
           </div>
         </div>
-        <div className="m-10 p-5">
+        <div className="m-10 p-5 contacto_footer">
           <div className="px-5">
-            <p className="font-bold text-brinna">Contáctanos </p>
-            <div className="my-5">
+            <p className="font-bold text-brinna enlaces_texto_footer">Contáctanos</p>
+            <div className="my-5 contactanos_footer">
               {contactanos.map((enlace, id) => (
                 <div className="my-3 flex" key={id}>
-                  <span className="text-brinna text-2xl mr-2">
+                  <span className="text-brinna text-2xl mr-2 ">
                     {enlace.logo}
                   </span>
-                  {enlace.contact}
+                  <div className="enlacesrapidos_footer">
+                    {enlace.contact}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-      <div className="py-5 flex justify-center text-center font-bold text-brinna text-2xl">
+      <div className="py-5 flex justify-center text-center font-bold text-brinna text-2xl sumate_footer">
         <a className="flex" href="https://www.instagram.com/Brinna">
           <Image src={instagram} alt="Instagram" />
           &nbsp;Súmate a nuestro Instagram @Brinna
