@@ -30,6 +30,7 @@
 - Next.js
 - FireBase
 - Google Fonts (https://fonts.google.com/variablefonts?vfquery=jost)
+- Iconos: npm install @heroicons/react
 
 ## 🧑‍💻 Developers
 Realizado por <a href="https://www.linkedin.com/in/cecilia-perdomo/" style="text-decoration: none; color: inherit;">Cecilia Perdomo</a> y <a href="https://www.linkedin.com/in/danieljmartinezdev/" style="text-decoration: none; color: inherit;">Daniel Martinez</a>, primera versión desde el 02 de Abril.

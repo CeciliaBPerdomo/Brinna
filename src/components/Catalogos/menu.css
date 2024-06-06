@@ -1,0 +1,46 @@
+.menuHeader_menuCatalogo {
+    margin-right: 100px;
+}
+
+.menuNav_menuCatalogo {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 8px;
+    gap: 4px;
+}
+
+.menuInicio_menuCatalogo {
+    font-size: larger;
+    color: white;
+}
+
+
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {
+
+}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .menuInicio_menuCatalogo {
+        font-size: 12px;
+        color: black;
+        text-align: center;
+    }
+
+    .menuHeader_menuCatalogo {
+        margin-left: 100px;
+        width: 250px;
+    }
+    
+    .menuNav_menuCatalogo {
+        padding-top: 2px;
+        gap: 0px;
+    }
+}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {
+    
+}
