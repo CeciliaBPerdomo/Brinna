@@ -19,6 +19,7 @@ module.exports = withMT({
         "chicos": "url('../../public/images/fondos/chicos.png')",
         "comprar": "url('../../public/images/fondos/FondoComprar.png')",
         "vender": "url('../../public/images/fondos/FondoVender.png')",
+        "bannerella": "url('../../public/images/fondos/banner_catalogo_para_ella.png')",
       },
       colors: {
         'brinna': '#CA4E3C',

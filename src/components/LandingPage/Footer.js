@@ -68,7 +68,7 @@ const FooterHome = () => {
       </div>
       <div className="py-5 flex justify-center text-center bg-muted-cyan cyan">
         <p className="equipo_footer"><b>Equipo de desarrollo: </b>
-          Diseño Noelia Perdomo / Desarrollo Cecilia Perdomo • Daniel Martinez
+          Diseño: Noelia Perdomo / Desarrollo: Cecilia Perdomo • Daniel Martinez
           </p>
       </div>
     </footer>

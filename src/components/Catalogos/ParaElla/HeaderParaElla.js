@@ -1,10 +1,13 @@
 import React from "react";
+import "../ParaElla/headerparaella.css"
 
 const HeaderParaElla = () => {
     return (
         <>
         <header>
-            <h1>Catálogo para Ella</h1>
+            <div className="bg-bannerella bannerella_principal">
+
+            </div>
         </header>
         </>
     )
