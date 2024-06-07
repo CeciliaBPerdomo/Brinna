@@ -1,9 +1,11 @@
 .fondoPrincipal_catalogo {
-    height: 720px;
+    height: 711px;
     background-size: contain;
     background-repeat: no-repeat;
     align-content: center;
+    margin-top: 2px;
 }
+
 
 .fondo_catalogo {
     height: 720px;
@@ -58,13 +60,37 @@
     line-height: 40px;
 }
 
-/* Para dispositivos móviles */
-@media screen and (max-width: 350px) {
 
+/* Mas catalogos */
+.mas_catalogos {
+    background-color: #DAEBEB;
+    padding: 195px 68px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
+
+.mira_otros_catalogos {
+    color: #CA4E3C;
+    font-size: 28px;
+    font-style: normal;
+    line-height: 40px;
+}
+
+.explora_otros_catalogos {
+    color: #5D717C;
+    font-size: 23px;
+    font-style: normal;
+    line-height: 32px;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
+
     /* Encabezado */
     .titulo_catalogo {
         text-align: center;
@@ -82,7 +108,7 @@
     }
 
     .fondoPrincipal_catalogo {
-        height: 175px;
+        height: 167px;
         align-content: center;
     }
 
@@ -102,16 +128,29 @@
     }
 
     .catalogo {
-        width: 368px; 
+        width: 368px;
         display: block;
         justify-content: center;
         padding-left: 2px;
         margin-left: -2px;
     }
 
+    /* Mas catalogos */
+    .mas_catalogos {
+        padding: 35px 18px;
+        gap: 5px;
+    }
+
+    .mira_otros_catalogos {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .explora_otros_catalogos {
+        font-size: 11px;
+        line-height: 14px;
+    }
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
-@media screen and (min-width: 901px) and (max-width: 1023px) {
-    
-}
+@media screen and (min-width: 901px) and (max-width: 1023px) {}

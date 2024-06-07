@@ -1,14 +1,18 @@
 import React from "react"
+
+// Componentes
 import HeaderParaElla from "@/components/Catalogos/ParaElla/HeaderParaElla"
+import ContenedorEllas from "@/components/Catalogos/ParaElla/ContenedorPrincipal"
 
 export default function CatalogoElla() {
     return (
         <div>
+            {/* Header */}
             <HeaderParaElla />
-            {/* Contenido del catálogo para ella */}
+
+            {/* Contenido */}
             <main>
-                <h1>Fotos del catalogo de chicas</h1>
-                {/* Aquí va el contenido específico del catálogo para ella */}
+                <ContenedorEllas />
             </main>
         </div>
     )
