@@ -4,6 +4,7 @@ import { IoIosMail } from "react-icons/io";
 import Image from "next/image";
 import instagram from "../../../public/images/instagram.ico";
 
+// CSS para celulares
 import "../LandingPage/Footer/footer.css"
 
 const FooterHome = () => {

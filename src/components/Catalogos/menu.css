@@ -24,9 +24,11 @@
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
     .menuInicio_menuCatalogo {
-        font-size: 12px;
+        font-size: 10px;
         color: black;
         text-align: center;
+        line-height: 0.7rem;
+        padding: 0.2rem;
     }
 
     .menuHeader_menuCatalogo {
@@ -35,8 +37,9 @@
     }
     
     .menuNav_menuCatalogo {
-        padding-top: 2px;
+        padding-top: 3px;
         gap: 0px;
+        padding-right: 12px;
     }
 }
 
