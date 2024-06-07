@@ -17,7 +17,7 @@ const subjost = Jost({
 })
 
 
-const MasCatalogos = () => {
+const MasCatalogosEl = () => {
     return (
         <div>
             <div className="w-full grid grid-cols-3">
@@ -26,8 +26,8 @@ const MasCatalogos = () => {
                     <p className={`explora_otros_catalogos ${subjost}`}>Explora en otras categorías.</p>
                 </div>
 
-                <div className="bg-el fondoPrincipal_catalogo">
-                    <CatalagoPara para={"él"} targetPage="/catalogo-el" />
+                <div className="bg-ella fondoPrincipal_catalogo">
+                    <CatalagoPara para={"ella"} targetPage="/catalogo-ella"  />
                 </div>
 
                 <div className="bg-chicos fondoPrincipal_catalogo">
@@ -38,4 +38,4 @@ const MasCatalogos = () => {
     )
 }
 
-export default MasCatalogos; 
+export default MasCatalogosEl; 

@@ -1,12 +1,16 @@
 import React from "react"
 import HeaderParaEl from "@/components/Catalogos/ParaEl/HeaderParaEl"
+import ContenedorEl from "@/components/Catalogos/ParaEl/ContenedorPrincipalEl"
 
 export default function CatalogoEl() {
     return (
         <div>
+            {/* Encabezado */}
             <HeaderParaEl />
+
+            {/* Contenedor */}
             <main>
-                <h1>Fotos del catalogo de varones</h1>
+                <ContenedorEl />
             </main>
         </div>
     )

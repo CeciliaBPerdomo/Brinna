@@ -1,12 +1,16 @@
 import React from "react"
 import HeaderParaChicos from "@/components/Catalogos/Chicos/HeaderChicos"
+import ContenedorChicos from "@/components/Catalogos/Chicos/ContenedorPrincipalChicos"
 
 export default function CatalogoChicos() {
     return (
         <div>
+            {/* Encabezado */}
             <HeaderParaChicos />
+
+            {/* Contenedor */}
             <main>
-                <h1>Fotos del catalogo de los bebes</h1>
+                <ContenedorChicos />
             </main>
         </div>
     )
