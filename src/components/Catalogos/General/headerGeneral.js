@@ -1,29 +1,27 @@
 import React from "react";
 
-// CSS
-import "../ParaEl/headerparael.css"
+//CSS
+import "../General/headerGeneral.css"
 
-// Componentes
+//Componentes
 import MenuOpciones from "../MenuOpciones";
 import MenuCatalogos from "../menu";
 import LogoWhatsappCatalogos from "../LogoWhatsApp";
 
-const HeaderParaEl = () => {
+const CatalogoGeneral = () => {
     return (
-        <> 
-        <header className="bg-bannerel principal_catalago_el">
+        <div className="principal_catalago_general">
 
             {/* Menu de opciones */}
             <MenuOpciones />
 
-            {/* Menu */}
+            {/* Menu de navegacion */}
             <MenuCatalogos />
 
-            {/* WhatsApp */}
+            {/* LogoWhatsapp */}
             <LogoWhatsappCatalogos />
-        </header>
-        </>
+        </div>
     )
 }
 
-export default HeaderParaEl
+export default CatalogoGeneral

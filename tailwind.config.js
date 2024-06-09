@@ -19,7 +19,9 @@ module.exports = withMT({
         "chicos": "url('../../public/images/fondos/chicos.png')",
         "comprar": "url('../../public/images/fondos/FondoComprar.png')",
         "vender": "url('../../public/images/fondos/FondoVender.png')",
-        "bannerella": "url('../../public/images/fondos/banner_catalogo_para_ella.png')",
+        "bannerella": "url('../../public/images/fondos/banner_para_ella_logo.jpg')",
+        "bannerel": "url('../../public/images/fondos/banner_para_el_logo.jpg')",
+        "bannerchicos": "url('../../public/images/fondos/banner_para_chicos_logo.jpg')",
       },
       colors: {
         'brinna': '#CA4E3C',
