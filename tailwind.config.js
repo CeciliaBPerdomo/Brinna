@@ -22,6 +22,8 @@ module.exports = withMT({
         "bannerella": "url('../../public/images/fondos/banner_para_ella_logo.jpg')",
         "bannerel": "url('../../public/images/fondos/banner_para_el_logo.jpg')",
         "bannerchicos": "url('../../public/images/fondos/banner_para_chicos_logo.jpg')",
+        "bannernosotros": "url('../../public/images/fondos/banner_sobre_nosotros_con_logo.png')",
+        "bannercontacto": "url('../../public/images/fondos/banner_contacto_con_logo.png')",
       },
       colors: {
         'brinna': '#CA4E3C',

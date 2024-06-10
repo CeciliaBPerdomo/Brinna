@@ -1,0 +1,26 @@
+.banner_nosotros_principal{
+    width: 100%;
+    height: 546px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {
+    .banner_nosotros_principal {
+        background-size: contain;
+        height: 135px;
+    }
+}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .banner_nosotros_principal {
+        background-size: contain;
+        height: 165px;
+    }
+}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {}

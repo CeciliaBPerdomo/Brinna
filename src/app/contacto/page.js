@@ -1,8 +1,11 @@
+import HeaderContacto from '@/components/Contacto/HeaderContacto'
 import React from 'react'
 
 function Contacto() {
   return (
-    <div>Contacto</div>
+    <div>
+      <HeaderContacto />
+    </div>
   )
 }
 
