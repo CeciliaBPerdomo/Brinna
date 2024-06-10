@@ -1,25 +1,63 @@
 .nosotros_contenedor {
     color: #CA4E3C;
-    /* font-family: "Be Vietnam"; */
     font-size: 28px;
     font-style: normal;
-    font-weight: 600;
     line-height: 40px;
-    /* 142.857% */
+}
+
+.contenedor_principal_nosotros {
+    padding-top: 93px;
+    padding-left: 101px;
+    padding-bottom: 35px;
+}
+
+.texto_contenedor_nosotros {
+    color: #5D717C;
+    text-align: justify;
+    font-size: 23px;
+    font-style: normal;
+    line-height: 40px;
+    padding-bottom: 15px;
+}
+
+.contenedor_texto_nosotros {
+    display: flex;
+    height: 599px;
+    flex-direction: column;
+    padding-left: 101px;
+    padding-right: 70px;
+    flex-shrink: 0;
+
 }
 
 
 /* Para dispositivos móviles */
-@media screen and (max-width: 350px) {
-
-}
+@media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
+    .nosotros_contenedor {
+        font-size: 14px;
+        line-height: 20px;
+    }
 
+    .contenedor_principal_nosotros {
+        padding-top: 23px;
+        padding-left: 25px;
+        padding-bottom: 15px;
+    }
+
+    .texto_contenedor_nosotros {
+        font-size: 11px;
+        line-height: 20px;
+    }
+
+    .contenedor_texto_nosotros {
+        height: 300px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
-@media screen and (min-width: 901px) and (max-width: 1023px) {
-    
-}
+@media screen and (min-width: 901px) and (max-width: 1023px) {}
