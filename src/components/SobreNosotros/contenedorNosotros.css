@@ -51,9 +51,10 @@
         font-size: 11px;
         line-height: 20px;
     }
-
+    
     .contenedor_texto_nosotros {
-        height: 300px;
+        margin-bottom: 6px;
+        height: 420px;
         padding-left: 25px;
         padding-right: 25px;
     }

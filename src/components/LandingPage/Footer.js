@@ -6,10 +6,21 @@ import instagram from "../../../public/images/instagram.ico";
 
 // CSS para celulares
 import "../LandingPage/Footer/footer.css"
+import Link from "next/link";
 
 const FooterHome = () => {
-  const enlaces = ["Catálogo", "Sobre nosotros", " Contacto"];
-  const datos = ["¿Como comprar?", "¿Como vender?", "Términos y condiciones"];
+  const enlaces = [
+    { "nombre": "Catálogo", "link": "/catalogo" },
+    { "nombre": "Sobre nosotros", "link": "/nosotros" },
+    { "nombre": "Contacto", "link": "/contacto" }
+  ];
+
+  const datos = [
+    { nombre: "¿Como comprar?", linkTo: "/" },
+    { nombre: "¿Como vender?", linkTo: "/" },
+    { nombre: "Términos y condiciones", linkTo: "/terminos" }
+  ];
+
   const contactanos = [
     { logo: <FaSquarePhone />, contact: "099 000 000" },
     { logo: <IoIosMail />, contact: "info@brinna.com" },
@@ -24,7 +35,9 @@ const FooterHome = () => {
             <div className="my-5 enlacesrapidos_footer">
               {enlaces.map((enlace, id) => (
                 <p className="my-3 enlacesrapidos_footer" key={id}>
-                  {enlace}
+                  <Link href={enlace.link} >
+                    {enlace.nombre}
+                  </Link>
                 </p>
               ))}
             </div>
@@ -37,7 +50,9 @@ const FooterHome = () => {
             <div className="my-5 enlacesrapidos_footer">
               {datos.map((enlace, id) => (
                 <p className="my-3 enlacesrapidos_footer" key={id}>
-                  {enlace}
+                  <Link href={enlace.linkTo}>
+                    {enlace.nombre}
+                  </Link>
                 </p>
               ))}
             </div>
@@ -70,7 +85,7 @@ const FooterHome = () => {
       <div className="py-5 flex justify-center text-center bg-muted-cyan cyan">
         <p className="equipo_footer"><b>Equipo de desarrollo: </b>
           Diseño: Noelia Perdomo / Desarrollo: Cecilia Perdomo • Daniel Martinez
-          </p>
+        </p>
       </div>
     </footer>
   );
