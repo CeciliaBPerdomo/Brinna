@@ -23,7 +23,7 @@ const FooterHome = () => {
 
   const contactanos = [
     { logo: <FaSquarePhone />, contact: "099 000 000" },
-    { logo: <IoIosMail />, contact: "info@brinna.com" },
+    { logo: <IoIosMail />, contact: "brinnaropadesegundamano@gmail.com" },
   ];
 
   return (

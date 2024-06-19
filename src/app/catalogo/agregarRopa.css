@@ -1,0 +1,45 @@
+.realiza_una_publicacion {
+    color: #CA4E3C;
+    font-size: 30px;
+    font-style: normal;
+    line-height: 40px;
+
+    padding-bottom: 38.5px;
+    padding-left: 40px;
+}
+
+.botonGuardar_agregarRopa {
+    display: flex;
+    height: 42px;
+    padding: 11px 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 25px;
+    background: #CA4E3C;
+}
+
+.texto_guardarRopa {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .realiza_una_publicacion {
+        font-size: 12px;
+        line-height: 10px;
+    }
+
+}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {}
