@@ -20,7 +20,7 @@ const MenuUsuario = () => {
                     <MenuLateral />
                 </div>
 
-                <div className="bg-white p-2 menuUsuario_agregarproductos" >
+                <div className="bg-white p-2 menuUsuario_agregarproductos w-1/2" >
                     {/* Agregar productos */}
                     <AgregarProductos />
                 </div>

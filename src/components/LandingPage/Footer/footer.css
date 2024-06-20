@@ -1,3 +1,6 @@
+.fondo_footer {
+    background-color: #F2F5F8;
+}
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {
     .divPrincipalFooter {

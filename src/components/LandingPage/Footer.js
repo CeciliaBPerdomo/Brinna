@@ -27,7 +27,7 @@ const FooterHome = () => {
   ];
 
   return (
-    <footer>
+    <footer className="fondo_footer">
       <div className="grid place-content-center md:grid md:grid-cols-3 xl:flex xl:flex-row xl:justify-evenly xl:mx-5 text-norpe-green xl:text-left text-center text-muted-blue divPrincipalFooter">
         <div className="m-10 p-5">
           <div className="px-5 enlaces_footer">
