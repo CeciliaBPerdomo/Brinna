@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from "react";
 
 //Componentes
-import Card from "./CardElla";
+import Card from "../ParaElla/CardElla";
 
 //CSS
-import "./ropaElla.css"
+import "./ropaChicos.css"
 
 // Fuente
 import { Jost } from "next/font/google"
@@ -15,7 +15,7 @@ const jost = Jost({
     subsets: ['latin'],
 })
 
-const RopaParaElla = () => {
+const RopaParaChicos = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -26,7 +26,7 @@ const RopaParaElla = () => {
 
     const fetchItems = async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/productos/mujer`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/productos/chicos`, {
                 cache: "no-store",
                 headers: { 'Content-Type': 'application/json' }
             });
@@ -72,12 +72,13 @@ const RopaParaElla = () => {
         )
     }
 
+
     return (
         <div>
             <div>
-                <h1 className={`ropaElla_h1 ${jost}`}>Ropa para ella</h1>
+                <h1 className={`ropaChicos_h1 ${jost}`}>Ropa para chicos </h1>
             </div>
-            <div className="grid grid-cols-2 sm:grid md:grid-cols-4 ropaElla_cardElla">
+            <div className="grid grid-cols-2 sm:grid md:grid-cols-4 ropaChicos_cardChicos">
                 {items.map((card) => (
                     <Card key={card.id}
                         imageSrc={card.file}
@@ -93,4 +94,4 @@ const RopaParaElla = () => {
 
 
 
-export default RopaParaElla
+export default RopaParaChicos

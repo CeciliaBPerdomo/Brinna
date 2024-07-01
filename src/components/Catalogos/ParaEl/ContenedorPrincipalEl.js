@@ -3,6 +3,8 @@ import React from "react";
 // Barra de busqueda
 import MasCatalogosEl from "./masCatalogosEl";
 import Barra from "@/components/LandingPage/Busqueda/barraBusqueda";
+import RopaParaElla from "./ropaParaEl";
+import RopaParaEl from "./ropaParaEl";
 
 const ContenedorEl = () => {
 
@@ -12,6 +14,9 @@ const ContenedorEl = () => {
             <Barra />
 
             <br />
+
+            {/* Catalogos de él */}
+            <RopaParaEl />
 
             {/* Mas catalogos */}
             <MasCatalogosEl />

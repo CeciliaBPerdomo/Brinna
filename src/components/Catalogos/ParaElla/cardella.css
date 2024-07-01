@@ -1,11 +1,14 @@
 .card_ella {
-    height: 520px;
+    height: 420px;
     background-color: #DAEBEB;
+    border-radius: 15px;
 }
 
 .imagen_card_ella {
-    height: 300px;
+    height: 280px;
     width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 /* Para dispositivos móviles */
