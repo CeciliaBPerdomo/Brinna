@@ -6,6 +6,9 @@ import { Jost } from "next/font/google"
 // Componente
 import CatalagoPara from "@/components/LandingPage/Catalogos/catalogo_para";
 
+// CSS
+import "./masCatalogosEl.css"
+
 const jost = Jost({
     weight: "400",
     subsets: ['latin'],
@@ -20,7 +23,7 @@ const subjost = Jost({
 const MasCatalogosEl = () => {
     return (
         <div>
-            <div className="w-full grid grid-cols-3">
+            <div className="w-full grid grid-cols-3 mas_catalogos_el">
                 <div className="fondoPrincipal_catalogo mas_catalogos">
                     <p className={`mira_otros_catalogos ${jost}`}>¡Mirá otros catálogos!</p>
                     <p className={`explora_otros_catalogos ${subjost}`}>Explora en otras categorías.</p>
