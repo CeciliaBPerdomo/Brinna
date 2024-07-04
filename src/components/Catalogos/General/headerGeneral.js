@@ -10,7 +10,7 @@ import LogoWhatsappCatalogos from "../LogoWhatsApp";
 
 const CatalogoGeneral = () => {
     return (
-        <div className="principal_catalago_general">
+        <div className="bg-bannertodoscatalogos principal_catalago_general">
 
             {/* Menu de opciones */}
             <MenuOpciones />
