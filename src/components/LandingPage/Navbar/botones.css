@@ -12,10 +12,47 @@
     gap: 4px;
 }
 
-/* Para dispositivos móviles */
-@media screen and (max-width: 350px) {
-
+/*Botones*/
+.botones_registro {
+    display: flex;
+    width: 150px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    border-radius: 25px;
+    border: 1.5px solid #FFFBFB;
+    font-size: 15px;
+    font-style: normal;
+    line-height: normal;
 }
+
+.botones_iniciar_sesion {
+    display: flex;
+    width: 150px;
+    height: 40px;
+    padding: 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 20px;
+    background: #CA4E3C;
+    color: white;
+    font-size: 15px;
+    font-style: normal;
+    line-height: normal;
+    margin-right: 15px;
+}
+
+.icono_botones_iniciar_sesion {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
@@ -30,13 +67,32 @@
         padding-top: 30px;
     }
 
-    .images_botonRegistro_menuHeaderHome, .images_botonInicio_menuHeaderHome {
-        width: 90px;
-    }
+
+    /*Botones*/
+.botones_registro {
+    width: 95px;
+    height: 40px;
+    gap: 8px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.botones_iniciar_sesion {
+    width: 95px;
+    height: 40px;
+    padding: 6px;
+    gap: 4px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-right: 2px;
+}
+
+.icono_botones_iniciar_sesion {
+    width: 26px;
+    height: 26px;
+}
 
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
-@media screen and (min-width: 901px) and (max-width: 1023px) {
-    
-}
+@media screen and (min-width: 901px) and (max-width: 1023px) {}

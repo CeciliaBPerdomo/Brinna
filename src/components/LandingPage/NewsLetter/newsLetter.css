@@ -60,6 +60,21 @@
     padding-left: 15px;
 }
 
+.botonSuscribite_newsLetter {
+    display: flex;
+    width: 122px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 25px;
+    background: #CA4E3C;
+    color: white;
+    font-size: 15px;
+    font-style: normal;
+    line-height: normal;
+}
+
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {}
@@ -118,6 +133,14 @@
         height: 37px;
         display: flex;
         justify-content: center;
+    }
+
+    .botonSuscribite_newsLetter {
+        width: 90px;
+        padding: 8px;
+        gap: 10px;
+        border-radius: 25px;
+        font-size: 10px;
     }
 }
 

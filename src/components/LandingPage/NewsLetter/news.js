@@ -1,5 +1,5 @@
+// CSS 
 import "../NewsLetter/newsLetter.css"
-import Image from "next/image"
 import { Jost } from "next/font/google"
 
 const jost = Jost({
@@ -38,13 +38,9 @@ const News = () => {
                         />
                     </div>
                     <div className="divBoton_news">
-                        <Image
-                            src={"/images/botones/suscribirme.png"}
-                            alt={"Suscribirme"}
-                            width={122}
-                            height={42}
-                            className="botonSuscribite_newsLetter"
-                        />
+                        <button className={`botonSuscribite_newsLetter ${sub_jost}`}>
+                            Suscribirme!
+                        </button>
                     </div>
                 </div>
 
