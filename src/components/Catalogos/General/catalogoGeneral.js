@@ -1,6 +1,10 @@
 "use client"
 import React, { useEffect, useState } from "react";
 
+// Redux
+import { useSelector, useDispatch } from "react-redux";
+import { fetchProductos } from "../../../lib/productosSlice";
+
 //Componentes
 import Card from "../ParaElla/CardElla";
 
@@ -16,31 +20,13 @@ const jost = Jost({
 })
 
 const General = () => {
-    const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const dispatch = useDispatch();
+    const { items, loading, error } = useSelector((state) => state.productos);
 
     useEffect(() => {
-        fetchItems();
-    }, []);
+        dispatch(fetchProductos());
+    }, [dispatch]);
 
-    const fetchItems = async () => {
-        try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/productos/todos`, {
-                cache: "no-store",
-                headers: { 'Content-Type': 'application/json' }
-            });
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            const data = await response.json();
-            setItems(data);
-        } catch (error) {
-            setError(error.message);
-        } finally {
-            setLoading(false);
-        }
-    };
 
     if (loading) {
         return (
