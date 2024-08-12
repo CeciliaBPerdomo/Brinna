@@ -14,7 +14,7 @@ const Menu = () => {
             href: "/contacto"
         }, 
         {
-            label: "SOBRE NOSOTROS",
+            label: "NOSOTROS",
             href: "/nosotros"
         },
         {
