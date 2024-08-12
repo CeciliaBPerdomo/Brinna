@@ -34,6 +34,7 @@ const precio_jost = Jost({
 })
 
 
+// Configuracion del slider
 let settings = {
     className: "slider_novedades",
     arrows: true,
@@ -75,11 +76,43 @@ const Novedades = () => {
     // Obtener los últimos 6 productos
     const productosRecientes = productos.slice(-6);
 
+
+    // Mientras carga
     if (loading) {
         return (
-            <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 mt-6" role="alert">
-                <p class="font-bold">Información</p>
-                <p class="text-sm">Las últimas novedades están siendo cargadas!</p>
+            <div>
+                <div className="encabezado_novedades">
+                    <h1 className={`titulo_novedades ${jost}`}>
+                        ¡Descubre las novedades!
+                    </h1>
+                    <p className={`sub_novedades ${jost}`}>
+                        Échale un vistazo a los últimos ingresos.
+                    </p>
+                </div>
+                <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 mt-6" role="alert">
+                    <p class="font-bold">Información</p>
+                    <p class="text-sm">Las últimas novedades están siendo cargadas!</p>
+                </div>
+            </div>
+        )
+    }
+
+    // Si se produce algun error
+    if (error) {
+        return (
+            <div>
+                <div className="encabezado_novedades">
+                    <h1 className={`titulo_novedades ${jost}`}>
+                        ¡Descubre las novedades!
+                    </h1>
+                    <p className={`sub_novedades ${jost}`}>
+                        Échale un vistazo a los últimos ingresos.
+                    </p>
+                </div>
+                <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
+                    <p class="font-bold">Error al actualizar los productos</p>
+                    <p class="text-sm">Las novedades no se pueden actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
+                </div>
             </div>
         )
     }

@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
@@ -30,28 +30,36 @@ const General = () => {
 
     if (loading) {
         return (
+            <>
+            <h1 className={`ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
             <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
                 <p class="font-bold">Información</p>
                 <p class="text-sm">El catálogo esta siendo cargado!</p>
             </div>
+            </>
         )
     }
 
     if (error) {
         return (
+            <>
+            <h1 className={`ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
             <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
                 <p class="font-bold">Error al actualizar los productos</p>
                 <p class="text-sm">El catálogo no se puede actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
             </div>
+            </>
         )
     }
 
     if (items.length === 0) {
         return (
             <>
+            <h1 className={`ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
                 <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
-                    <p class="font-bold">No hay productos disponibles</p>
-                    <p class="text-sm">Este catálogo no tiene productos disponibles aún</p>
+                <p class="font-bold">No hay ropadisponible</p>
+                    <p class="text-sm">El catálogo aún no tiene ropa disponible.</p>
+                    <p class="text-sm">Esperamos que a la brevedad tengamos disponible.</p>
                 </div>
                 <br />
             </>
@@ -61,9 +69,7 @@ const General = () => {
 
     return (
         <div>
-            <div>
-                <h1 className={`ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
-            </div>
+            <h1 className={`ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
             <div className="grid grid-cols-2 sm:grid md:grid-cols-4 ropaParaTodos_cardtodos">
                 {items.map((card) => (
                     <Card key={card.id}
