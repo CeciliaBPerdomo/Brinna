@@ -1,12 +1,22 @@
 "use client"
-import "../Novedades/novedades.css"
-import { Jost } from "next/font/google"
-import Image from "next/image"
-import { useState } from "react"
 
+import Image from "next/image"
+import { useState, useEffect } from "react"
+
+// Redux
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProductos } from '../../../lib/productosSlice';
+
+//Slider
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+// CSS
+import "../Novedades/novedades.css"
+
+//Fuentes
+import { Jost } from "next/font/google"
 
 const jost = Jost({
     weight: "500",
@@ -24,51 +34,7 @@ const precio_jost = Jost({
 })
 
 
-const nov = [
-    {
-        "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera1.jpg?alt=media&token=9787afb9-8ca8-4991-ad10-00625c137bb6",
-        "titulo": "Remera Indian",
-        "talle": "L",
-        "precio": "350",
-        "etiqueta": "si"
-    },
-    {
-        "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera3.jpg?alt=media&token=d0367ff2-5325-4efe-aead-b4e1b7893a45",
-        "titulo": "Remera Rosada",
-        "talle": "M",
-        "precio": "300",
-        "etiqueta": "si"
-    },
-    {
-        "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera4.jpg?alt=media&token=e4bd9de3-c453-4bcf-98c6-5bc77fb6f48d",
-        "titulo": "Musculosa Amarilla con flores",
-        "talle": "M",
-        "precio": "300",
-        "etiqueta": "no"
-    },
-    {
-        "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera1.jpg?alt=media&token=9787afb9-8ca8-4991-ad10-00625c137bb6",
-        "titulo": "Remera 1",
-        "talle": "M",
-        "precio": "300",
-        "etiqueta": "no"
-    },
-    {
-        "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera3.jpg?alt=media&token=d0367ff2-5325-4efe-aead-b4e1b7893a45",
-        "titulo": "Remera 3",
-        "talle": "M",
-        "precio": "300",
-        "etiqueta": "no"
-    },
-    {
-        "imagen": "https://firebasestorage.googleapis.com/v0/b/brinna-45fe0.appspot.com/o/remera4.jpg?alt=media&token=e4bd9de3-c453-4bcf-98c6-5bc77fb6f48d",
-        "titulo": "Remera 4",
-        "talle": "M",
-        "precio": "300",
-        "etiqueta": "si"
-    },
-]
-
+// Configuracion del slider
 let settings = {
     className: "slider_novedades",
     arrows: true,
@@ -90,6 +56,8 @@ let settings = {
 };
 
 const Novedades = () => {
+    const dispatch = useDispatch();
+    const { items: productos, loading, error } = useSelector((state) => state.productos);
     const [corazon, setCorazon] = useState([])
 
     const cambiarCorazon = (index) => {
@@ -99,6 +67,54 @@ const Novedades = () => {
         } else { // Si no está seleccionado, lo agregamos a la lista de corazones seleccionados
             setCorazon([...corazon, index]);
         }
+    }
+
+    useEffect(() => {
+        dispatch(fetchProductos());
+    }, [dispatch]);
+
+    // Obtener los últimos 6 productos
+    const productosRecientes = productos.slice(-6);
+
+
+    // Mientras carga
+    if (loading) {
+        return (
+            <div>
+                <div className="encabezado_novedades">
+                    <h1 className={`titulo_novedades ${jost}`}>
+                        ¡Descubre las novedades!
+                    </h1>
+                    <p className={`sub_novedades ${jost}`}>
+                        Échale un vistazo a los últimos ingresos.
+                    </p>
+                </div>
+                <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 mt-6" role="alert">
+                    <p class="font-bold">Información</p>
+                    <p class="text-sm">Las últimas novedades están siendo cargadas!</p>
+                </div>
+            </div>
+        )
+    }
+
+    // Si se produce algun error
+    if (error) {
+        return (
+            <div>
+                <div className="encabezado_novedades">
+                    <h1 className={`titulo_novedades ${jost}`}>
+                        ¡Descubre las novedades!
+                    </h1>
+                    <p className={`sub_novedades ${jost}`}>
+                        Échale un vistazo a los últimos ingresos.
+                    </p>
+                </div>
+                <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
+                    <p class="font-bold">Error al actualizar los productos</p>
+                    <p class="text-sm">Las novedades no se pueden actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
+                </div>
+            </div>
+        )
     }
 
     return (
@@ -114,15 +130,15 @@ const Novedades = () => {
 
             <div className="tarjetas_novedades">
                 <Slider {...settings}>
-                    {nov.map((novedades, index) => (
+                    {productosRecientes.map((novedades, index) => (
                         <div className="max-w-sm rounded overflow-hidden shadow-md mt-4 card_individual_novedades"
                             key={index}>
-                            
-                            {novedades.etiqueta == "si" ? 
+
+                            {novedades.estado == "nuevo-con-etiqueta" ?
                                 <button className="etiqueta_novedades">
                                     <p className={`nuevo_novedades ${precio_jost}`}>Nuevo ¡con etiqueta!</p>
                                 </button>
-                            : null
+                                : null
                             }
 
                             <button className="corazon_novedades"
@@ -141,14 +157,14 @@ const Novedades = () => {
                             </button>
 
                             <Image
-                                src={novedades.imagen}
-                                alt={novedades.titulo}
+                                src={novedades.file}
+                                alt={novedades.nombre}
                                 width={420}
                                 height={50}
                                 className="imagen_novedades"
                             />
                             <div className="px-6 py-4">
-                                <div className={`titulo_novedades_card mb-2 ${jost}`}>{novedades.titulo}</div>
+                                <div className={`titulo_novedades_card mb-2 ${jost}`}>{novedades.nombre}</div>
                                 <p className={`talle_novedades ${sub_jost}`}>
                                     Talle {novedades.talle}
                                 </p>
