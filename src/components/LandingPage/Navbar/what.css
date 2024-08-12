@@ -14,7 +14,7 @@
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
     .div_logoWhatsapp {
-        padding-top: 80px;
+        padding-top: 70px;
         float: right;
     }
 
