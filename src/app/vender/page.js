@@ -1,9 +1,10 @@
+import ContenedorVendor from '@/components/LandingPage/ComprarVender/Vender/ContenedorVendor'
 import React from 'react'
 
 function Vender() {
   return (
     <div>
-        Hola Manola
+        <ContenedorVendor />
     </div>
   )
 }
