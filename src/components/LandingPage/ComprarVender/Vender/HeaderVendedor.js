@@ -1,16 +1,16 @@
 import React from 'react'
 
 // CSS
-import "../Comprar/HeaderCompar.css"
+import "../Vender/headerVendedor.css"
 
 //Menus
 import MenuOpciones from '@/components/Catalogos/MenuOpciones'
 import MenuCatalogos from '@/components/Catalogos/menu'
 import LogoWhatsappCompraVenta from '../LogoWhatsApp'
 
-function HeaderComprar() {
-    return (
-        <div className="bg-bannercomocomprar bannerComoComprar_header">
+function HeaderVendedor() {
+  return (
+    <div className='bg-bannercomovender'>
             {/* Menu de opciones */}
             <MenuOpciones />
 
@@ -19,9 +19,8 @@ function HeaderComprar() {
 
             {/* Logo de whatsapp */}
             <LogoWhatsappCompraVenta />
-
-        </div>
-    )
+    </div>
+  )
 }
 
-export default HeaderComprar
+export default HeaderVendedor
