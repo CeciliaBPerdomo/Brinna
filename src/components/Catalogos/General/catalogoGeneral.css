@@ -18,7 +18,15 @@
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
-
+    .ropa_para_Todos_h1 {
+        font-size: 18px;
+        line-height: 20px; /* 142.857% */
+        padding: 35px 0px 0px 60px;
+    }
+    .ropaParaTodos_cardtodos{
+        margin-bottom: 50px;
+        margin-top: 10px;
+    }    
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */

@@ -1,4 +1,4 @@
-.ropaChicos_cardChhicos {
+.ropaChicos_cardChicos {
     margin-bottom: 50px;
 }
 
@@ -14,7 +14,17 @@
 @media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
-@media screen and (min-width: 351px) and (max-width: 600px) {}
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .ropaChicos_cardChicos {
+        margin-bottom: 20px;
+    }
+    
+    .ropaChicos_h1 {
+        font-size: 18px;
+        line-height: 18px;
+        padding-left: 18px;
+    }
+}
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
 @media screen and (min-width: 901px) and (max-width: 1023px) {}

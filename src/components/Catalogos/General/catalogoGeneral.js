@@ -28,6 +28,7 @@ const General = () => {
     }, [dispatch]);
 
 
+    // Mientras carga
     if (loading) {
         return (
             <>
@@ -40,6 +41,7 @@ const General = () => {
         )
     }
 
+    // Si sucede algun error
     if (error) {
         return (
             <>
@@ -52,6 +54,7 @@ const General = () => {
         )
     }
 
+    // Si no hay articulos
     if (items.length === 0) {
         return (
             <>
@@ -70,14 +73,16 @@ const General = () => {
     return (
         <div>
             <h1 className={`ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
-            <div className="grid grid-cols-2 sm:grid md:grid-cols-4 ropaParaTodos_cardtodos">
+            <div className="grid grid-cols-1 sm:grid md:grid-cols-4 ropaParaTodos_cardtodos">
                 {items.map((card) => (
-                    <Card key={card.id}
+                    <Card 
+                        key={card.id}
                         imageSrc={card.file}
                         text={card.nombre}
                         talle={card.talle}
                         precio={card.precio}
-                        marca={card.marca} />
+                        marca={card.marca} 
+                    />
                 ))}
             </div>
         </div>
