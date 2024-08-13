@@ -74,7 +74,7 @@ const RopaParaChicos = () => {
     return (
         <div>
             <h1 className={`ropaChicos_h1 ${jost}`}>Ropa para chicos</h1>
-            <div className="grid grid-cols-2 sm:grid md:grid-cols-4 ropaChicos_cardChicos">
+            <div className="grid grid-cols-1 sm:grid md:grid-cols-4 ropaChicos_cardChicos">
                 {productosChicos.map((card) => (
                     <Card key={card.id}
                         imageSrc={card.file}
