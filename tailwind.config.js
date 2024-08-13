@@ -26,6 +26,7 @@ module.exports = withMT({
         "bannercontacto": "url('../../public/images/fondos/banner_contacto_con_logo.png')",
         "bannerterminos": "url('../../public/images/fondos/banner_terminos_y_condiciones_con logo.png')",
         "bannertodoscatalogos": "url('../../public/images/fondos/Banner_ catalogo_vertodo_con_logo.jpg')",
+        "bannercomocomprar": "url('../../public/images/fondos/Banner_como_comprar_con_logo.png')",
       },
       colors: {
         'brinna': '#CA4E3C',
