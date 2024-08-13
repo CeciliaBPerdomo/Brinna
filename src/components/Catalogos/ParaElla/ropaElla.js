@@ -34,7 +34,7 @@ const RopaParaElla = () => {
     if (loading) {
         return (
             <>
-                <h1 className={`ropaElla_h1 ${jost}`}>Ropa para ella</h1>
+                <h1 className={`mb-4 ropaElla_h1 ${jost}`}>Ropa para ella</h1>
                 <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
                     <p class="font-bold">Información</p>
                     <p class="text-sm">El catálogo esta siendo cargado!</p>
@@ -47,7 +47,7 @@ const RopaParaElla = () => {
     if (error) {
         return (
             <>
-                <h1 className={`ropaElla_h1 ${jost}`}>Ropa para ella</h1>
+                <h1 className={`mb-4 ropaElla_h1 ${jost}`}>Ropa para ella</h1>
                 <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
                     <p class="font-bold">Error al actualizar los productos</p>
                     <p class="text-sm">El catálogo no se puede actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
@@ -60,10 +60,11 @@ const RopaParaElla = () => {
     if (productosMujer.length === 0) {
         return (
             <>
-                <h1 className={`ropaElla_h1 ${jost}`}>Ropa para ella</h1>
+                <h1 className={`mb-4  ropaElla_h1 ${jost}`}>Ropa para ella</h1>
                 <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
-                    <p class="font-bold">No hay productos disponibles</p>
-                    <p class="text-sm">Este catálogo no tiene productos disponibles aún</p>
+                    <p class="font-bold">No hay productos disponibles en este catálogo</p>
+                    <p class="text-sm">El catálogo de ropa para ella aún no tiene ropa para mostrar.</p>
+                    <p class="text-sm">Esperamos que a la brevedad tengamos para ofrecerte.</p>
                 </div>
                 <br />
             </>
@@ -73,14 +74,16 @@ const RopaParaElla = () => {
     return (
         <div>
             <h1 className={`ropaElla_h1 ${jost}`}>Ropa para ella</h1>
-            <div className="grid grid-cols-2 sm:grid md:grid-cols-4 ropaElla_cardElla">
+            <div className="grid grid-cols-1 sm:grid md:grid-cols-4 ropaElla_cardElla">
                 {productosMujer.map((card) => (
-                    <Card key={card.id}
+                    <Card 
+                        key={card.id}
                         imageSrc={card.file}
                         text={card.nombre}
                         talle={card.talle}
                         precio={card.precio}
-                        marca={card.marca} />
+                        marca={card.marca} 
+                    />
                 ))}
             </div>
         </div>
