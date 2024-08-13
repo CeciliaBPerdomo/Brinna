@@ -32,7 +32,7 @@ const General = () => {
     if (loading) {
         return (
             <>
-            <h1 className={`ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
+            <h1 className={`mb-4 ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
             <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
                 <p class="font-bold">Información</p>
                 <p class="text-sm">El catálogo esta siendo cargado!</p>
@@ -45,7 +45,7 @@ const General = () => {
     if (error) {
         return (
             <>
-            <h1 className={`ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
+            <h1 className={`mb-4 ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
             <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
                 <p class="font-bold">Error al actualizar los productos</p>
                 <p class="text-sm">El catálogo no se puede actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
@@ -58,7 +58,7 @@ const General = () => {
     if (items.length === 0) {
         return (
             <>
-            <h1 className={`ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
+            <h1 className={`mb-4 ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
                 <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
                 <p class="font-bold">No hay ropadisponible</p>
                     <p class="text-sm">El catálogo aún no tiene ropa disponible.</p>

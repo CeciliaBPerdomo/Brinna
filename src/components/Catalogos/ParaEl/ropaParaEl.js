@@ -30,7 +30,7 @@ const RopaParaEl = () => {
     // Filtrar productos para "hombres"
     const productosHombres = productos.filter((producto) => producto.categoria === "hombres");
 
-
+    // Mientras carga
     if (loading) {
         return (
             <>
@@ -43,6 +43,7 @@ const RopaParaEl = () => {
         )
     }
 
+    // Si hay un error
     if (error) {
         return (
             <>
@@ -55,6 +56,7 @@ const RopaParaEl = () => {
         )
     }
 
+    // Si no hay productos
     if (productosHombres.length === 0) {
         return (
             <>
@@ -69,18 +71,19 @@ const RopaParaEl = () => {
         )
     }
 
-
     return (
         <div>
             <h1 className={`ropaEl_h1 ${jost}`}>Ropa para él</h1>
-            <div className="grid grid-cols-2 sm:grid md:grid-cols-4 ropaEl_cardEl">
+            <div className="grid grid-cols-1 sm:grid md:grid-cols-4 ropaEl_cardEl">
                 {productosHombres.map((card) => (
-                    <Card key={card.id}
+                    <Card 
+                        key={card.id}
                         imageSrc={card.file}
                         text={card.nombre}
                         talle={card.talle}
                         precio={card.precio}
-                        marca={card.marca} />
+                        marca={card.marca} 
+                        />
                 ))}
             </div>
         </div>

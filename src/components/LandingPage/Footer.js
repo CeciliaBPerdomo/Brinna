@@ -16,8 +16,8 @@ const FooterHome = () => {
   ];
 
   const datos = [
-    { nombre: "¿Como comprar?", linkTo: "/" },
-    { nombre: "¿Como vender?", linkTo: "/" },
+    { nombre: "¿Como comprar?", linkTo: "/comprar" },
+    { nombre: "¿Como vender?", linkTo: "/vender" },
     { nombre: "Términos y condiciones", linkTo: "/terminos" }
   ];
 
