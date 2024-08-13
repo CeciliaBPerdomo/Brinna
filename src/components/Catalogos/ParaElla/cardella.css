@@ -17,13 +17,13 @@
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
     .card_ella {
-        height: 325px;
+        height: 335px;
         width: 68%;
-        margin-left: 40px;
+        margin-left: 60px;
     }
 
     .imagen_card_ella {
-        height: 190px;
+        height: 200px;
     }
     
 }
