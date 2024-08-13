@@ -1,4 +1,9 @@
+import Link from "next/link"
+
+//CSS
 import "../ComprarVender/comprarvender.css"
+
+//Fuente
 import { Jost } from "next/font/google"
 
 const jost = Jost({
@@ -12,17 +17,21 @@ const ComprarVender = () => {
             <div class="grid grid-cols-2 gap-2">
                 <div className="bg-comprar fondo_cv fondo_comprar_cv">
                     <div className="boton_cv">
-                        <button className={`titulo_cv ${jost}`}>
-                            COMPRAR
-                        </button>
+                        <Link href={"/comprar"}>
+                            <button className={`titulo_cv ${jost}`}>
+                                COMPRAR
+                            </button>
+                        </Link>
                     </div>
                 </div>
 
                 <div className="bg-vender fondo_cv">
                     <div className="boton_cv">
-                        <button className={`titulo_cv ${jost}`}>
-                            VENDER
-                        </button>
+                        <Link href={"/vender"}>
+                            <button className={`titulo_cv ${jost}`}>
+                                VENDER
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
