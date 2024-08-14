@@ -1,9 +1,10 @@
+//agregarropa.js
 "use client"
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 
-import { doc, setDoc } from "firebase/firestore"
-import { db, storage } from "../firebase/config"
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage"
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+import { agregarProducto } from '../../lib/productosSlice';
 
 // CSS 
 import "../catalogo/agregarRopa.css"
@@ -21,32 +22,10 @@ const jost_texto = Jost({
     subsets: ['latin'],
 })
 
-const agregarProductos = async (values) => {
-    try {
-        let fileURL = "";
-        // Guarda la imagen en el storage
-        if (values.file) {
-            fileURL = await uploadFile(values.file);
-        }
-
-        const docRef = doc(db, "productos", values.id);
-        await setDoc(docRef, { ...values, file: fileURL });
-        console.info("Producto guardado");
-        return "Tú producto ha sido guardado exitosamente"; // Retorna el mensaje de éxito
-    } catch (error) {
-        console.log(error);
-        throw new Error("Algo ocurrio y hubo un error al guardar tú producto"); // Lanza un error en caso de falla
-    }
-}
-
-const uploadFile = async (file) => {
-    const storageRef = ref(storage, `productos/${file.name}`);
-    await uploadBytes(storageRef, file);
-    const url = await getDownloadURL(storageRef);
-    return url;
-};
 
 export default function AgregarProductos() {
+    const dispatch = useDispatch();
+
     // Para guardar la info
     const initialValues = {
         id: "",
@@ -58,8 +37,11 @@ export default function AgregarProductos() {
         estado: "usado",
         categoria: "mujer",
         subcategoria: "buzo",
-        precio: ""
+        precio: "",
+        id_vendedor: 1, 
+        vendedor: "Cecilia Perdomo"
     }
+
     const [values, setValues] = useState(initialValues)
 
     // Para guardar la imagen
@@ -93,18 +75,18 @@ export default function AgregarProductos() {
         const timestamp = Date.now().toString(); // Generate a unique ID using the current timestamp
 
         try {
-            //console.log(values)
-            const successMessage = await agregarProductos({ ...values, id: timestamp, file });
-            //const successMessage = "exitosamente"
+            // Aquí se despacha la acción para agregar un producto
+            dispatch(agregarProducto({ ...values, id: timestamp, file }));
+    
             setIsLoading(false);
-            setMessage(successMessage);
-
+            setMessage("Tú producto ha sido guardado exitosamente");
+    
             // Restablece los valores del formulario después de enviar
             setValues(initialValues);
             setFile(null);
             window.scrollTo(0, 1200); // Desplaza al inicio del formulario
         } catch (error) {
-            console.error("Error en firebase: ", error)
+            console.error("Error en el guardado: ", error);
             setIsLoading(false);
             setMessage(error.message);
             window.scrollTo(0, 1200); // Desplaza al inicio del formulario
@@ -325,7 +307,10 @@ export default function AgregarProductos() {
                         <option value="bluza">Bluza</option>
                         <option value="campera">Campera</option>
                         <option value="pantalones">Pantalones</option>
-                        <option value="pantalones">Calzado</option>
+                        <option value="calzas">Calzas</option>
+                        <option value="calzado">Calzado</option>
+                        <option value="short">Shorts</option>
+                        <option value="short-pollera">Shorts-Polleras</option>
                     </select>
                 </div>
 
