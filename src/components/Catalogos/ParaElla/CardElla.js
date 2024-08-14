@@ -3,12 +3,14 @@ import Image from "next/image";
 
 //CSS 
 import "../ParaElla/cardella.css"
+import NuevoEtiqueta from "../nuevoEtiqueta";
 
-const Card = ({ imageSrc, text, talle, precio, marca }) => {
+const Card = ({ imageSrc, text, talle, precio, marca, esNuevoConEtiqueta }) => {
     return (
         <div className="mx-3 mt-6 flex flex-col text-surface shadow-secondary-1 
         dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0 
         border border-1 card_ella">
+            {esNuevoConEtiqueta && <NuevoEtiqueta />}
             <Image
                 class="imagen_card_ella"
                 height={50}
