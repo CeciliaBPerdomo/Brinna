@@ -15,9 +15,11 @@ import "slick-carousel/slick/slick-theme.css";
 // CSS
 import "../Novedades/novedades.css"
 
+// Nuevo con etiqueta
+import NuevoEtiqueta from "@/components/Catalogos/nuevoEtiqueta";
+
 //Fuentes
 import { Jost } from "next/font/google"
-import NuevoEtiqueta from "@/components/Catalogos/nuevoEtiqueta";
 
 const jost = Jost({
     weight: "500",

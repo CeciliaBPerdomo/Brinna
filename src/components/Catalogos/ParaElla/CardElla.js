@@ -3,6 +3,8 @@ import Image from "next/image";
 
 //CSS 
 import "../ParaElla/cardella.css"
+
+// Componentes
 import NuevoEtiqueta from "../nuevoEtiqueta";
 
 const Card = ({ imageSrc, text, talle, precio, marca, esNuevoConEtiqueta }) => {
@@ -20,8 +22,8 @@ const Card = ({ imageSrc, text, talle, precio, marca, esNuevoConEtiqueta }) => {
 
             <div class="p-6">
                 <h5 class="mb-2 text-l font-medium leading-tight">{text} {marca}</h5>
-                <p class="text-base"> Talle: {talle} </p>
-                <p class="mb-4 text-base"> <b>${precio}</b></p>
+                <p class="text-base">Talle: {talle} </p>
+                <p class="mb-4 text-base"><b>${precio}</b></p>
             </div>
         </div>
     );

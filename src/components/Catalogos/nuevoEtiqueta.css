@@ -2,14 +2,11 @@
     display: flex;
     position: absolute;
     background-color: #A63729;
-
     margin: 15px;
-
     width: 65px;
     height: 65px;
     justify-content: center;
     align-items: center;
-
     border-radius: 65px;
 }
 
@@ -19,6 +16,31 @@
     color: white;
     font-size: 11px;
     font-style: normal;
-    font-weight: 600;
     line-height: normal;
+}
+
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {
+
+}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .etiqueta_nuevo {    
+        margin: 10px;
+        width: 45px;
+        height: 45px;
+        border-radius: 45px;
+    }
+
+    .nuevo_etiqueta {
+        padding: 2px;
+        font-size: 8px;
+    }
+}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {
+    
 }

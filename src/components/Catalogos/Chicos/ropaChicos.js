@@ -81,9 +81,9 @@ const RopaParaChicos = () => {
                         text={card.nombre}
                         talle={card.talle}
                         precio={card.precio}
-                        marca={card.marca} 
-                        esNuevoConEtiqueta={card.estado === "nuevo-con-etiqueta"} 
-                        />
+                        marca={card.marca}
+                        esNuevoConEtiqueta={card.estado === "nuevo-con-etiqueta"}
+                    />
                 ))}
             </div>
         </div>
