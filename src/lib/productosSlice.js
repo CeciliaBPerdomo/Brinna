@@ -1,6 +1,10 @@
 // productosSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+import { doc, setDoc } from 'firebase/firestore';
+import { db, storage } from '../app/firebase/config';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+
 // Thunk para realizar el fetch de productos
 export const fetchProductos = createAsyncThunk(
   'productos/fetchProductos',
@@ -21,6 +25,28 @@ export const fetchProductos = createAsyncThunk(
   }
 );
 
+// En el thunk `agregarProducto`, solo devuelve la URL del archivo
+export const agregarProducto = createAsyncThunk(
+  'productos/agregarProducto',
+  async (values, { rejectWithValue }) => {
+    try {
+      let fileURL = "";
+      if (values.file) {
+        const storageRef = ref(storage, `productos/${values.file.name}`);
+        await uploadBytes(storageRef, values.file);
+        fileURL = await getDownloadURL(storageRef);
+      }
+
+      const docRef = doc(db, "productos", values.id);
+      await setDoc(docRef, { ...values, file: fileURL });
+      return { ...values, file: fileURL }; // Devuelve la URL del archivo en lugar del objeto File
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+
 const productosSlice = createSlice({
   name: 'productos',
   initialState: {
@@ -28,9 +54,11 @@ const productosSlice = createSlice({
     loading: false,
     error: null,
   },
+
   reducers: {},
   extraReducers: (builder) => {
     builder
+    //Mostrar productos / ropa
       .addCase(fetchProductos.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -40,6 +68,19 @@ const productosSlice = createSlice({
         state.items = action.payload;
       })
       .addCase(fetchProductos.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      //Agregar productos / ropa
+      .addCase(agregarProducto.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(agregarProducto.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items.push(action.payload);
+      })
+      .addCase(agregarProducto.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

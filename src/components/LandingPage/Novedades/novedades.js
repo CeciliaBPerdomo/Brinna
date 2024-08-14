@@ -17,6 +17,7 @@ import "../Novedades/novedades.css"
 
 //Fuentes
 import { Jost } from "next/font/google"
+import NuevoEtiqueta from "@/components/Catalogos/nuevoEtiqueta";
 
 const jost = Jost({
     weight: "500",
@@ -135,9 +136,7 @@ const Novedades = () => {
                             key={index}>
 
                             {novedades.estado == "nuevo-con-etiqueta" ?
-                                <button className="etiqueta_novedades">
-                                    <p className={`nuevo_novedades ${precio_jost}`}>Nuevo ¡con etiqueta!</p>
-                                </button>
+                                <NuevoEtiqueta />
                                 : null
                             }
 
