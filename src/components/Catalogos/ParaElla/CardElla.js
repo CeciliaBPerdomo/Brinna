@@ -17,7 +17,10 @@ const Card = ({ imageSrc, text, talle, precio, marca, esNuevoConEtiqueta, index 
 
             {esNuevoConEtiqueta && <NuevoEtiqueta />}
 
-            {/* <FavoritosCorazon index={index}/> */}
+            <FavoritosCorazon 
+                index={index}
+                claseCSS={"corazon_favoritos_cardCatalogos"}
+            />
             
             <Image
                 class="imagen_card_ella"
