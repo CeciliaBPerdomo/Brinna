@@ -1,0 +1,31 @@
+.div_formulario_registro_principal {
+    width: 960px;
+    height: 680px;
+    border-radius: 100px;
+    background: #DAEBEB;
+    display: flex;
+}
+
+.div_formulario_registro_imagen {
+    width: 425px;
+    height: 680px;
+    position: relative;   
+}
+
+.formulario_registro_imagen {
+    border-radius: 100px 0px 0px 100px;
+}
+
+.div_formulario_registro {
+    width: 425px;
+    height: 680px;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {}
