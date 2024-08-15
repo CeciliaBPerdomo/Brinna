@@ -64,22 +64,6 @@
 
 /* ------------------------------------------------------- */
 
-/* Icono  de corazon */
-.corazon_novedades {
-    display: flex;
-    position: absolute;
-    right: 0;
-
-    margin-top: 15px;
-    margin-right: 18px;
-
-    width: 25px;
-    height: 23px;
-    justify-content: center;
-    align-items: center;
-    color: #A63729;
-}
-
 .card_individual_novedades {
     position: relative;
 }
@@ -137,17 +121,6 @@
     .precio_novedades {
         font-size: 11px;
         margin-bottom: 10px;
-    }
-
-    /* ------------------------------------------------------- */
-
-    /* Icono  de corazon */
-    .corazon_novedades {
-        margin-top: 9px;
-        margin-right: 9px;
-
-        width: 15px;
-        height: 13px;
     }
 
 }

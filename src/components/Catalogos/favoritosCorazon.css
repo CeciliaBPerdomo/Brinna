@@ -1,0 +1,31 @@
+.corazon_favoritos {
+    display: flex;
+    position: absolute;
+    right: 0;
+
+    margin-top: 15px;
+    margin-right: 18px;
+
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    color: #A63729;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .corazon_favoritos {
+        margin-top: 9px;
+        margin-right: 9px;
+
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {}
