@@ -10,13 +10,16 @@ const jost = Jost({
 
 // CSS
 import "../Navbar/botones.css"
+import Link from "next/link"
 
 const BotonesSesion = () => {
 
     return (
         <div className='barraBotones_menuHeaderHome'>
             <nav className="botonera_menuHeaderHome">
+                <Link href={"/admin/Registro"}>
                 <button className={`botones_registro ${jost}`}>Registrarte</button>
+                </Link>
                 <button className={`botones_iniciar_sesion ${jost}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" 
                     width="30" 
