@@ -13,6 +13,17 @@
     color: #A63729;
 }
 
+.corazon_favoritos_cardCatalogos {
+    color: #A63729;
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    position: absolute;
+    padding-top: 8px;
+    padding-left: 300px;
+}
+
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {}
 
@@ -25,6 +36,14 @@
         width: 15px;
         height: 15px;
     }
+
+    .corazon_favoritos_cardCatalogos {
+        width: 15px;
+        height: 15px;
+        padding-top: 8px;
+        padding-left: 185px;
+    }
+    
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */

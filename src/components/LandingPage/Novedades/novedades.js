@@ -131,7 +131,10 @@ const Novedades = () => {
                             key={index}>
 
                             {novedades.estado == "nuevo-con-etiqueta" ? <NuevoEtiqueta /> : null }
-                            <FavoritosCorazon index={index} />
+                            <FavoritosCorazon 
+                                index={index} 
+                                claseCSS={"corazon_favoritos"}
+                            />
 
                             <Image
                                 src={novedades.file}
