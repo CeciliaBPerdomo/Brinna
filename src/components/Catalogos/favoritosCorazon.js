@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import "../Catalogos/favoritosCorazon.css"
 
-function FavoritosCorazon({ index }) {
+function FavoritosCorazon({ index, claseCSS }) {
     const [corazon, setCorazon] = useState([])
 
     const cambiarCorazon = (index) => {
@@ -15,10 +15,8 @@ function FavoritosCorazon({ index }) {
 
 
     return (
-        <div>
-            <button className="corazon_favoritos"
-                onClick={() => cambiarCorazon(index)}
-            >
+        <div className={claseCSS}>
+            <button onClick={() => cambiarCorazon(index)}>
                 <svg xmlns="http://www.w3.org/2000/svg"
                     fill={corazon.includes(index) ? "currentColor" : "none"}
                     viewBox="0 0 24 24"
