@@ -13,7 +13,6 @@ import { fetchProductos } from "../../../lib/productosSlice";
 
 // Fuente
 import { Jost } from "next/font/google"
-import FavoritosCorazon from "../favoritosCorazon";
 
 const jost = Jost({
     weight: "600",
