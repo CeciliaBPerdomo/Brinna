@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -17,6 +17,9 @@ import "../Novedades/novedades.css"
 
 // Nuevo con etiqueta
 import NuevoEtiqueta from "@/components/Catalogos/nuevoEtiqueta";
+
+//Favorito corazon
+import FavoritosCorazon from "@/components/Catalogos/favoritosCorazon";
 
 //Fuentes
 import { Jost } from "next/font/google"
@@ -61,16 +64,6 @@ let settings = {
 const Novedades = () => {
     const dispatch = useDispatch();
     const { items: productos, loading, error } = useSelector((state) => state.productos);
-    const [corazon, setCorazon] = useState([])
-
-    const cambiarCorazon = (index) => {
-        //setCorazon(index)
-        if (corazon.includes(index)) {
-            setCorazon(corazon.filter((item) => item !== index));
-        } else { // Si no está seleccionado, lo agregamos a la lista de corazones seleccionados
-            setCorazon([...corazon, index]);
-        }
-    }
 
     useEffect(() => {
         dispatch(fetchProductos());
@@ -137,25 +130,8 @@ const Novedades = () => {
                         <div className="max-w-sm rounded overflow-hidden shadow-md mt-4 card_individual_novedades"
                             key={index}>
 
-                            {novedades.estado == "nuevo-con-etiqueta" ?
-                                <NuevoEtiqueta />
-                                : null
-                            }
-
-                            <button className="corazon_novedades"
-                                onClick={() => cambiarCorazon(index)}
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    fill={corazon.includes(index) ? "currentColor" : "none"}
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="w-10 h-10">
-                                    <path strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                                </svg>
-                            </button>
+                            {novedades.estado == "nuevo-con-etiqueta" ? <NuevoEtiqueta /> : null }
+                            <FavoritosCorazon index={index} />
 
                             <Image
                                 src={novedades.file}

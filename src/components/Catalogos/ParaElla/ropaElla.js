@@ -13,6 +13,7 @@ import { fetchProductos } from "../../../lib/productosSlice";
 
 // Fuente
 import { Jost } from "next/font/google"
+import FavoritosCorazon from "../favoritosCorazon";
 
 const jost = Jost({
     weight: "600",
@@ -75,9 +76,10 @@ const RopaParaElla = () => {
         <div>
             <h1 className={`ropaElla_h1 ${jost}`}>Ropa para ella</h1>
             <div className="grid grid-cols-1 sm:grid md:grid-cols-4 ropaElla_cardElla">
-                {productosMujer.map((card) => (
+                {productosMujer.map((card, index) => (
                     <Card 
                         key={card.id}
+                        index={index}
                         imageSrc={card.file}
                         text={card.nombre}
                         talle={card.talle}

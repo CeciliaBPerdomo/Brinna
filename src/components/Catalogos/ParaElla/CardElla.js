@@ -6,13 +6,19 @@ import "../ParaElla/cardella.css"
 
 // Componentes
 import NuevoEtiqueta from "../nuevoEtiqueta";
+import FavoritosCorazon from "../favoritosCorazon";
 
-const Card = ({ imageSrc, text, talle, precio, marca, esNuevoConEtiqueta }) => {
+const Card = ({ imageSrc, text, talle, precio, marca, esNuevoConEtiqueta, index }) => {
     return (
         <div className="mx-3 mt-6 flex flex-col text-surface shadow-secondary-1 
         dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0 
         border border-1 card_ella">
+
+
             {esNuevoConEtiqueta && <NuevoEtiqueta />}
+
+            {/* <FavoritosCorazon index={index}/> */}
+            
             <Image
                 class="imagen_card_ella"
                 height={50}
