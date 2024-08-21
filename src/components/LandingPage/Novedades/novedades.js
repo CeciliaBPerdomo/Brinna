@@ -23,6 +23,7 @@ import FavoritosCorazon from "@/components/Catalogos/favoritosCorazon";
 
 //Fuentes
 import { Jost } from "next/font/google"
+import LoadingWash from "@/components/Catalogos/loading";
 
 const jost = Jost({
     weight: "500",
@@ -72,7 +73,6 @@ const Novedades = () => {
     // Obtener los últimos 6 productos
     const productosRecientes = productos.slice(-6);
 
-
     // Mientras carga
     if (loading) {
         return (
@@ -81,13 +81,10 @@ const Novedades = () => {
                     <h1 className={`titulo_novedades ${jost}`}>
                         ¡Descubre las novedades!
                     </h1>
-                    <p className={`sub_novedades ${jost}`}>
-                        Échale un vistazo a los últimos ingresos.
-                    </p>
                 </div>
-                <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 mt-6" role="alert">
-                    <p class="font-bold">Información</p>
-                    <p class="text-sm">Las últimas novedades están siendo cargadas!</p>
+
+                <div className="loading_novedades">
+                    <LoadingWash />
                 </div>
             </div>
         )
@@ -130,9 +127,9 @@ const Novedades = () => {
                         <div className="max-w-sm rounded overflow-hidden shadow-md mt-4 card_individual_novedades"
                             key={index}>
 
-                            {novedades.estado == "nuevo-con-etiqueta" ? <NuevoEtiqueta /> : null }
-                            <FavoritosCorazon 
-                                index={index} 
+                            {novedades.estado == "nuevo-con-etiqueta" ? <NuevoEtiqueta /> : null}
+                            <FavoritosCorazon
+                                index={index}
                                 claseCSS={"corazon_favoritos"}
                             />
 

@@ -68,6 +68,11 @@
     position: relative;
 }
 
+/* Loading */ 
+.loading_novedades{
+    padding-left: 98px;
+}
+
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {}
 
