@@ -14,6 +14,7 @@ import { fetchProductos } from "../../../lib/productosSlice";
 
 // Fuente
 import { Jost } from "next/font/google"
+import LoadingWash from "../loading";
 
 const jost = Jost({
     weight: "600",
@@ -36,10 +37,7 @@ const RopaParaChicos = () => {
         return (
             <>
                 <h1 className={`mb-4 ropaChicos_h1 ${jost}`}>Ropa para chicos</h1>
-                <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-                    <p class="font-bold">Información</p>
-                    <p class="text-sm">El catálogo esta siendo cargado!</p>
-                </div>
+                <LoadingWash />
             </>
         )
     }

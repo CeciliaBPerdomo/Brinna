@@ -10,7 +10,7 @@ export const agregarUsuario = createAsyncThunk(
       // Verificar si el email ya existe en Firestore
       const q = query(collection(db, "usuarios"), where("email", "==", values.email));
       const querySnapshot = await getDocs(q);
-      
+
       if (!querySnapshot.empty) {
         return rejectWithValue("El email ya está registrado");
       }
@@ -23,10 +23,10 @@ export const agregarUsuario = createAsyncThunk(
         return rejectWithValue("El nombre de usuario ya está registrado");
       }
 
-
-      // Obtener el siguiente ID secuencial basado en el estado
-      const state = getState().usuarios;
-      const nextId = state.items.length ? state.items.length + 1 : 1; // Generar ID secuencial
+      // Obtener el siguiente ID secuencial 
+      const querySnapshotCantidad = await getDocs(collection(db, "usuarios"));
+      const existingUsers = querySnapshotCantidad.docs.map((doc) => doc.data());
+      const nextId = existingUsers.length + 1;
 
       const userWithId = { ...values, id: nextId }; // Agregar el ID al objeto del usuario
       const docRef = doc(db, "usuarios", String(nextId)); // Usa el ID como la clave del documento

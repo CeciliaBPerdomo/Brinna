@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 
 //Componentes
 import Card from "./CardElla";
+import LoadingWash from "../loading";
 
 //CSS
 import "./ropaElla.css"
@@ -35,10 +36,7 @@ const RopaParaElla = () => {
         return (
             <>
                 <h1 className={`mb-4 ropaElla_h1 ${jost}`}>Ropa para ella</h1>
-                <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-                    <p class="font-bold">Información</p>
-                    <p class="text-sm">El catálogo esta siendo cargado!</p>
-                </div>
+                <LoadingWash />
             </>
         )
     }
@@ -75,6 +73,7 @@ const RopaParaElla = () => {
         <div>
             <h1 className={`ropaElla_h1 ${jost}`}>Ropa para ella</h1>
             <div className="grid grid-cols-1 sm:grid md:grid-cols-4 ropaElla_cardElla">
+
                 {productosMujer.map((card, index) => (
                     <Card 
                         key={card.id}
