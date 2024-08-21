@@ -46,7 +46,6 @@ function FormRegistro() {
     }
 
     const handleSubmit = async (e) => {
-        console.log(values)
         e.preventDefault()
         try {
             // Usuario agregado exitosamente
