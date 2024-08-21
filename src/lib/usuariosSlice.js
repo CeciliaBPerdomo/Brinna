@@ -1,3 +1,4 @@
+//usuariosSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { doc, setDoc, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../app/firebase/config';
@@ -39,6 +40,31 @@ export const agregarUsuario = createAsyncThunk(
   }
 );
 
+// Acción asíncrona para iniciar sesión (simulada en este caso)
+export const loginUsuario = createAsyncThunk(
+  'usuarios/loginUsuario',
+  async (values, { rejectWithValue }) => {
+    try {
+      // Aquí deberías validar las credenciales y obtener el token real si estás trabajando con un backend real
+      // Simulación de token
+      const token = 'user-token'; // Simular un token
+      const expirationTime = new Date().getTime() + 60 * 60 * 1000; // 1 hora en milisegundos
+      
+      // Guardar el token y marca de tiempo en localStorage
+      localStorage.setItem('authToken', token);
+      localStorage.setItem('tokenExpiration', expirationTime);
+      
+      // Simular la recuperación del usuario
+      const user = { usuario: values.usuario, email: values.email }; // Simular un usuario  
+      localStorage.setItem('currentUser', JSON.stringify(user));
+
+      return { user, token, expirationTime };
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 // Crear el slice de usuarios
 const usuariosSlice = createSlice({
   name: 'usuarios',
@@ -46,8 +72,18 @@ const usuariosSlice = createSlice({
     items: [],
     loading: false,
     error: null,
+    currentUser: null, // Para guardar el usuario autenticado
   },
-  reducers: {},
+  reducers: {
+    setCurrentUser: (state, action) => {
+      state.currentUser = action.payload;
+    },
+    logout: (state) => {
+      state.currentUser = null;
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('tokenExpiration');
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(agregarUsuario.pending, (state) => {
@@ -65,4 +101,5 @@ const usuariosSlice = createSlice({
   },
 });
 
+export const { setCurrentUser, logout } = usuariosSlice.actions;
 export default usuariosSlice.reducer;
