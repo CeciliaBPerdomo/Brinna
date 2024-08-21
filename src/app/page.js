@@ -1,3 +1,4 @@
+//page.js de la carpeta app
 import Barra from "@/components/LandingPage/Busqueda/barraBusqueda";
 import Catalago from "@/components/LandingPage/Catalogos/catalogos";
 import ComprarVender from "@/components/LandingPage/ComprarVender/ComprarVender";

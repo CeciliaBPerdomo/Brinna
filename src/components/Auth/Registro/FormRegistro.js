@@ -1,10 +1,11 @@
 "use client"
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
 
 //Redux
 import { useDispatch } from 'react-redux';
-import { agregarUsuario } from '../../../lib/usuariosSlice';
+import { agregarUsuario, loginUsuario } from '../../../lib/usuariosSlice';
 
 //CSS 
 import "../Registro/formRegistro.css"
@@ -25,6 +26,7 @@ const ya_jost = Jost({
 
 
 function FormRegistro() {
+    const router = useRouter();
     const dispatch = useDispatch();
     // Para guardar la info
     const initialValues = {
@@ -38,7 +40,7 @@ function FormRegistro() {
     const [values, setValues] = useState(initialValues)
 
     const handleChange = (e) => {
-        const { name, value, files } = e.target;
+        const { name, value } = e.target;
         setValues({
             ...values,
             [name]: value
@@ -50,11 +52,18 @@ function FormRegistro() {
         try {
             // Usuario agregado exitosamente
             await dispatch(agregarUsuario(values)).unwrap();
-            console.log("Usuario creado")
-          } catch (error) {
+            console.info("Usuario creado exitosamente")
+
+            // Disparar la acción de inicio de sesión
+            await dispatch(loginUsuario(values)).unwrap();
+            console.info("Usuario logueado exitosamente");
+
+            setValues(initialValues)
+            router.push('/')
+        } catch (error) {
             console.error("Error al agregar usuario:", error);
             //alert(error); // Mostrar el error al usuario
-          }
+        }
     }
 
     return (
@@ -67,7 +76,7 @@ function FormRegistro() {
                             fill
                             alt='Registro'
                             className='formulario_registro_imagen'
-                            style={{ objectFit: 'cover' }} 
+                            style={{ objectFit: 'cover' }}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             priority
                         />

@@ -1,5 +1,9 @@
+"use client"
 import React from "react";
 import { HeartIcon, ShoppingCartIcon, MailIcon, UserCircleIcon } from '@heroicons/react/solid';
+
+// Redux
+import { useSelector } from "react-redux";
 
 //CSS
 import "../Catalogos/menuOpciones.css"
@@ -14,9 +18,13 @@ const jost = Jost({
 
 
 const MenuOpciones = () => {
+    // Acceder al estado de autenticación desde Redux
+    const currentUser = useSelector((state) => state.usuarios.currentUser);
     return (
         <div className="menuopciones_catalogo">
-            <p className={`holaNoelia ${jost}`}>¡Hola, Noelia!</p>
+            <p className={`holaNoelia ${jost}`}>
+                ¡Hola {currentUser.usuario}!
+            </p>
 
             <div>
                 <div className="menuopciones_catalogo_iconos">
