@@ -10,6 +10,10 @@ import { agregarUsuario, loginUsuario } from '../../../lib/usuariosSlice';
 //CSS 
 import "../Registro/formRegistro.css"
 
+// Alerts
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 // Fuente
 import { Jost } from "next/font/google"
 
@@ -22,6 +26,7 @@ const ya_jost = Jost({
     weight: "500",
     subsets: ['latin'],
 })
+
 
 
 
@@ -50,26 +55,100 @@ function FormRegistro() {
         });
     }
 
+    // Chequea que se ingresen los datos
+    const handleChequeo = () => {
+        function tostada(mensaje) {
+            toast.error(mensaje, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+            });
+        }
+
+        // Verificar si los campos están completos
+        if (!values.email) {
+            setLoading(false);
+            tostada("Por favor ingresa tu correo electrónico.")
+            return false
+        }
+
+        if (!values.nombre) {
+            setLoading(false);
+            tostada("Por favor ingresa tu nombre completo.")
+            return false
+        }
+
+        if (!values.celular) {
+            setLoading(false);
+            tostada("Por favor ingresa tu celular.")
+            return false
+        }
+
+        if (!values.usuario) {
+            setLoading(false);
+            tostada("Por favor ingresa tu nombre de usuario.")
+            return false
+        }
+
+        if (!values.password) {
+            setLoading(false);
+            tostada("Por favor ingresa tu contraseña.")
+            return false
+        }
+
+        // Verificar que la contraseña tenga al menos 6 caracteres
+        if (values.password.length < 6) {
+            setLoading(false);
+            tostada("La contraseña debe tener al menos 6 caracteres.")
+            return false
+        }
+
+        return true
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true);  // Activar el loader
+        let resp = handleChequeo()
+
         try {
-            // Usuario agregado exitosamente
-            await dispatch(agregarUsuario(values)).unwrap();
-            console.info("Usuario creado exitosamente")
+            if (resp) {
+                // Agregar usuario
+                await dispatch(agregarUsuario(values)).unwrap();
+                console.info("Usuario creado exitosamente")
 
-            // Disparar la acción de inicio de sesión
-            await dispatch(loginUsuario(values)).unwrap();
-            console.info("Usuario logueado exitosamente");
+                // Disparar la acción de inicio de sesión
+                await dispatch(loginUsuario(values)).unwrap();
+                console.info("Usuario logueado exitosamente");
 
-            setValues(initialValues)
-            setLoading(false);  
-            router.push('/')
+                setValues(initialValues)
+                setLoading(false);
+                router.push('/')
+            }
         } catch (error) {
-            console.error("Error al agregar usuario:", error);
-            //alert(error); // Mostrar el error al usuario
+            setLoading(false);
+
+            // Mensaje de error
+            toast.error(error, {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+            });
         }
     }
+
 
     return (
         <div>
@@ -191,12 +270,14 @@ function FormRegistro() {
             </div>
 
             {loading && (
-            <div className="loader-overlay">
-                <div className="loader"></div>
-            </div>
-        )}
+                <div className="loader-overlay">
+                    <div className="loader"></div>
+                </div>
+            )}
 
+            <ToastContainer />
         </div>
+
     )
 }
 

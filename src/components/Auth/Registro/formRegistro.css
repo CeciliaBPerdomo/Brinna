@@ -161,6 +161,17 @@
     border: 1px solid #000;
 }
 
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {}
