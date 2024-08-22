@@ -28,6 +28,9 @@ const ya_jost = Jost({
 function FormRegistro() {
     const router = useRouter();
     const dispatch = useDispatch();
+
+    const [loading, setLoading] = useState(false);
+
     // Para guardar la info
     const initialValues = {
         email: "",
@@ -49,6 +52,7 @@ function FormRegistro() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setLoading(true);  // Activar el loader
         try {
             // Usuario agregado exitosamente
             await dispatch(agregarUsuario(values)).unwrap();
@@ -59,6 +63,7 @@ function FormRegistro() {
             console.info("Usuario logueado exitosamente");
 
             setValues(initialValues)
+            setLoading(false);  
             router.push('/')
         } catch (error) {
             console.error("Error al agregar usuario:", error);
@@ -184,6 +189,13 @@ function FormRegistro() {
                     </div>
                 </div>
             </div>
+
+            {loading && (
+            <div className="loader-overlay">
+                <div className="loader"></div>
+            </div>
+        )}
+
         </div>
     )
 }
