@@ -22,9 +22,13 @@ const MenuOpciones = () => {
     const currentUser = useSelector((state) => state.usuarios.currentUser);
     return (
         <div className="menuopciones_catalogo">
-            <p className={`holaNoelia ${jost}`}>
-                ¡Hola {currentUser.usuario}!
-            </p>
+            {currentUser ? (
+                <p className={`holaNoelia ${jost.className}`}>
+                    ¡Hola {currentUser.usuario}!
+                </p>
+            ) :
+                null
+            }
 
             <div>
                 <div className="menuopciones_catalogo_iconos">
