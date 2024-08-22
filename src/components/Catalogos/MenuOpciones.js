@@ -24,12 +24,15 @@ const MenuOpciones = () => {
     const currentUser = useSelector((state) => state.usuarios.currentUser);
 
     useEffect(() => {
-        // Recuperar el usuario desde localStorage cuando el componente se monte
-        const storedUser = localStorage.getItem('currentUser');
-        if (storedUser) {
-            dispatch(setCurrentUser(JSON.parse(storedUser)));
+        if (typeof window !== 'undefined') {
+            // Solo se ejecuta en el cliente
+            const storedUser = localStorage.getItem('currentUser');
+            console.log('Stored user from localStorage:', storedUser);
+            if (storedUser) {
+                dispatch(setCurrentUser(JSON.parse(storedUser)));
+            }
         }
-    }, [dispatch]);
+    });
 
 
     return (

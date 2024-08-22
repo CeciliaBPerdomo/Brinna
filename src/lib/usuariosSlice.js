@@ -107,7 +107,7 @@ const usuariosSlice = createSlice({
     items: [],
     loading: false,
     error: null,
-    currentUser: JSON.parse(localStorage.getItem('currentUser')) || null, // Para guardar el usuario autenticado
+    currentUser:  null, // Para guardar el usuario autenticado
   },
   reducers: {
     setCurrentUser: (state, action) => {
