@@ -34,7 +34,7 @@ function FormRegistro() {
         nombre: "",
         celular: "",
         usuario: "",
-        clave: ""
+        password: ""
     }
 
     const [values, setValues] = useState(initialValues)
@@ -144,8 +144,8 @@ function FormRegistro() {
                                     className="shadow appearance-none border focus:outline-none focus:shadow-outline registro_inputs"
                                     type="password"
                                     placeholder="Contraseña"
-                                    name="clave"
-                                    value={values.clave}
+                                    name="password"
+                                    value={values.password}
                                     onChange={handleChange}
                                 />
                             </div>
