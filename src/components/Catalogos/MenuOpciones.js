@@ -1,9 +1,10 @@
 "use client"
-import React from "react";
+import React, {useEffect} from "react";
 import { HeartIcon, ShoppingCartIcon, MailIcon, UserCircleIcon } from '@heroicons/react/solid';
 
 // Redux
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentUser } from '../../lib/usuariosSlice';
 
 //CSS
 import "../Catalogos/menuOpciones.css"
@@ -18,8 +19,19 @@ const jost = Jost({
 
 
 const MenuOpciones = () => {
+    const dispatch = useDispatch();
     // Acceder al estado de autenticación desde Redux
     const currentUser = useSelector((state) => state.usuarios.currentUser);
+
+    useEffect(() => {
+        // Recuperar el usuario desde localStorage cuando el componente se monte
+        const storedUser = localStorage.getItem('currentUser');
+        if (storedUser) {
+            dispatch(setCurrentUser(JSON.parse(storedUser)));
+        }
+    }, [dispatch]);
+
+
     return (
         <div className="menuopciones_catalogo">
             {currentUser ? (
