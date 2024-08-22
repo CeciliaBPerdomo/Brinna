@@ -23,16 +23,16 @@ const MenuOpciones = () => {
     // Acceder al estado de autenticación desde Redux
     const currentUser = useSelector((state) => state.usuarios.currentUser);
 
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            // Solo se ejecuta en el cliente
-            const storedUser = localStorage.getItem('currentUser');
-            console.log('Stored user from localStorage:', storedUser);
-            if (storedUser) {
-                dispatch(setCurrentUser(JSON.parse(storedUser)));
-            }
-        }
-    });
+    // useEffect(() => {
+    //     if (typeof window !== 'undefined') {
+    //         // Solo se ejecuta en el cliente
+    //         const storedUser = localStorage.getItem('currentUser');
+    //         console.log('Stored user from localStorage:', storedUser);
+    //         if (storedUser) {
+    //             dispatch(setCurrentUser(JSON.parse(storedUser)));
+    //         }
+    //     }
+    // });
 
 
     return (

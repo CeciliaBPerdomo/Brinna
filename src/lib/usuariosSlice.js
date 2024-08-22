@@ -89,7 +89,7 @@ export const loginUsuario = createAsyncThunk(
       localStorage.setItem('authToken', token);
       localStorage.setItem('tokenExpiration', expirationTime);
       
-      // Recuperación del usuario
+      // Simular la recuperación del usuario
       const user = { usuario: userData.usuario, email: userData.email };
       localStorage.setItem('currentUser', JSON.stringify(user));
 
@@ -107,7 +107,7 @@ const usuariosSlice = createSlice({
     items: [],
     loading: false,
     error: null,
-    currentUser:  null, // Para guardar el usuario autenticado
+    currentUser: null, // Para guardar el usuario autenticado
   },
   reducers: {
     setCurrentUser: (state, action) => {
@@ -117,7 +117,7 @@ const usuariosSlice = createSlice({
       state.currentUser = null;
       localStorage.removeItem('authToken');
       localStorage.removeItem('tokenExpiration');
-      localStorage.removeItem('currentUser');
+      localStorage.removeItem('currentUser')
     },
   },
   extraReducers: (builder) => {
