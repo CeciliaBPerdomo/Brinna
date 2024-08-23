@@ -1,4 +1,5 @@
-.div_formulario_registro_principal {
+/* principal */
+.div_formulario_iniciosesion_principal {
     width: 960px;
     height: 680px;
     border-radius: 100px;
@@ -9,51 +10,59 @@
     backdrop-filter: blur(10px);
 }
 
-.div_formulario_registro_imagen {
+.div_formulario_iniciosesion_imagen {
     width: 425px;
     height: 680px;
     position: relative;
 }
 
-.formulario_registro_imagen {
+.formulario_iniciosesion_imagen {
     border-radius: 100px 0px 0px 100px;
 }
 
-.div_formulario_registro {
-    width: 425px;
+.div_iniciosesion_registro {
+    width: 618px;
     height: 680px;
 }
 
-/* -------------------------------------------------------- */
-/* Tipografia */
+/* ------------------------------------------------------------------ */
+/* Titulos */
 
-.crea_tu_cuenta {
+.iniciar_sesion {
     color: #CA4E3C;
     font-size: 28px;
     font-style: normal;
     line-height: 40px;
-    padding-top: 32px;
-    padding-left: 37.5px;
+    padding-top: 92px;
+    padding-left: 32px;
 }
 
-
-.completa_tus_datos {
+.completa_tus_datos_sesion {
     color: #5D717C;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     line-height: 40px;
-    padding-left: 37.5px;
+    padding-left: 32px;
+}
+
+.olvidaste_contra {
+    color: #000;
+    text-align: right;
+    padding-right: 62px;
+    font-size: 13px;
+    font-style: normal;
+    line-height: normal;
 }
 
 /* -------------------------------------------------------- */
 /* Inputs */
 
-.formulario_registro_inputs {
-    padding-left: 37.5px;
-    padding-top: 20px;
+.formulario_iniciarsesion_inputs {
+    padding-left: 32px;
+    padding-top: 32px;
 }
 
-.registro_inputs {
+.iniciosesion_inputs {
     display: flex;
     width: 443px;
     height: 50px;
@@ -67,36 +76,43 @@
     margin-bottom: 15px;
 }
 
-/* -------------------------------------------------------- */
-/* Botones */
-
-.botonGuardar_crearcuenta {
-    border-radius: 100px;
-    background: #CA4E3C;
-    width: 185px;
-    height: 54px;
-    padding: 10px 40px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.div_botonGuardar_crearcuenta {
-    display: flex;
-    padding-top: 5px;
-}
-
-.ya_tengo_cuenta {
-    padding-left: 37.5px;
+.no_tengo_cuenta {
+    /* padding-left: 32px; */
     color: #5D717C;
     font-size: 16px;
     font-style: normal;
     line-height: 40px;
 }
 
+.ingresar_o {
+color: #888;
+text-align: center;
+font-size: 16px;
+font-style: normal;
+line-height: 40px;
+}
+
+/* -------------------------------------------------------- */
+/* Botones */ 
+
+.div_botonGuardar_ingresar {
+    border-radius: 100px;
+    background: #CA4E3C;
+    width: 185px;
+    height: 54px;
+    gap: 10px;
+    margin-top: 28px;
+    margin-left: -32px;
+}
+
+.botonGuardar_ingresar {
+    padding-top: 5px;
+}
+
 /* -------------------------------------------------------- */
 /* Google */
-.boton_crear_cuenta_con_google {
+
+.boton_iniciarsesion_con_google{
     display: flex;
     width: 309px;
     height: 54px;
@@ -111,21 +127,20 @@
     background: #FFF;
 }
 
-.texto_crea_cuenta_google {
+.div_iniciar_con_google {
+    padding-top: 23px;
+}
+
+.icono_google_iniciarsesion {
+    width: 29px;
+    height: 33px;
+}
+
+.texto_iniciarsesion_google {
     color: #5D717C;
     font-size: 16px;
     font-style: normal;
     line-height: 40px;
-}
-
-.div_crear_cuenta_con_google {
-    padding-left: 37.5px;
-    padding-top: 23px;
-}
-
-.icono_google_crearcuenta {
-    width: 29px;
-    height: 33px;
 }
 
 /* -------------------------------------------------------- */
@@ -143,7 +158,6 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
-    /* Superponer sobre el formulario */
 }
 
 .loader {
@@ -167,6 +181,7 @@
     transform-origin: 60px 180px;
     border: 1px solid #000;
 }
+
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {}

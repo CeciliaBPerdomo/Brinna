@@ -55,22 +55,22 @@ function FormRegistro() {
         });
     }
 
+    function tostada(mensaje) {
+        toast.error(mensaje, {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+        });
+    }
+
     // Chequea que se ingresen los datos
     const handleChequeo = () => {
-        function tostada(mensaje) {
-            toast.error(mensaje, {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-                transition: Bounce,
-            });
-        }
-
         // Verificar si los campos están completos
         if (!values.email) {
             setLoading(false);
@@ -121,11 +121,9 @@ function FormRegistro() {
             if (resp) {
                 // Agregar usuario
                 await dispatch(agregarUsuario(values)).unwrap();
-                console.info("Usuario creado exitosamente")
 
                 // Disparar la acción de inicio de sesión
                 await dispatch(loginUsuario(values)).unwrap();
-                console.info("Usuario logueado exitosamente");
 
                 setValues(initialValues)
                 setLoading(false);
@@ -133,19 +131,8 @@ function FormRegistro() {
             }
         } catch (error) {
             setLoading(false);
-
             // Mensaje de error
-            toast.error(error, {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "dark",
-                transition: Bounce,
-            });
+            tostada(error)
         }
     }
 
