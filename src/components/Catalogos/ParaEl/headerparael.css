@@ -6,6 +6,18 @@
     background-repeat: no-repeat;
 }
 
+/* Div principal */
+.barraBotones_menuBotones {
+    padding-top: 25px;
+    margin-right: 100px;
+}
+
+.botonera_menuBotones {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+}
+
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {
     .principal_catalago_el {

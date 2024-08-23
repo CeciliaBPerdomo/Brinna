@@ -1,9 +1,20 @@
 .principal_catalogo_chicos {
     width: 100%;
     height: 546px;
-    flex-shrink: 0;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+/* Div principal */
+.barraBotones_menuBotones {
+    padding-top: 25px;
+    margin-right: 100px;
+}
+
+.botonera_menuBotones {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;
 }
 
 /* Para dispositivos móviles */

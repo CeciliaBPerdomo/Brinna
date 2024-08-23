@@ -15,8 +15,11 @@ const HeaderParaElla = () => {
                 <div className="bg-bannerella bannerella_principal">
 
                     {/* Menu de opciones */}
-                    <MenuOpciones />
-
+                    <div className="barraBotones_menuBotones">
+                        <div className="botonera_menuBotones">
+                            <MenuOpciones />
+                        </div>
+                    </div>
                     {/* Menu de navegacion */}
                     <MenuCatalogos />
 
