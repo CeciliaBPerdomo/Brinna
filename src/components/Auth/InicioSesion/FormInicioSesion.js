@@ -16,6 +16,7 @@ import "../InicioSesion/formInicioSesion.css"
 
 // Fuente
 import { Jost } from "next/font/google"
+import Link from 'next/link';
 
 const jost = Jost({
     weight: "600",
@@ -177,7 +178,9 @@ function FormInicioSesion() {
                         </form>
 
                         <div className='flex items-center justify-center'>
-                            <p className={`no_tengo_cuenta ${ya_jost}`}>Aún no tengo cuenta.</p>
+                            <Link href="/admin/Registro">
+                                <p className={`no_tengo_cuenta ${ya_jost}`}>Aún no tengo cuenta.</p>
+                            </Link>
                         </div>
 
                         <div className='flex items-center justify-center'>

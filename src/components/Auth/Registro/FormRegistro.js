@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 //Redux
 import { useDispatch } from 'react-redux';
@@ -234,7 +235,9 @@ function FormRegistro() {
                         </form>
 
                         <div className='flex items-center justify-center'>
+                            <Link href="/admin/IniciarSesion">
                             <p className={`ya_tengo_cuenta ${ya_jost}`}>Ya tengo una cuenta.</p>
+                            </Link>
                         </div>
 
                         <div className='flex items-center justify-center div_crear_cuenta_con_google'>

@@ -1,35 +1,46 @@
 /* Saludo */
 .menuopciones_catalogo {
-    padding-top: 24px;
-    padding-right: 85px;
+    padding-right: 10px;
     display: flex;
     flex-direction: column;
     justify-content: left;
-    flex-shrink: 0;
 }
 
 .holaNoelia {
     color: #FFF;
     text-align: right;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     line-height: normal;
-    padding-right: 21px;
+    padding-bottom: 15px;
 }
 
 /* Iconos */
 .menuopciones_catalogo_iconos {
-    padding-top: 10px;
     display: flex;
-    flex-direction: row;
-    justify-content: right;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 }
 
 .iconos_menuopciones {
-    padding-right: 25px;
     width: 65px;
     color: white;
 }
+
+.icono_corazon_menuopciones .icono_mensajes_menuopciones .icono_cart_menuopciones {
+    width: 31px;
+    height: 28px;
+}
+
+.foto_perfil_menuopciones {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    border: 2px solid #FFF;
+}
+
+
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {}
@@ -52,13 +63,6 @@
     .menuopciones_catalogo_iconos {
         padding-top: 10px;
     }
-
-    .iconos_menuopciones {
-        padding-right: 10px;
-        width: 30px;
-        color: white;
-    }
-
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */

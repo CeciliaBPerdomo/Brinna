@@ -14,10 +14,14 @@ const HeaderParaChicos = () => {
             <header className="bg-bannerchicos principal_catalogo_chicos">
 
                 {/* Menu de opciones */}
-                <MenuOpciones />
+                <div className="barraBotones_menuBotones">
+                    <div className="botonera_menuBotones">
+                        <MenuOpciones />
+                    </div>
+                </div>
 
                 {/* Menu de navegacion */}
-                <MenuCatalogos/>
+                <MenuCatalogos />
 
                 {/* Logo de whataspp */}
                 <LogoWhatsappCatalogos />

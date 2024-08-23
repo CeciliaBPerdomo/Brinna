@@ -10,18 +10,22 @@ import LogoWhatsappCatalogos from "../LogoWhatsApp";
 
 const HeaderParaEl = () => {
     return (
-        <> 
-        <header className="bg-bannerel principal_catalago_el">
+        <>
+            <header className="bg-bannerel principal_catalago_el">
 
-            {/* Menu de opciones */}
-            <MenuOpciones />
+                {/* Menu de opciones */}
+                <div className="barraBotones_menuBotones">
+                    <div className="botonera_menuBotones">
+                        <MenuOpciones />
+                    </div>
+                </div>
 
-            {/* Menu */}
-            <MenuCatalogos />
+                {/* Menu */}
+                <MenuCatalogos />
 
-            {/* WhatsApp */}
-            <LogoWhatsappCatalogos />
-        </header>
+                {/* WhatsApp */}
+                <LogoWhatsappCatalogos />
+            </header>
         </>
     )
 }
