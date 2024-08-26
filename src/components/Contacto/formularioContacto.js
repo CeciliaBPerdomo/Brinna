@@ -7,6 +7,7 @@ import "./formularioContacto.css"
 // Envio de mails
 import emailjs from '@emailjs/browser';
 
+// Alertas
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -44,7 +45,7 @@ function FormularioContacto() {
         });
     }
 
-    // Envio de mail de registro / bienvenida
+    // Envio de mail de contacto
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -106,7 +107,7 @@ function FormularioContacto() {
         return true
     }
 
-
+    // Envio de info
     const handleSubmit = async (e) => {
         e.preventDefault()
         let resp = handleChequeo()

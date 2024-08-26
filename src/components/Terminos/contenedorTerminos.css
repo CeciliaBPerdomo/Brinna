@@ -11,6 +11,23 @@
     padding-bottom: 35px;
 }
 
+.contenedor_texto_terminos{
+    display: flex;
+    height: 599px;
+    flex-direction: column;
+    padding-left: 101px;
+    padding-right: 70px;
+}
+
+.texto_contenedor_terminos {
+    color: #5D717C;
+    text-align: justify;
+    font-size: 23px;
+    font-style: normal;
+    line-height: 40px;
+    padding-bottom: 15px;
+}
+
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {}
