@@ -122,7 +122,7 @@ function FormRegistro() {
         const emailParams = {
             nombre: values.nombre,
             email: values.email,
-            subject: `Bienvenida ${values.usuario}a Brinna!!`
+            subject: `Bienvenida ${values.usuario} a Brinna!!`
         };
 
         emailjs
