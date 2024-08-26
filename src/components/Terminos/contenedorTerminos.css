@@ -13,7 +13,7 @@
 
 .contenedor_texto_terminos{
     display: flex;
-    height: 599px;
+    height: 1350px;
     flex-direction: column;
     padding-left: 101px;
     padding-right: 70px;
@@ -22,9 +22,9 @@
 .texto_contenedor_terminos {
     color: #5D717C;
     text-align: justify;
-    font-size: 23px;
+    font-size: 20px;
     font-style: normal;
-    line-height: 40px;
+    line-height: 25px;
     padding-bottom: 15px;
 }
 
