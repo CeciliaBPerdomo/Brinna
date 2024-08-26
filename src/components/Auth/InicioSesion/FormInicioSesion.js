@@ -73,6 +73,7 @@ function FormInicioSesion() {
         return true
     }
 
+    // Mensaje de error
     function tostada(mensaje) {
         toast.error(mensaje, {
             position: "top-center",
@@ -95,8 +96,7 @@ function FormInicioSesion() {
         try {
             if (resp) {
                 // Disparar la acción de inicio de sesión
-                await dispatch(loginUsuario(values)).unwrap();
-                console.info("Usuario logueado exitosamente");
+                const userLoggedIn = await dispatch(loginUsuario(values)).unwrap();
 
                 setValues(initialValues)
                 setLoading(false);
@@ -124,7 +124,6 @@ function FormInicioSesion() {
                             priority
                         />
                     </div>
-
 
                     <div className="w-1/2 p-6 div_iniciosesion_registro">
                         <h2 className={`iniciar_sesion ${jost}`}>Iniciar sesión</h2>
@@ -168,8 +167,8 @@ function FormInicioSesion() {
                                     <button
                                         className="text-white font-bold py-2 px-4 rounded focus:outline-none 
                                     focus:shadow-outline botonGuardar_ingresar"
-                                        type="button"
-                                        onClick={(e) => handleSubmit(e)}
+                                        type="submit"
+                                        // onClick={(e) => handleSubmit(e)}
                                     >
                                         Ingresar
                                     </button>

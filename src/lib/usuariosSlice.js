@@ -9,7 +9,6 @@ import { db } from '../app/firebase/config';
 // Encriptacion de contraseña 
 import bcrypt from 'bcryptjs';
 
-
 // Thunk para agregar un usuario con ID secuencial y verificación de email
 export const agregarUsuario = createAsyncThunk(
   'usuarios/agregarUsuario',
@@ -89,9 +88,10 @@ export const loginUsuario = createAsyncThunk(
       localStorage.setItem('authToken', token);
       localStorage.setItem('tokenExpiration', expirationTime);
 
-      // Simular la recuperación del usuario
+      // Recuperación del usuario
       const user = { usuario: userData.usuario, email: userData.email };
       localStorage.setItem('currentUser', JSON.stringify(user));
+      setCurrentUser(user)
 
       return { user, token, expirationTime };
     } catch (error) {

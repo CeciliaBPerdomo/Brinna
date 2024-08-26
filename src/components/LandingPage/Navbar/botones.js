@@ -1,9 +1,11 @@
 "use client"
 {/* Registro e inicio de sesion */ }
+import { useEffect } from "react";
 import Link from "next/link"
 
 //Redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setCurrentUser } from "@/lib/usuariosSlice";
 
 // CSS
 import "../Navbar/botones.css"
@@ -19,8 +21,18 @@ const jost = Jost({
 })
 
 const BotonesSesion = () => {
+    const dispatch = useDispatch()
     // Acceder al estado de autenticación desde Redux
     const currentUser = useSelector((state) => state.usuarios.currentUser);
+
+    useEffect(() => {
+        const savedUser = localStorage.getItem('currentUser');
+        if (savedUser) {
+            console.log(savedUser)
+            dispatch(setCurrentUser(JSON.parse(savedUser)));
+        }
+    }, [dispatch]);
+    
 
     return (
         <div className='barraBotones_menuHeaderHome'>
