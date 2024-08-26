@@ -12,7 +12,11 @@ function HeaderComprar() {
     return (
         <div className="bg-bannercomocomprar bannerComoComprar_header">
             {/* Menu de opciones */}
-            <MenuOpciones />
+            <div className="barraBotones_menuBotones_comprar">
+                <div className="botonera_menuBotones_comprar">
+                    <MenuOpciones />
+                </div>
+            </div>
 
             {/* Menu de navegacion */}
             <MenuCatalogos />

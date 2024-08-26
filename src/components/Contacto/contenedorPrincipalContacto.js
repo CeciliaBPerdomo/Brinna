@@ -23,7 +23,7 @@ function ContenedorPrincipalContacto() {
     <div>
         <h1 className={`contacto_h1 ${jost}`}>Contáctanos</h1>
         <p className={`contacto_p ${jost_p}`}>Si tienes alguna consulta no dudes en ponerte en contacto con nosotros vía teléfono al 099 000 000
-        o por correo electrónico brinnaropadesegundamano@gmail.com</p>
+        o por correo electrónico a brinnaropadesegundamano@gmail.com</p>
         <h1 className={`contacto_h1 ${jost}`}>Envíanos un mensaje</h1>
 
         <FormularioContacto />
