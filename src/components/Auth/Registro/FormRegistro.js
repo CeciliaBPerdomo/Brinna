@@ -59,6 +59,7 @@ function FormRegistro() {
         });
     }
 
+    // Manejo de errores
     function tostada(mensaje) {
         toast.error(mensaje, {
             position: "top-center",
@@ -116,6 +117,7 @@ function FormRegistro() {
         return true
     }
 
+    // Envio de mail de registro / bienvenida
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -133,7 +135,6 @@ function FormRegistro() {
                 process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
             )
     };
-
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -161,7 +162,6 @@ function FormRegistro() {
             tostada(error)
         }
     }
-
 
     return (
         <div>
