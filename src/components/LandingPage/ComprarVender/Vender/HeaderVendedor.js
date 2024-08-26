@@ -12,7 +12,11 @@ function HeaderVendedor() {
   return (
     <div className='bg-bannercomovender'>
             {/* Menu de opciones */}
-            <MenuOpciones />
+            <div className="barraBotones_menuBotones_vender">
+                <div className="botonera_menuBotones_vender">
+                    <MenuOpciones />
+                </div>
+            </div>
 
             {/* Menu de navegacion */}
             <MenuCatalogos />

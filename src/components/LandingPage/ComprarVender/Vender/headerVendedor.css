@@ -6,6 +6,18 @@
     height: 546px;
 }
 
+/* Div principal */
+.barraBotones_menuBotones_vender {
+    padding-top: 25px;
+    margin-right: 100px;
+}
+
+.botonera_menuBotones_vender {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+}
+
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {
