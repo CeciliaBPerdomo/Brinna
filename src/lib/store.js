@@ -1,5 +1,6 @@
 // store.js
 import { configureStore } from '@reduxjs/toolkit';
+
 import productosReducer from './productosSlice';
 import usuariosReducer from './usuariosSlice'
 

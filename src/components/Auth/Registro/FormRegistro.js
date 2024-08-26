@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -7,6 +7,9 @@ import Link from 'next/link';
 //Redux
 import { useDispatch } from 'react-redux';
 import { agregarUsuario, loginUsuario } from '../../../lib/usuariosSlice';
+
+// Envio de mails
+import emailjs from '@emailjs/browser';
 
 //CSS 
 import "../Registro/formRegistro.css"
@@ -29,11 +32,11 @@ const ya_jost = Jost({
 })
 
 
-
-
 function FormRegistro() {
     const router = useRouter();
     const dispatch = useDispatch();
+
+    const form = useRef()
 
     const [loading, setLoading] = useState(false);
 
@@ -113,6 +116,25 @@ function FormRegistro() {
         return true
     }
 
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        const emailParams = {
+            nombre: values.nombre,
+            email: values.email,
+            subject: `Bienvenida ${values.usuario}a Brinna!!`
+        };
+
+        emailjs
+            .send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+                emailParams,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+            )
+    };
+
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true);  // Activar el loader
@@ -122,6 +144,8 @@ function FormRegistro() {
             if (resp) {
                 // Agregar usuario
                 await dispatch(agregarUsuario(values)).unwrap();
+
+                sendEmail(e)
 
                 // Disparar la acción de inicio de sesión
                 await dispatch(loginUsuario(values)).unwrap();
@@ -133,6 +157,7 @@ function FormRegistro() {
         } catch (error) {
             setLoading(false);
             // Mensaje de error
+            console.log(error)
             tostada(error)
         }
     }
@@ -161,6 +186,7 @@ function FormRegistro() {
                         <form
                             className='formulario_registro_inputs'
                             onSubmit={handleSubmit}
+                            ref={form}
                         >
                             {/* Email */}
                             <div className="flex items-center">
@@ -236,7 +262,7 @@ function FormRegistro() {
 
                         <div className='flex items-center justify-center'>
                             <Link href="/admin/IniciarSesion">
-                            <p className={`ya_tengo_cuenta ${ya_jost}`}>Ya tengo una cuenta.</p>
+                                <p className={`ya_tengo_cuenta ${ya_jost}`}>Ya tengo una cuenta.</p>
                             </Link>
                         </div>
 
@@ -267,7 +293,6 @@ function FormRegistro() {
 
             <ToastContainer />
         </div>
-
     )
 }
 

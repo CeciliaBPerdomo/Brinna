@@ -1,5 +1,4 @@
 //usuariosSlice.js
-
 // Redux
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
@@ -9,6 +8,7 @@ import { db } from '../app/firebase/config';
 
 // Encriptacion de contraseña 
 import bcrypt from 'bcryptjs';
+
 
 // Thunk para agregar un usuario con ID secuencial y verificación de email
 export const agregarUsuario = createAsyncThunk(
@@ -40,12 +40,12 @@ export const agregarUsuario = createAsyncThunk(
       const existingUsers = querySnapshotCantidad.docs.map((doc) => doc.data());
       const nextId = existingUsers.length + 1;
 
-        // Guardar el usuario con la contraseña encriptada
-        const userWithId = { 
-          ...values, 
-          id: nextId, // Agregar el ID al objeto del usuario
-          password: hashedPassword // Guardar la contraseña encriptada
-        };
+      // Guardar el usuario con la contraseña encriptada
+      const userWithId = {
+        ...values,
+        id: nextId, // Agregar el ID al objeto del usuario
+        password: hashedPassword // Guardar la contraseña encriptada
+      };
 
       const docRef = doc(db, "usuarios", String(nextId)); // Usa el ID como la clave del documento
       await setDoc(docRef, userWithId);
@@ -84,11 +84,11 @@ export const loginUsuario = createAsyncThunk(
       // Simulación de token
       const token = 'user-token'; // Simular un token
       const expirationTime = new Date().getTime() + 60 * 60 * 1000; // 1 hora en milisegundos
-      
+
       // Guardar el token y marca de tiempo en localStorage
       localStorage.setItem('authToken', token);
       localStorage.setItem('tokenExpiration', expirationTime);
-      
+
       // Simular la recuperación del usuario
       const user = { usuario: userData.usuario, email: userData.email };
       localStorage.setItem('currentUser', JSON.stringify(user));
@@ -99,6 +99,8 @@ export const loginUsuario = createAsyncThunk(
     }
   }
 );
+
+
 
 // Crear el slice de usuarios
 const usuariosSlice = createSlice({
@@ -122,6 +124,8 @@ const usuariosSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+    
+      // Agregar usuario
       .addCase(agregarUsuario.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -133,7 +137,7 @@ const usuariosSlice = createSlice({
       .addCase(agregarUsuario.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-      });
+      })
   },
 });
 
