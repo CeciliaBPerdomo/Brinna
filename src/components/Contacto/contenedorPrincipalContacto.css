@@ -1,0 +1,28 @@
+.contacto_h1 {
+    color: #CA4E3C;
+    font-size: 28px;
+    font-style: normal;
+    line-height: 40px;
+    padding-left: 100px;
+    padding-top: 65px;
+}
+
+.contacto_p {
+    width: 90%;
+    color: #5D717C;
+    text-align: justify;
+    font-size: 23px;
+    font-style: normal;
+    line-height: 40px;
+    padding-left: 100px;
+    padding-top: 21px;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {}
