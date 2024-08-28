@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 //Redux
 import { useDispatch } from 'react-redux';
-import { agregarUsuario, loginUsuario } from '../../../lib/usuariosSlice';
+import { agregarUsuario, loginUsuario, loginWithGoogle } from '../../../lib/usuariosSlice';
 
 // Envio de mails
 import emailjs from '@emailjs/browser';
@@ -17,10 +17,6 @@ import "../Registro/formRegistro.css"
 // Alerts
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-
-import { auth, provider } from '../../../app/firebase/config'; // Importa la configuración de Firebase
-import { signInWithPopup } from "firebase/auth";  // Importa la función para iniciar sesión con Google
 
 // Fuente
 import { Jost } from "next/font/google"
@@ -122,14 +118,8 @@ function FormRegistro() {
     }
 
     // Envio de mail de registro / bienvenida
-    const sendEmail = (e) => {
+    const sendEmail = (e, emailParams) => {
         e.preventDefault();
-
-        const emailParams = {
-            nombre: values.nombre,
-            email: values.email,
-            subject: `Bienvenida ${values.usuario} a Brinna!!`
-        };
 
         emailjs
             .send(
@@ -140,6 +130,7 @@ function FormRegistro() {
             )
     };
 
+    // Registro sin google
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true);  // Activar el loader
@@ -150,7 +141,13 @@ function FormRegistro() {
                 // Agregar usuario
                 await dispatch(agregarUsuario(values)).unwrap();
 
-                sendEmail(e)
+                const emailParams = {
+                    nombre: values.nombre,
+                    email: values.email,
+                    subject: `Bienvenida ${values.usuario} a Brinna!!`
+                };
+
+                sendEmail(e, emailParams)
 
                 // Disparar la acción de inicio de sesión
                 await dispatch(loginUsuario(values)).unwrap();
@@ -167,32 +164,26 @@ function FormRegistro() {
         }
     }
 
-    const handleGoogleSignIn = async () => {
-        console.log("google sing in")
+    // Registro con google
+    const handleGoogleSignIn = async (e) => {
+        setLoading(true);  // Activar el loader
         try {
-            const result = await signInWithPopup(auth, provider);
-            const user = result.user;
+            const response = await dispatch(loginWithGoogle()).unwrap();
+            const userGoogle = response.userGoogle;  // Obtener los datos del usuario de Google
 
-            // Guardar el usuario en tu store de Redux
-            dispatch(agregarUsuario({
-                email: user.email,
-                nombre: user.displayName,
-                usuario: user.displayName, 
-                imagen: user.photoURL,
-                uid: user.uid,
-                isGoogleUser: true, 
-                password: "",  // Puedes usar otro método para guardar un password si es necesario
-            }));
+            // Preparar los parámetros del email
+            const emailParams = {
+                nombre: userGoogle.name,  // Usar el nombre del usuario de Google
+                email: userGoogle.email,  // Usar el email del usuario de Google
+                subject: `Bienvenida ${userGoogle.usuario} a Brinna!!`  // Usar el nombre del usuario de Google
+            };
 
-            dispatch(loginUsuario({
-                email: user.email,
-                password: "",  // Manejar autenticación con Google
-            }));
-
-            router.push('/');
+            sendEmail(e, emailParams)
+            setLoading(false);
+            router.push('/');  // Redirigir a la página principal después de iniciar sesión
         } catch (error) {
-            console.error("Error al iniciar sesión con Google:", error);
-            tostada("Error al iniciar sesión con Google. Por favor, intenta de nuevo.");
+            setLoading(false);
+            tostada(error);
         }
     };
 

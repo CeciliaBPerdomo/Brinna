@@ -46,9 +46,9 @@ const RopaParaEl = () => {
         return (
             <>
                 <h1 className={`mb-4 ropaEl_h1 ${jost}`}>Ropa para él</h1>
-                <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
-                    <p class="font-bold">Error al actualizar los productos</p>
-                    <p class="text-sm">El catálogo no se puede actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
+                <div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
+                    <p className="font-bold">Error al actualizar los productos</p>
+                    <p className="text-sm">El catálogo no se puede actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
                 </div>
             </>
         )
@@ -59,10 +59,10 @@ const RopaParaEl = () => {
         return (
             <>
                 <h1 className={`mb-4 ropaEl_h1 ${jost}`}>Ropa para él</h1>
-                <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
-                    <p class="font-bold">No hay ropa para hombres disponible</p>
-                    <p class="text-sm">El catálogo de ropa para él aún no tiene ropa para mostrar.</p>
-                    <p class="text-sm">Esperamos que a la brevedad tengamos para ofrecerte.</p>
+                <div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
+                    <p className="font-bold">No hay ropa para hombres disponible</p>
+                    <p className="text-sm">El catálogo de ropa para él aún no tiene ropa para mostrar.</p>
+                    <p className="text-sm">Esperamos que a la brevedad tengamos para ofrecerte.</p>
                 </div>
                 <br />
             </>

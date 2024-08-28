@@ -107,6 +107,7 @@ export const loginUsuario = createAsyncThunk(
   }
 );
 
+// Se loguea con Google y crea un usuario si no esta registrado
 export const loginWithGoogle = createAsyncThunk(
   'auth/loginWithGoogle',
   async (_, { rejectWithValue }) => {
@@ -115,17 +116,28 @@ export const loginWithGoogle = createAsyncThunk(
       const user = result.user;
 
       // Verificar si el usuario ya existe en Firestore
-      const docRef = doc(db, "usuarios", user.uid);
-      const docSnap = await getDoc(docRef);
+     const docRef = query(collection(db, "usuarios"), where("uid", "==", user.uid));
+     const querySnapshot = await getDocs(docRef);
 
-      if (!docSnap.exists()) {
-        //   // Guardar el nuevo usuario en Firestore
-        //   await setDoc(docRef, {
-        //     uid: user.uid,
-        //     name: user.displayName,
-        //     email: user.email,
-        //     photoURL: user.photoURL,
-        //   });
+     if (querySnapshot.empty) {
+        // Obtener el siguiente ID secuencial 
+        const querySnapshotCantidad = await getDocs(collection(db, "usuarios"));
+        const existingUsers = querySnapshotCantidad.docs.map((doc) => doc.data());
+        const nextId = existingUsers.length + 1;
+
+        // Guardar el usuario con la contraseña encriptada
+        const userWithId = {
+          id: nextId, // Agregar el ID al objeto del usuario
+          uid: user.uid,
+          name: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          usuario: user.displayName || '', // Puedes usar el nombre de display como usuario
+        };
+
+        // Guardar el nuevo usuario en Firestore
+        const docRef = doc(db, "usuarios", String(nextId)); // Usa el ID como la clave del documento
+        await setDoc(docRef, userWithId);
       }
 
       // Simulación de token
@@ -138,15 +150,15 @@ export const loginWithGoogle = createAsyncThunk(
 
       // Recuperación del usuario
       const userGoogle = {
-        id: user.uid,
+        uid: user.uid,
         name: user.displayName,
         email: user.email,
         photoURL: user.photoURL,
         usuario: user.displayName,
       };
 
-      localStorage.setItem('currentUser', JSON.stringify(user));
-      setCurrentUser(user)
+      localStorage.setItem('currentUser', JSON.stringify(userGoogle));
+      setCurrentUser(userGoogle)
 
       return { userGoogle, token, expirationTime };
     } catch (error) {
@@ -154,7 +166,6 @@ export const loginWithGoogle = createAsyncThunk(
     }
   }
 );
-
 
 // Crear el slice de usuarios
 const usuariosSlice = createSlice({
