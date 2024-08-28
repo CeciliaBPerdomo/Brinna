@@ -22,7 +22,9 @@ const HeaderTerminos = () => {
             <MenuCatalogos />
 
             {/* Logo de whatsapp */}
+            <div className="logo_whatsapp_terminos">
             <LogoWhatsappCatalogos/>
+            </div>
 
         </header>
     )

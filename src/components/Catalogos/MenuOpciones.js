@@ -30,11 +30,13 @@ const MenuOpciones = () => {
                     </p>
                     <div className="menuopciones_catalogo_iconos">
                         {/* Corazon */}
+                        <div className="icono-container">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             width="35" height="31" viewBox="0 0 35 31" fill="none"
                             className="icono_corazon_menuopciones">
                             <path d="M33.0555 10.619C33.0555 13.0247 32.1318 15.3353 30.4823 17.0445C26.6853 20.9802 23.0025 25.0843 19.0637 28.8773C18.1608 29.7341 16.7286 29.7029 15.8647 28.8073L4.51685 17.0445C1.08683 13.489 1.08683 7.74903 4.51685 4.19355C7.98057 0.603144 13.6234 0.603144 17.087 4.19355L17.4996 4.6211L17.9118 4.1938C19.5725 2.47145 21.8343 1.5 24.197 1.5C26.5598 1.5 28.8214 2.47135 30.4823 4.19355C32.1319 5.90292 33.0555 8.21342 33.0555 10.619Z" stroke="white" strokeWidth="2" strokeLinejoin="round" />
                         </svg>
+                        </div>
 
                         {/* Shopping cart */}
                         <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31" fill="none" className="icono_cart_menuopciones">

@@ -1,7 +1,6 @@
 .banner_terminos_principal {
     width: 100%;
     height: 546px;
-    flex-shrink: 0;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -21,7 +20,7 @@
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {
-    .banner_terminos_principal  {
+    .banner_terminos_principal {
         background-size: contain;
         height: 135px;
     }
@@ -29,10 +28,21 @@
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
-    .banner_terminos_principal  {
+    .banner_terminos_principal {
         background-size: contain;
         height: 165px;
     }
+
+    /* Div principal */
+    .barraBotones_menuBotones_terminos {
+        padding-top: 15px;
+        margin-right: 28px;
+    }
+
+    .logo_whatsapp_terminos {
+        margin-top: -10px;
+    }
+
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */

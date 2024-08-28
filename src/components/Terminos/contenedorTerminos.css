@@ -11,7 +11,7 @@
     padding-bottom: 35px;
 }
 
-.contenedor_texto_terminos{
+.contenedor_texto_terminos {
     display: flex;
     height: 1350px;
     flex-direction: column;
@@ -41,8 +41,21 @@
 
     .contenedor_principal_terminos {
         padding-top: 23px;
-        padding-left: 25px;
+        padding-left: 23px;
         padding-bottom: 15px;
+    }
+
+    .texto_contenedor_terminos {
+        font-size: 14px;
+        font-style: normal;
+        line-height: 14px;
+        padding-bottom: 15px;
+    }
+
+    .contenedor_texto_terminos {
+        height: 1700px;
+        padding-left: 35px;
+        padding-right: 6px;
     }
 }
 
