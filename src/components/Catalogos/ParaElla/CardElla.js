@@ -23,16 +23,16 @@ const Card = ({ imageSrc, text, talle, precio, marca, esNuevoConEtiqueta, index 
             />
             
             <Image
-                class="imagen_card_ella"
+                className="imagen_card_ella"
                 height={50}
                 width={420}
                 src={imageSrc}
                 alt={text} />
 
-            <div class="p-6">
-                <h5 class="mb-2 text-l font-medium leading-tight">{text} {marca}</h5>
-                <p class="text-base">Talle: {talle} </p>
-                <p class="mb-4 text-base"><b>${precio}</b></p>
+            <div className="p-6">
+                <h5 className="mb-2 text-l font-medium leading-tight">{text} {marca}</h5>
+                <p className="text-base">Talle: {talle} </p>
+                <p className="mb-4 text-base"><b>${precio}</b></p>
             </div>
         </div>
     );

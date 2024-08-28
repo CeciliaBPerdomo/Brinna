@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 //Redux
 import { useDispatch } from 'react-redux';
-import { agregarUsuario, loginUsuario } from '../../../lib/usuariosSlice';
+import { agregarUsuario, loginUsuario, loginWithGoogle } from '../../../lib/usuariosSlice';
 
 // Envio de mails
 import emailjs from '@emailjs/browser';
@@ -118,14 +118,8 @@ function FormRegistro() {
     }
 
     // Envio de mail de registro / bienvenida
-    const sendEmail = (e) => {
+    const sendEmail = (e, emailParams) => {
         e.preventDefault();
-
-        const emailParams = {
-            nombre: values.nombre,
-            email: values.email,
-            subject: `Bienvenida ${values.usuario} a Brinna!!`
-        };
 
         emailjs
             .send(
@@ -136,6 +130,7 @@ function FormRegistro() {
             )
     };
 
+    // Registro sin google
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true);  // Activar el loader
@@ -146,7 +141,13 @@ function FormRegistro() {
                 // Agregar usuario
                 await dispatch(agregarUsuario(values)).unwrap();
 
-                sendEmail(e)
+                const emailParams = {
+                    nombre: values.nombre,
+                    email: values.email,
+                    subject: `Bienvenida ${values.usuario} a Brinna!!`
+                };
+
+                sendEmail(e, emailParams)
 
                 // Disparar la acción de inicio de sesión
                 await dispatch(loginUsuario(values)).unwrap();
@@ -162,6 +163,29 @@ function FormRegistro() {
             tostada(error)
         }
     }
+
+    // Registro con google
+    const handleGoogleSignIn = async (e) => {
+        setLoading(true);  // Activar el loader
+        try {
+            const response = await dispatch(loginWithGoogle()).unwrap();
+            const userGoogle = response.userGoogle;  // Obtener los datos del usuario de Google
+
+            // Preparar los parámetros del email
+            const emailParams = {
+                nombre: userGoogle.name,  // Usar el nombre del usuario de Google
+                email: userGoogle.email,  // Usar el email del usuario de Google
+                subject: `Bienvenida ${userGoogle.usuario} a Brinna!!`  // Usar el nombre del usuario de Google
+            };
+
+            sendEmail(e, emailParams)
+            setLoading(false);
+            router.push('/');  // Redirigir a la página principal después de iniciar sesión
+        } catch (error) {
+            setLoading(false);
+            tostada(error);
+        }
+    };
 
     return (
         <div>
@@ -267,7 +291,7 @@ function FormRegistro() {
                         </div>
 
                         <div className='flex items-center justify-center div_crear_cuenta_con_google'>
-                            <button className='boton_crear_cuenta_con_google'>
+                            <button className='boton_crear_cuenta_con_google' onClick={handleGoogleSignIn}>
                                 <Image
                                     src={"/images/icono_google.png"}
                                     width={29}

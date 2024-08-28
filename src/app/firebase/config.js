@@ -1,8 +1,15 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
+
+// BD
 import { getFirestore } from "firebase/firestore"
-import { getStorage } from "firebase/storage" // Guarda las imagenes
+
+// Guarda las imagenes
+import { getStorage } from "firebase/storage" 
+
+//Autenticacion con Google
+import { getAuth, GoogleAuthProvider } from "firebase/auth"; 
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -20,3 +27,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app)
 export const storage = getStorage(app)
+
+// Autenticacion con google
+export const auth = getAuth(app);
+export const provider = new GoogleAuthProvider();

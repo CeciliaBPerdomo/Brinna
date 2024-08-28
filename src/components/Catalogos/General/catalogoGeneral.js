@@ -44,9 +44,9 @@ const General = () => {
         return (
             <>
                 <h1 className={`mb-4 ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
-                <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
-                    <p class="font-bold">Error al actualizar los productos</p>
-                    <p class="text-sm">El catálogo no se puede actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
+                <div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
+                    <p className="font-bold">Error al actualizar los productos</p>
+                    <p className="text-sm">El catálogo no se puede actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
                 </div>
             </>
         )
@@ -57,10 +57,10 @@ const General = () => {
         return (
             <>
                 <h1 className={`mb-4 ropa_para_Todos_h1 ${jost}`}>Todas las prendas</h1>
-                <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
-                    <p class="font-bold">No hay ropadisponible</p>
-                    <p class="text-sm">El catálogo aún no tiene ropa disponible.</p>
-                    <p class="text-sm">Esperamos que a la brevedad tengamos disponible.</p>
+                <div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
+                    <p className="font-bold">No hay ropadisponible</p>
+                    <p className="text-sm">El catálogo aún no tiene ropa disponible.</p>
+                    <p className="text-sm">Esperamos que a la brevedad tengamos disponible.</p>
                 </div>
                 <br />
             </>

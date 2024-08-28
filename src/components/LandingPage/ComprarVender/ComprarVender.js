@@ -14,7 +14,7 @@ const jost = Jost({
 const ComprarVender = () => {
     return (
         <div className="principal_cv">
-            <div class="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2">
                 <div className="bg-comprar fondo_cv fondo_comprar_cv">
                     <div className="boton_cv">
                         <Link href={"/comprar"}>

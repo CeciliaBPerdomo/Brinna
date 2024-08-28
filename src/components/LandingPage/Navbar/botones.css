@@ -12,6 +12,14 @@
     gap: 4px;
 }
 
+.menuopciones_navbar_generico {
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+
+
 /*Botones*/
 .botones_registro {
     display: flex;

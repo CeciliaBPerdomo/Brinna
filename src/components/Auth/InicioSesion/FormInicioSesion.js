@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 
 //Redux
 import { useDispatch } from 'react-redux';
-import { loginUsuario } from '../../../lib/usuariosSlice';
+import { loginUsuario, loginWithGoogle } from '../../../lib/usuariosSlice';
 
 // Alerts
 import { ToastContainer, toast, Bounce } from 'react-toastify';
@@ -88,6 +88,7 @@ function FormInicioSesion() {
         });
     }
 
+    // Iniciar sesion
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true);  // Activar el loader
@@ -108,6 +109,19 @@ function FormInicioSesion() {
         }
     }
 
+    // Iniciar sesion con google
+    const handleGoogleLogin = async () => {
+        setLoading(true);  // Activar el loader
+        try {
+            const userLoggedIn = await dispatch(loginWithGoogle()).unwrap();
+            setLoading(false);
+            router.push('/');  // Redirigir a la página principal después de iniciar sesión
+        } catch (error) {
+            setLoading(false);
+            tostada(error);
+        }
+    }
+    
     return (
         <>
             <div className="fixed inset-0 flex justify-center items-center">
@@ -187,7 +201,10 @@ function FormInicioSesion() {
                         </div>
 
                         <div className='flex items-center justify-center div_iniciar_con_google'>
-                            <button className='boton_iniciarsesion_con_google'>
+                            <button 
+                            className='boton_iniciarsesion_con_google'
+                            onClick={handleGoogleLogin}
+                            >
                                 <Image
                                     src={"/images/icono_google.png"}
                                     width={29}

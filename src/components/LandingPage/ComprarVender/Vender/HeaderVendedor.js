@@ -11,18 +11,18 @@ import LogoWhatsappCompraVenta from '../LogoWhatsApp'
 function HeaderVendedor() {
   return (
     <div className='bg-bannercomovender'>
-            {/* Menu de opciones */}
-            <div className="barraBotones_menuBotones_vender">
-                <div className="botonera_menuBotones_vender">
-                    <MenuOpciones />
-                </div>
-            </div>
+      {/* Menu de opciones */}
+      <div className="barraBotones_menuBotones_vender">
+        <div className="botonera_menuBotones_vender">
+          <MenuOpciones />
+        </div>
+      </div>
 
-            {/* Menu de navegacion */}
-            <MenuCatalogos />
+      {/* Menu de navegacion */}
+      <MenuCatalogos />
 
-            {/* Logo de whatsapp */}
-            <LogoWhatsappCompraVenta />
+      {/* Logo de whatsapp */}
+      <LogoWhatsappCompraVenta />
     </div>
   )
 }
