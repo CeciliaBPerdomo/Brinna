@@ -18,6 +18,10 @@ import "../Registro/formRegistro.css"
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+import { auth, provider } from '../../../app/firebase/config'; // Importa la configuración de Firebase
+import { signInWithPopup } from "firebase/auth";  // Importa la función para iniciar sesión con Google
+
 // Fuente
 import { Jost } from "next/font/google"
 
@@ -163,6 +167,35 @@ function FormRegistro() {
         }
     }
 
+    const handleGoogleSignIn = async () => {
+        console.log("google sing in")
+        try {
+            const result = await signInWithPopup(auth, provider);
+            const user = result.user;
+
+            // Guardar el usuario en tu store de Redux
+            dispatch(agregarUsuario({
+                email: user.email,
+                nombre: user.displayName,
+                usuario: user.displayName, 
+                imagen: user.photoURL,
+                uid: user.uid,
+                isGoogleUser: true, 
+                password: "",  // Puedes usar otro método para guardar un password si es necesario
+            }));
+
+            dispatch(loginUsuario({
+                email: user.email,
+                password: "",  // Manejar autenticación con Google
+            }));
+
+            router.push('/');
+        } catch (error) {
+            console.error("Error al iniciar sesión con Google:", error);
+            tostada("Error al iniciar sesión con Google. Por favor, intenta de nuevo.");
+        }
+    };
+
     return (
         <div>
             <div className="fixed inset-0 flex justify-center items-center">
@@ -267,7 +300,7 @@ function FormRegistro() {
                         </div>
 
                         <div className='flex items-center justify-center div_crear_cuenta_con_google'>
-                            <button className='boton_crear_cuenta_con_google'>
+                            <button className='boton_crear_cuenta_con_google' onClick={handleGoogleSignIn}>
                                 <Image
                                     src={"/images/icono_google.png"}
                                     width={29}

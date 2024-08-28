@@ -2,6 +2,10 @@
 // Redux
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+// Google
+import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { auth, provider } from '../app/firebase/config';
+
 // Firebase 
 import { doc, setDoc, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../app/firebase/config';
@@ -30,9 +34,12 @@ export const agregarUsuario = createAsyncThunk(
         return rejectWithValue("El nombre de usuario ya está registrado");
       }
 
-      // Encriptar la contraseña usando bcryptjs
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(values.password, salt);
+      // Encriptar la contraseña solo si no es vacía
+      let hashedPassword = "";
+      if (values.password) {
+        const salt = await bcrypt.genSalt(10);
+        hashedPassword = await bcrypt.hash(values.password, salt);
+      }
 
       // Obtener el siguiente ID secuencial 
       const querySnapshotCantidad = await getDocs(collection(db, "usuarios"));
@@ -61,11 +68,11 @@ export const loginUsuario = createAsyncThunk(
   'usuarios/loginUsuario',
   async (values, { rejectWithValue }) => {
     try {
-      // Verificar si el usuario existe en Firestore
       const q = query(collection(db, "usuarios"), where("email", "==", values.email));
       const querySnapshot = await getDocs(q);
 
       if (querySnapshot.empty) {
+        console.log("No se encontraron documentos.");
         return rejectWithValue("Usuario o contraseña incorrectos");
       }
 
@@ -100,6 +107,53 @@ export const loginUsuario = createAsyncThunk(
   }
 );
 
+export const loginWithGoogle = createAsyncThunk(
+  'auth/loginWithGoogle',
+  async (_, { rejectWithValue }) => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      // Verificar si el usuario ya existe en Firestore
+      const docRef = doc(db, "usuarios", user.uid);
+      const docSnap = await getDoc(docRef);
+
+      if (!docSnap.exists()) {
+        //   // Guardar el nuevo usuario en Firestore
+        //   await setDoc(docRef, {
+        //     uid: user.uid,
+        //     name: user.displayName,
+        //     email: user.email,
+        //     photoURL: user.photoURL,
+        //   });
+      }
+
+      // Simulación de token
+      const token = 'user-token'; // Simular un token
+      const expirationTime = new Date().getTime() + 60 * 60 * 1000; // 1 hora en milisegundos
+
+      // Guardar el token y marca de tiempo en localStorage
+      localStorage.setItem('authToken', token);
+      localStorage.setItem('tokenExpiration', expirationTime);
+
+      // Recuperación del usuario
+      const userGoogle = {
+        id: user.uid,
+        name: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        usuario: user.displayName,
+      };
+
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      setCurrentUser(user)
+
+      return { userGoogle, token, expirationTime };
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 
 // Crear el slice de usuarios
@@ -124,7 +178,7 @@ const usuariosSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-    
+
       // Agregar usuario
       .addCase(agregarUsuario.pending, (state) => {
         state.loading = true;
@@ -138,6 +192,21 @@ const usuariosSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
+
+      // Login con Google
+      .addCase(loginWithGoogle.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(loginWithGoogle.fulfilled, (state, action) => {
+        state.loading = false;
+        state.currentUser = action.payload;
+        localStorage.setItem('currentUser', JSON.stringify(action.payload));
+      })
+      .addCase(loginWithGoogle.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
   },
 });
 
