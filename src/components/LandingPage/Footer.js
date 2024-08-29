@@ -22,8 +22,8 @@ const FooterHome = () => {
   ];
 
   const contactanos = [
-    { logo: <FaSquarePhone />, contact: "099 000 000" },
-    { logo: <IoIosMail />, contact: "brinnaropadesegundamano@gmail.com" },
+    { logo: <FaSquarePhone />, contact: "099 000 000", link: "" },
+    { logo: <IoIosMail />, contact: "BrinnaMail", link: "mailto:brinnaropasegundamano@gmail.com" },
   ];
 
   return (
@@ -68,7 +68,9 @@ const FooterHome = () => {
                     {enlace.logo}
                   </span>
                   <div className="enlacesrapidos_footer">
+                    <Link href={enlace.link}>
                     {enlace.contact}
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -83,8 +85,13 @@ const FooterHome = () => {
         </a>
       </div>
       <div className="py-5 flex justify-center text-center bg-muted-cyan cyan">
-        <p className="equipo_footer"><b>Equipo de desarrollo: </b>
-          Diseño: Noelia Perdomo / Desarrollo: Cecilia Perdomo • Daniel Martinez
+        <p className="equipo_footer">
+          <b>Equipo de desarrollo</b> 
+          <br/>
+          Diseño UX/UI:  <Link href="mailto:noelia.perdomo88@gmail.com" >Noelia Perdomo</Link>
+          <br/> 
+          Desarrollo web: <Link href="mailto:cecilia.perdomo@gmail.com" >Cecilia Perdomo</Link> • 
+          <Link href="mailto:rdjmartinez95@gmail.com"> Daniel Martinez</Link>
         </p>
       </div>
     </footer>
