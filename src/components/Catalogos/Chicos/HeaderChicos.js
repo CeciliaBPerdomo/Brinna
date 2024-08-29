@@ -23,8 +23,10 @@ const HeaderParaChicos = () => {
                 {/* Menu de navegacion */}
                 <MenuCatalogos />
 
-                {/* Logo de whataspp */}
-                <LogoWhatsappCatalogos />
+                {/* WhatsApp */}
+                <div className="header_parachicos_logoWA">
+                    <LogoWhatsappCatalogos />
+                </div>
             </header>
         </>
     )

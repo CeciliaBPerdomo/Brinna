@@ -64,13 +64,19 @@
     }
 
     .menuopciones_catalogo_iconos {
-        gap: 15px;
+        gap: 8px;
     }
     
     .iconos_menuopciones {
         width: 25px;
         color: white;
     }
+
+    /* .foto_perfil_menuopciones {
+        width: 26px;
+        height: 25px;
+        border-radius: 25px;
+    } */
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */

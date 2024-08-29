@@ -4,9 +4,9 @@ import React from "react";
 import "../ParaElla/headerparaella.css"
 
 // Componentes
-import LogoWhatsapp from "../LogoWhatsApp"
 import MenuCatalogos from "../menu";
 import MenuOpciones from "../MenuOpciones";
+import LogoWhatsappCatalogos from "../LogoWhatsApp";
 
 const HeaderParaElla = () => {
     return (
@@ -15,17 +15,19 @@ const HeaderParaElla = () => {
                 <div className="bg-bannerella bannerella_principal">
 
                     {/* Menu de opciones */}
-                    <div className="barraBotones_menuBotones">
+                    <div className="barraBotones_menuBotones_paraella">
                         <div className="botonera_menuBotones">
                             <MenuOpciones />
                         </div>
                     </div>
+
                     {/* Menu de navegacion */}
                     <MenuCatalogos />
 
-                    {/* Logo de whatsapp */}
-                    <LogoWhatsapp />
-
+                    {/* WhatsApp */}
+                    <div className="header_paraella_logoWA">
+                        <LogoWhatsappCatalogos />
+                    </div>
                 </div>
             </header>
         </>

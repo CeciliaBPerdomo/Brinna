@@ -7,7 +7,7 @@
 }
 
 /* Div principal */
-.barraBotones_menuBotones {
+.barraBotones_menuBotones_paraEl {
     padding-top: 25px;
     margin-right: 100px;
 }
@@ -31,6 +31,14 @@
     .principal_catalago_el {
         background-size: contain;
         height: 165px;
+    }
+
+    .barraBotones_menuBotones_paraEl{
+        margin-right: 20px;
+    }
+
+    .header_parael_logoWA{
+        margin-top: -25px;
     }
 }
 

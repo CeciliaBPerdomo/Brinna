@@ -2,13 +2,12 @@
 .bannerella_principal {
     width: 100%;
     height: 546px;
-    flex-shrink: 0;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 /* Div principal */
-.barraBotones_menuBotones {
+.barraBotones_menuBotones_paraella {
     padding-top: 25px;
     margin-right: 100px;
 }
@@ -34,6 +33,12 @@
         height: 165px;
     }
 
+    .header_paraella_logoWA{
+        margin-top: -25px;
+    }
+.barraBotones_menuBotones_paraella{
+    margin-right: 20px;
+}
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
