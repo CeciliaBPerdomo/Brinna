@@ -36,6 +36,7 @@
 @media screen and (min-width: 351px) and (max-width: 600px) {
     .terminos_contenedor {
         font-size: 14px;
+        font-weight: bold;
         line-height: 20px;
     }
 
