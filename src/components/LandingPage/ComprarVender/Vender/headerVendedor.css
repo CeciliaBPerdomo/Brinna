@@ -20,18 +20,25 @@
 
 
 /* Para dispositivos móviles */
-@media screen and (max-width: 350px) {
-
-}
+@media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
     .bg-bannercomovender {
         height: 160px;
     }
+
+    .logoWA_comprarvender {
+        margin-top: -15px;
+    }
+
+    /* Div principal */
+    .barraBotones_menuBotones_vender {
+        padding-top: 5px;
+        margin-right: 20px;
+    }
+
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
-@media screen and (min-width: 901px) and (max-width: 1023px) {
-
-}
+@media screen and (min-width: 901px) and (max-width: 1023px) {}

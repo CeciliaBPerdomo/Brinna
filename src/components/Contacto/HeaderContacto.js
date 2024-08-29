@@ -21,8 +21,10 @@ const HeaderContacto = () => {
             {/* Menu de navegacion */}
             <MenuCatalogos />
 
-            {/* Logo de whatsapp */}
-            <LogoWhatsappCatalogos />
+            {/* WhatsApp */}
+            <div className="header_contacto_logoWA">
+                    <LogoWhatsappCatalogos />
+                </div>
 
         </header>
     )

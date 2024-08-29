@@ -22,7 +22,9 @@ function HeaderVendedor() {
       <MenuCatalogos />
 
       {/* Logo de whatsapp */}
-      <LogoWhatsappCompraVenta />
+      <div className='logoWA_comprarvender'>
+        <LogoWhatsappCompraVenta />
+      </div>
     </div>
   )
 }

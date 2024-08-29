@@ -1,7 +1,6 @@
 .contacto_header_principal {
     width: 100%;
     height: 546px;
-    flex-shrink: 0;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -32,6 +31,14 @@
     .contacto_header_principal {
         background-size: contain;
         height: 165px;
+    }
+
+    .barraBotones_menuBotones{
+        margin-right: 20px;
+    }
+
+    .header_contacto_logoWA{
+        margin-top: -25px;
     }
 }
 
