@@ -22,7 +22,22 @@
 @media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
-@media screen and (min-width: 351px) and (max-width: 600px) {}
+@media screen and (min-width: 351px) and (max-width: 600px) {
+    .contacto_h1 {
+        font-size: 18px;
+        font-weight: bold;
+        padding-left: 30px;
+        padding-top: 15px;
+    }
+
+    .contacto_p {
+        font-size: 16px;
+        line-height: 20px;
+        padding-left: 30px;
+        padding-top: 11px;
+        text-align: left;
+    }
+}
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
 @media screen and (min-width: 901px) and (max-width: 1023px) {}

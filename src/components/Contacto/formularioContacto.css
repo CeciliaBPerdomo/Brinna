@@ -46,7 +46,28 @@
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
+    .formulario_contacto {
+        padding-left: 30px;
+        padding-top: 5px;
+    }
 
+    .formulario_contacto_inputs {
+        width: 310px;
+        padding: 5px;
+        gap: 10px;
+    }
+
+    .div_botonenviar_formContacto {
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+    
+    .botonenviar_formContacto {
+        border-radius: 100px;
+        width: 120px;
+        height: 35px;
+        padding: 5px 20px;
+    }
 }
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
