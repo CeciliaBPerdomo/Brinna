@@ -13,8 +13,8 @@ const CatalogoGeneral = () => {
         <div className="bg-bannertodoscatalogos principal_catalago_general">
 
             {/* Menu de opciones */}
-            <div className="barraBotones_menuBotones">
-                <div className="botonera_menuBotones">
+            <div className="barraBotones_menuBotones_headergeneral">
+                <div className="botonera_menuBotones_headerGeneral">
                     <MenuOpciones />
                 </div>
             </div>
@@ -23,7 +23,9 @@ const CatalogoGeneral = () => {
             <MenuCatalogos />
 
             {/* LogoWhatsapp */}
+            <div className="header_general_logoWA">
             <LogoWhatsappCatalogos />
+            </div>
         </div>
     )
 }

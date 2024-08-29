@@ -6,12 +6,12 @@
 }
 
 /* Div principal */
-.barraBotones_menuBotones {
+.barraBotones_menuBotones_headergeneral {
     padding-top: 25px;
     margin-right: 100px;
 }
 
-.botonera_menuBotones {
+.botonera_menuBotones_headerGeneral {
     display: flex;
     flex-direction: row-reverse;
     gap: 4px;
@@ -31,6 +31,18 @@
     .principal_catalago_general {
         background-size: contain;
         height: 165px;
+    }
+
+    .header_general_logoWA {
+        margin-top: -20px;
+    }
+
+    .barraBotones_menuBotones_headergeneral {
+        margin-right: 20px;
+    }
+
+    .botonera_menuBotones_headerGeneral {
+        gap: 1px
     }
 }
 

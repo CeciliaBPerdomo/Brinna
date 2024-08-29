@@ -14,7 +14,7 @@ const HeaderParaEl = () => {
             <header className="bg-bannerel principal_catalago_el">
 
                 {/* Menu de opciones */}
-                <div className="barraBotones_menuBotones">
+                <div className="barraBotones_menuBotones_paraEl">
                     <div className="botonera_menuBotones">
                         <MenuOpciones />
                     </div>
@@ -24,7 +24,9 @@ const HeaderParaEl = () => {
                 <MenuCatalogos />
 
                 {/* WhatsApp */}
-                <LogoWhatsappCatalogos />
+                <div className="header_parael_logoWA">
+                    <LogoWhatsappCatalogos />
+                </div>
             </header>
         </>
     )
