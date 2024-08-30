@@ -81,7 +81,7 @@ const FooterHome = () => {
       <div className="py-5 flex justify-center text-center font-bold text-brinna text-2xl sumate_footer">
         <a className="flex" href="https://www.instagram.com/Brinna">
           <Image src={instagram} alt="Instagram" />
-          &nbsp;Súmate a nuestro Instagram @Brinna
+          &nbsp;Súmate a nuestro Instagram
         </a>
       </div>
       <div className="py-5 flex justify-center text-center bg-muted-cyan cyan">
