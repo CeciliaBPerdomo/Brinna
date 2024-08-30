@@ -181,7 +181,6 @@
     border: 1px solid #000;
 }
 
-
 /* Para dispositivos móviles */
 @media screen and (max-width: 350px) {}
 
@@ -248,7 +247,6 @@
 
     /* -------------------------------------------------------- */
     /* Inputs */
-
     .formulario_iniciarsesion_inputs {
         padding-left: 6px;
         padding-top: 10px;

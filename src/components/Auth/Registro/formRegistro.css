@@ -1,3 +1,5 @@
+/* -------------------------------------------------------- */
+/* Div principal */
 .div_formulario_registro_principal {
     width: 960px;
     height: 680px;
@@ -26,7 +28,6 @@
 
 /* -------------------------------------------------------- */
 /* Tipografia */
-
 .crea_tu_cuenta {
     color: #CA4E3C;
     font-size: 28px;
@@ -35,7 +36,6 @@
     padding-top: 32px;
     padding-left: 37.5px;
 }
-
 
 .completa_tus_datos {
     color: #5D717C;
@@ -130,7 +130,6 @@
 
 /* -------------------------------------------------------- */
 /* Loader */
-
 .loader-overlay {
     position: absolute;
     top: 0;
@@ -172,7 +171,115 @@
 @media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
-@media screen and (min-width: 351px) and (max-width: 600px) {}
+@media screen and (min-width: 351px) and (max-width: 600px) {
+
+    /* -------------------------------------------------------- */
+    /* Div principal */
+    .div_formulario_registro_principal {
+        flex-direction: column;
+        width: 320px;
+        height: 540px;
+        border-radius: 50px;
+    }
+
+    .div_formulario_registro_imagen {
+        width: 100%;
+        height: 180px;
+        position: relative;
+    }
+
+    .formulario_registro_imagen {
+        border-radius: 50px 50px 0px 0px;
+        position: relative !important;
+    }
+
+    .div_formulario_registro {
+        width: 425px;
+        height: 680px;
+    }
+
+    /* -------------------------------------------------------- */
+    /* Tipografia */
+    .crea_tu_cuenta {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 18px;
+        padding-top: 1px;
+        padding-left: 6px;
+    }
+
+    .completa_tus_datos {
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 6px;
+    }
+
+    .ya_tengo_cuenta {
+        font-size: 12px;
+        font-style: normal;
+        line-height: 25px;
+    }
+
+    /* -------------------------------------------------------- */
+    /* Inputs */
+    .formulario_registro_inputs {
+        padding-left: 6px;
+        padding-top: 6px;
+    }
+
+    .registro_inputs {
+        width: 270px;
+        height: 30px;
+        gap: 5px;
+
+        border-radius: 50px;
+        margin-bottom: 6px;
+    }
+
+    /* -------------------------------------------------------- */
+    /* Botones */
+    .botonGuardar_crearcuenta {
+        border-radius: 50px;
+        width: 200px;
+        height: 35px;
+        gap: 1px;
+        margin-top: -6px;
+        margin-left: 0px;
+        margin-right: 100px;
+        padding-top: 4px;
+    }
+
+    .div_botonGuardar_crearcuenta {
+        display: flex;
+        padding-top: 8px;
+    }
+
+    /* -------------------------------------------------------- */
+    /* Google */
+    .boton_crear_cuenta_con_google {
+        width: 309px;
+        height: 40px;
+        padding: 5px;
+        gap: 1px;
+        border-radius: 100px;
+    }
+    
+    .texto_crea_cuenta_google {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .div_crear_cuenta_con_google {
+        padding-top: 3px;
+        padding-left: 0px;
+        padding-right: 100px;
+    }
+    
+    .icono_google_crearcuenta {
+        width: 25px;
+        height: 27px;
+    }
+}
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
 @media screen and (min-width: 901px) and (max-width: 1023px) {}
