@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 //Redux
@@ -16,7 +17,6 @@ import "../InicioSesion/formInicioSesion.css"
 
 // Fuente
 import { Jost } from "next/font/google"
-import Link from 'next/link';
 
 const jost = Jost({
     weight: "600",

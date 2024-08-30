@@ -77,7 +77,6 @@
 }
 
 .no_tengo_cuenta {
-    /* padding-left: 32px; */
     color: #5D717C;
     font-size: 16px;
     font-style: normal;
@@ -85,15 +84,15 @@
 }
 
 .ingresar_o {
-color: #888;
-text-align: center;
-font-size: 16px;
-font-style: normal;
-line-height: 40px;
+    color: #888;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 40px;
 }
 
 /* -------------------------------------------------------- */
-/* Botones */ 
+/* Botones */
 
 .div_botonGuardar_ingresar {
     border-radius: 100px;
@@ -112,7 +111,7 @@ line-height: 40px;
 /* -------------------------------------------------------- */
 /* Google */
 
-.boton_iniciarsesion_con_google{
+.boton_iniciarsesion_con_google {
     display: flex;
     width: 309px;
     height: 54px;
@@ -187,7 +186,123 @@ line-height: 40px;
 @media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
-@media screen and (min-width: 351px) and (max-width: 600px) {}
+@media screen and (min-width: 351px) and (max-width: 600px) {
+
+    /* ------------------------------------------------------------------ */
+    /*Div principal*/
+    .div_formulario_iniciosesion_principal {
+        flex-direction: column;
+        width: 320px;
+        height: 520px;
+        border-radius: 50px;
+    }
+
+    .div_formulario_iniciosesion_imagen {
+        width: 100%;
+        height: 180px;
+        position: relative;
+    }
+
+    .formulario_iniciosesion_imagen {
+        border-radius: 50px 50px 0px 0px;
+        position: relative !important;
+    }
+
+    .div_iniciosesion_registro {
+        width: 320px;
+        height: 520px;
+    }
+
+    /* ------------------------------------------------------------------ */
+    /* Titulos */
+    .iniciar_sesion {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 20px;
+        padding-top: 4px;
+        padding-left: 6px;
+    }
+
+    .completa_tus_datos_sesion {
+        font-size: 16px;
+        line-height: 20px;
+        padding-left: 6px;
+    }
+
+    .olvidaste_contra {
+        text-align: right;
+        padding-right: 6px;
+        font-size: 10px;
+    }
+
+    .no_tengo_cuenta {
+        font-size: 12px;
+        font-style: normal;
+        line-height: 25px;
+    }
+
+    .ingresar_o {
+        font-size: 12px;
+        line-height: 10px;
+    }
+
+    /* -------------------------------------------------------- */
+    /* Inputs */
+
+    .formulario_iniciarsesion_inputs {
+        padding-left: 6px;
+        padding-top: 10px;
+    }
+
+    .iniciosesion_inputs {
+        width: 443px;
+        height: 35px;
+        gap: 5px;
+
+        border-radius: 50px;
+        margin-bottom: 8px;
+    }
+
+    /* -------------------------------------------------------- */
+    /* Botones */
+    .div_botonGuardar_ingresar {
+        border-radius: 50px;
+        width: 110px;
+        height: 35px;
+        gap: 1px;
+        margin-top: 8px;
+        margin-left: 0px;
+    }
+
+    .botonGuardar_ingresar {
+        padding-top: 5px;
+    }
+
+    /* -------------------------------------------------------- */
+    /* Google */
+    .boton_iniciarsesion_con_google {
+        width: 309px;
+        height: 40px;
+        padding: 5px;
+        gap: 1px;
+        border-radius: 100px;
+    }
+
+    .div_iniciar_con_google {
+        padding-top: 10px;
+    }
+
+    .icono_google_iniciarsesion {
+        width: 25px;
+        height: 27px;
+    }
+
+    .texto_iniciarsesion_google {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+}
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
 @media screen and (min-width: 901px) and (max-width: 1023px) {}
