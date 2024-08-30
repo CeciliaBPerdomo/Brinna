@@ -1,8 +1,10 @@
 "use client"
 import Image from "next/image";
+import { useState } from "react";
 
 // Redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../lib/usuariosSlice"
 
 //CSS
 import "../Catalogos/menuOpciones.css"
@@ -18,10 +20,20 @@ const jost = Jost({
     subsets: ['latin'],
 })
 
-
 const MenuOpciones = () => {
+    const dispatch = useDispatch();
+    const [menuOpen, setMenuOpen] = useState(false);
+
     // Acceder al estado de autenticación desde Redux
     const currentUser = useSelector((state) => state.usuarios.currentUser);
+
+    const handleLogout = () => {
+        dispatch(logout());
+    };
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
 
     return (
         <div>
@@ -58,12 +70,50 @@ const MenuOpciones = () => {
 
                         {/* Perfil */}
                         <div className="foto_perfil_menuopciones">
-                            <Image
-                                src={currentUser.photoURL || currentUser.userGoogle.photoURL}
-                                width={35}
-                                height={35}
-                                alt=""
-                            />
+                            <button
+                                type="button"
+                                id="perfil"
+                                aria-expanded={menuOpen}
+                                className="perfil-button"
+                                onClick={toggleMenu}
+                            >
+                                <Image
+                                    src={currentUser.photoURL || currentUser.userGoogle.photoURL}
+                                    width={35}
+                                    height={35}
+                                    alt="Foto de perfil"
+                                    className="foto-perfil"
+                                />
+                            </button>
+
+                            <ul
+                                aria-labelledby="perfil"
+                                className={`perfil-menu ${menuOpen ? 'show' : 'hide'}`}
+                            >
+                                <li className={`perfil-menu-item ${jost}`}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                        <path d="M8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C4.35786 1 1 4.35786 1 8.5C1 12.6421 4.35786 16 8.5 16Z" stroke="white" />
+                                        <path d="M8.49951 8.5C9.74219 8.5 10.7495 7.49268 10.7495 6.25C10.7495 5.00736 9.74219 4 8.49951 4C7.25684 4 6.24951 5.00736 6.24951 6.25C6.24951 7.49268 7.25684 8.5 8.49951 8.5Z"
+                                            stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M4.75 13V12.25C4.75 10.179 6.42893 8.5 8.5 8.5C10.571 8.5 12.25 10.179 12.25 12.25V13"
+                                            stroke="white" strokeLinecap="round" />
+                                    </svg>
+                                    Mi cuenta
+                                </li>
+                                <li className="barra_menu_item">
+                                    <hr />
+                                </li>
+                                <li className={`perfil-menu-item ${jost}`}
+                                    onClick={handleLogout}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M15 5.66667L15 1M15 1H10.3333M15 1L8.77778 7.22222M6.44444 2.55556H4.73333C3.42654 2.55556 2.77315 2.55556 2.27402 2.80987C1.83498 3.03358 1.47802 3.39053 1.25432 3.82958C1 4.32871 1 4.9821 1 6.28889V11.2667C1 12.5735 1 13.2269 1.25432 13.726C1.47802 14.165 1.83498 14.522 2.27402 14.7457C2.77315 15 3.42654 15 4.73333 15H9.71111C11.0179 15 11.6713 15 12.1704 14.7457C12.6095 14.522 12.9664 14.165 13.1901 13.726C13.4444 13.2269 13.4444 12.5735 13.4444 11.2667V9.55556"
+                                            stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                    Cerrar sesión
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
                 </>

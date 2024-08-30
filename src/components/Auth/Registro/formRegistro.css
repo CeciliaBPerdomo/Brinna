@@ -47,7 +47,6 @@
 
 /* -------------------------------------------------------- */
 /* Inputs */
-
 .formulario_registro_inputs {
     padding-left: 37.5px;
     padding-top: 20px;
@@ -172,7 +171,6 @@
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
-
     /* -------------------------------------------------------- */
     /* Div principal */
     .div_formulario_registro_principal {
