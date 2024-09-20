@@ -38,8 +38,8 @@ export default function AgregarProductos() {
         categoria: "mujer",
         subcategoria: "buzo",
         precio: "",
-        id_vendedor: 1, 
-        vendedor: "Cecilia Perdomo"
+        // id_vendedor: 1, 
+        // vendedor: "Cecilia Perdomo"
     }
 
     const [values, setValues] = useState(initialValues)

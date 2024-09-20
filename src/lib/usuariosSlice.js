@@ -12,6 +12,7 @@ import { db } from '../app/firebase/config';
 
 // Encriptacion de contraseña 
 import bcrypt from 'bcryptjs';
+import next from 'next';
 
 // Thunk para agregar un usuario con ID secuencial y verificación de email
 export const agregarUsuario = createAsyncThunk(
@@ -119,11 +120,13 @@ export const loginWithGoogle = createAsyncThunk(
      const docRef = query(collection(db, "usuarios"), where("uid", "==", user.uid));
      const querySnapshot = await getDocs(docRef);
 
+     let nextId; 
+
      if (querySnapshot.empty) {
         // Obtener el siguiente ID secuencial 
         const querySnapshotCantidad = await getDocs(collection(db, "usuarios"));
         const existingUsers = querySnapshotCantidad.docs.map((doc) => doc.data());
-        const nextId = existingUsers.length + 1;
+        nextId = existingUsers.length + 1;
 
         // Guardar el usuario con la contraseña encriptada
         const userWithId = {
@@ -138,6 +141,9 @@ export const loginWithGoogle = createAsyncThunk(
         // Guardar el nuevo usuario en Firestore
         const docRef = doc(db, "usuarios", String(nextId)); // Usa el ID como la clave del documento
         await setDoc(docRef, userWithId);
+      } else {
+        const existingUser = querySnapshot.docs[0].data();
+        nextId = existingUser.id; 
       }
 
       // Simulación de token
@@ -150,6 +156,7 @@ export const loginWithGoogle = createAsyncThunk(
 
       // Recuperación del usuario
       const userGoogle = {
+        id: nextId,
         uid: user.uid,
         name: user.displayName,
         email: user.email,

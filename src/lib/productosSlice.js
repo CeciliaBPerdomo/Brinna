@@ -28,8 +28,20 @@ export const fetchProductos = createAsyncThunk(
 // En el thunk `agregarProducto`, solo devuelve la URL del archivo
 export const agregarProducto = createAsyncThunk(
   'productos/agregarProducto',
-  async (values, { rejectWithValue }) => {
+  async (values, { rejectWithValue, getState }) => {
     try {
+      console.log("hola")
+      // Obtener el usuario actual desde el estado
+      const state = getState();
+      console.log("Estado de usuarios:", state.usuarios); // Verifica el estado
+      const currentUser = state.usuarios.currentUser;
+
+      // Verifica el ID del usuario
+      console.log("Usuario actual:", currentUser);
+      if (!currentUser) {
+        throw new Error("No hay un usuario autenticado.");
+      }
+
       let fileURL = "";
       if (values.file) {
         const storageRef = ref(storage, `productos/${values.file.name}`);
@@ -37,9 +49,20 @@ export const agregarProducto = createAsyncThunk(
         fileURL = await getDownloadURL(storageRef);
       }
 
+      // Crear el objeto del producto con el ID del usuario
+      const productData = {
+        ...values,
+        file: fileURL,
+        id_vendedor: currentUser.userGoogle.id, // || currentUser.uid, // Asegúrate de usar el campo correcto para el ID del usuario
+        estado: "vendo"
+      };
+
+      // Guardar el producto en Firestore
       const docRef = doc(db, "productos", values.id);
-      await setDoc(docRef, { ...values, file: fileURL });
-      return { ...values, file: fileURL }; // Devuelve la URL del archivo en lugar del objeto File
+      await setDoc(docRef, productData);
+
+      return productData; // Devuelve el producto con el ID del usuario
+
     } catch (error) {
       return rejectWithValue(error.message);
     }
