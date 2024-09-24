@@ -30,10 +30,9 @@ export const agregarProducto = createAsyncThunk(
   'productos/agregarProducto',
   async (values, { rejectWithValue, getState }) => {
     try {
-      console.log("hola")
       // Obtener el usuario actual desde el estado
       const state = getState();
-      console.log("Estado de usuarios:", state.usuarios); // Verifica el estado
+      //console.log("Estado de usuarios:", state.usuarios); // Verifica el estado
       const currentUser = state.usuarios.currentUser;
 
       // Verifica el ID del usuario
@@ -49,12 +48,22 @@ export const agregarProducto = createAsyncThunk(
         fileURL = await getDownloadURL(storageRef);
       }
 
+      //    console.log("google: ", currentUser.userGoogle.id)
+      //console.log("comun: ", currentUser.id)
+
+      let vendedor = 0
+      if (currentUser.id != "") {
+        vendedor = currentUser.id
+      } else if (currentUser.userGoogle.id != "") {
+        vendedor = currentUser.userGoogle.id
+      }
+
       // Crear el objeto del producto con el ID del usuario
       const productData = {
         ...values,
         file: fileURL,
-        id_vendedor: currentUser.userGoogle.id, // || currentUser.uid, // Asegúrate de usar el campo correcto para el ID del usuario
-        estado: "vendo"
+        id_vendedor: vendedor,
+        estado: "vendo",
       };
 
       // Guardar el producto en Firestore
@@ -81,7 +90,7 @@ const productosSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    //Mostrar productos / ropa
+      //Mostrar productos / ropa
       .addCase(fetchProductos.pending, (state) => {
         state.loading = true;
         state.error = null;

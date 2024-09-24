@@ -41,6 +41,13 @@
     border: 2px solid #FFF;
 }
 
+.foto-perfil {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;  
+    border: 2px solid #FFF;
+}
+
 /* Menu desplegable */
 .perfil-menu {
     display: none;

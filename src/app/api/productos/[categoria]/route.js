@@ -5,7 +5,6 @@ import { db } from "@/app/firebase/config";
 
 export async function GET(request, { params }) {
     try {
-        console.log("Hola")
         const { categoria } = params
         const productosRef = collection(db, "productos")
 

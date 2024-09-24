@@ -79,7 +79,10 @@ const MenuOpciones = () => {
                                 onClick={toggleMenu}
                             >
                                 <Image
-                                    src={currentUser.photoURL || currentUser.userGoogle.photoURL}
+                                    src={(currentUser && (currentUser.photoURL
+                                        || currentUser.userGoogle?.photoURL))
+                                        || '/images/default-image.png'
+                                    }
                                     width={35}
                                     height={35}
                                     alt="Foto de perfil"
