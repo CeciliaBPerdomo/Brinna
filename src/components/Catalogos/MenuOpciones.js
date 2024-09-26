@@ -14,6 +14,7 @@ import MenuBotones from "../LandingPage/Navbar/menu_botones";
 
 // Fuente
 import { Jost } from "next/font/google"
+import Link from "next/link";
 
 const jost = Jost({
     weight: "400",
@@ -78,7 +79,10 @@ const MenuOpciones = () => {
                                 onClick={toggleMenu}
                             >
                                 <Image
-                                    src={currentUser.photoURL || currentUser.userGoogle.photoURL}
+                                    src={(currentUser && (currentUser.photoURL
+                                        || currentUser.userGoogle?.photoURL))
+                                        || '/images/default-image.png'
+                                    }
                                     width={35}
                                     height={35}
                                     alt="Foto de perfil"
@@ -90,16 +94,18 @@ const MenuOpciones = () => {
                                 aria-labelledby="perfil"
                                 className={`perfil-menu ${menuOpen ? 'show' : 'hide'}`}
                             >
-                                <li className={`perfil-menu-item ${jost}`}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                                        <path d="M8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C4.35786 1 1 4.35786 1 8.5C1 12.6421 4.35786 16 8.5 16Z" stroke="white" />
-                                        <path d="M8.49951 8.5C9.74219 8.5 10.7495 7.49268 10.7495 6.25C10.7495 5.00736 9.74219 4 8.49951 4C7.25684 4 6.24951 5.00736 6.24951 6.25C6.24951 7.49268 7.25684 8.5 8.49951 8.5Z"
-                                            stroke="white" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M4.75 13V12.25C4.75 10.179 6.42893 8.5 8.5 8.5C10.571 8.5 12.25 10.179 12.25 12.25V13"
-                                            stroke="white" strokeLinecap="round" />
-                                    </svg>
-                                    Mi cuenta
-                                </li>
+                                <Link href={"/admin/MenuUsuario"}>
+                                    <li className={`perfil-menu-item ${jost}`}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                            <path d="M8.5 16C12.6421 16 16 12.6421 16 8.5C16 4.35786 12.6421 1 8.5 1C4.35786 1 1 4.35786 1 8.5C1 12.6421 4.35786 16 8.5 16Z" stroke="white" />
+                                            <path d="M8.49951 8.5C9.74219 8.5 10.7495 7.49268 10.7495 6.25C10.7495 5.00736 9.74219 4 8.49951 4C7.25684 4 6.24951 5.00736 6.24951 6.25C6.24951 7.49268 7.25684 8.5 8.49951 8.5Z"
+                                                stroke="white" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M4.75 13V12.25C4.75 10.179 6.42893 8.5 8.5 8.5C10.571 8.5 12.25 10.179 12.25 12.25V13"
+                                                stroke="white" strokeLinecap="round" />
+                                        </svg>
+                                        Mi cuenta
+                                    </li>
+                                </Link>
                                 <li className="barra_menu_item">
                                     <hr />
                                 </li>

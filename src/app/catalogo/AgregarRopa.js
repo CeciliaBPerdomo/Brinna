@@ -38,8 +38,8 @@ export default function AgregarProductos() {
         categoria: "mujer",
         subcategoria: "buzo",
         precio: "",
-        id_vendedor: 1, 
-        vendedor: "Cecilia Perdomo"
+        // id_vendedor: 1, 
+        // vendedor: "Cecilia Perdomo"
     }
 
     const [values, setValues] = useState(initialValues)
@@ -74,13 +74,24 @@ export default function AgregarProductos() {
         setMessage("");
         const timestamp = Date.now().toString(); // Generate a unique ID using the current timestamp
 
+        const fechaActual = new Date();
+        const dia = fechaActual.getDate();
+        const mes = fechaActual.getMonth() + 1; // Los meses comienzan desde 0
+        const year = fechaActual.getFullYear();
+        let fecha = `${dia}/${mes}/${year}`
+
         try {
             // Aquí se despacha la acción para agregar un producto
-            dispatch(agregarProducto({ ...values, id: timestamp, file }));
-    
+            dispatch(agregarProducto({
+                ...values,
+                id: timestamp,
+                creado: fecha,
+                file
+            }));
+
             setIsLoading(false);
             setMessage("Tú producto ha sido guardado exitosamente");
-    
+
             // Restablece los valores del formulario después de enviar
             setValues(initialValues);
             setFile(null);

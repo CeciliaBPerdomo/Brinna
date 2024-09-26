@@ -28,8 +28,19 @@ export const fetchProductos = createAsyncThunk(
 // En el thunk `agregarProducto`, solo devuelve la URL del archivo
 export const agregarProducto = createAsyncThunk(
   'productos/agregarProducto',
-  async (values, { rejectWithValue }) => {
+  async (values, { rejectWithValue, getState }) => {
     try {
+      // Obtener el usuario actual desde el estado
+      const state = getState();
+      //console.log("Estado de usuarios:", state.usuarios); // Verifica el estado
+      const currentUser = state.usuarios.currentUser;
+
+      // Verifica el ID del usuario
+      console.log("Usuario actual:", currentUser);
+      if (!currentUser) {
+        throw new Error("No hay un usuario autenticado.");
+      }
+
       let fileURL = "";
       if (values.file) {
         const storageRef = ref(storage, `productos/${values.file.name}`);
@@ -37,9 +48,30 @@ export const agregarProducto = createAsyncThunk(
         fileURL = await getDownloadURL(storageRef);
       }
 
+      //    console.log("google: ", currentUser.userGoogle.id)
+      //console.log("comun: ", currentUser.id)
+
+      let vendedor = 0
+      if (currentUser.id != "") {
+        vendedor = currentUser.id
+      } else if (currentUser.userGoogle.id != "") {
+        vendedor = currentUser.userGoogle.id
+      }
+
+      // Crear el objeto del producto con el ID del usuario
+      const productData = {
+        ...values,
+        file: fileURL,
+        id_vendedor: vendedor,
+        estado: "vendo",
+      };
+
+      // Guardar el producto en Firestore
       const docRef = doc(db, "productos", values.id);
-      await setDoc(docRef, { ...values, file: fileURL });
-      return { ...values, file: fileURL }; // Devuelve la URL del archivo en lugar del objeto File
+      await setDoc(docRef, productData);
+
+      return productData; // Devuelve el producto con el ID del usuario
+
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -58,7 +90,7 @@ const productosSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    //Mostrar productos / ropa
+      //Mostrar productos / ropa
       .addCase(fetchProductos.pending, (state) => {
         state.loading = true;
         state.error = null;
