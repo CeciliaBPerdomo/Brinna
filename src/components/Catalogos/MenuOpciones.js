@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
@@ -14,7 +15,6 @@ import MenuBotones from "../LandingPage/Navbar/menu_botones";
 
 // Fuente
 import { Jost } from "next/font/google"
-import Link from "next/link";
 
 const jost = Jost({
     weight: "400",

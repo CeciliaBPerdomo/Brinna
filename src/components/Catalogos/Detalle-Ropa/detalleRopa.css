@@ -1,0 +1,64 @@
+/* Div principal y card con detalles */
+
+.principal-ropa-detalle {
+    width: 1280px;
+    margin-left: 150px;
+    margin-top: 108px;
+}
+
+.card-ropa-detalle {
+    width: 1000px;
+}
+
+.detalle-ropa-info {
+    margin-left: 20px;
+}
+
+
+
+/* Tipografias */
+.titulo-detalle-ropa {
+    color: #CA4E3C;
+    font-size: 28px;
+    font-style: normal;
+    line-height: 40px;
+}
+
+.info-ropa {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 40px;
+}
+
+
+/* Botones */
+
+.agregar_favoritos_detalle_ropa {
+    display: flex;
+    width: 250px;
+    height: 58px;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    border: 1px solid #CA4E3C;
+    background: #FFF;
+
+    /* Texto boton */
+    color: #CA4E3C;
+text-align: center;
+font-size: 20px;
+font-style: normal;
+line-height: normal;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 350px) {}
+
+/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
+@media screen and (min-width: 351px) and (max-width: 600px) {}
+
+/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
+@media screen and (min-width: 901px) and (max-width: 1023px) {}
