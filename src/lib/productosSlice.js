@@ -119,4 +119,10 @@ const productosSlice = createSlice({
   },
 });
 
+// Selector para obtener un producto por ID
+export const selectProductoById = (state, id) => {
+  return state.productos.items.find(producto => producto.id === id);
+};
+
+
 export default productosSlice.reducer;
