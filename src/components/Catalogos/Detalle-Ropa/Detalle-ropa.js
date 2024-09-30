@@ -1,12 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
 import Image from 'next/image'
-import { useParams } from 'next/navigation'
-
-
-// Redux
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProductos, selectProductoById } from "../../../lib/productosSlice"
 
 // CSS
 import "../Detalle-Ropa/detalleRopa.css"
@@ -14,7 +7,6 @@ import "../Detalle-Ropa/detalleRopa.css"
 
 // Fuente
 import { Jost } from "next/font/google"
-import LoadingWash from '../loading';
 
 const jost = Jost({
     weight: "600",
@@ -32,40 +24,7 @@ const p_jost = Jost({
 })
 
 
-function DetalleRopa() {
-    const dispatch = useDispatch();
-    const { id } = useParams()
-
-    // Obtener los productos desde el estado de Redux
-    const { items: productos, loading } = useSelector((state) => state.productos);
-
-    // Cargar los productos si no están cargados
-    useEffect(() => {
-        if (productos.length === 0) {
-            dispatch(fetchProductos());
-        }
-    }, [dispatch, productos.length]);
-
-
-    // Usar el selector para obtener el producto por su ID
-    const producto = useSelector((state) => (id ? selectProductoById(state, id) : null));
-
-    // Si el producto no está disponible o si aún se están cargando los productos
-    if (loading) {
-        return (
-            <div>
-                <LoadingWash />
-            </div>
-        );
-    }
-
-    if (!producto) {
-        return (
-            <div>
-                Producto no encontrado
-            </div>
-        );
-    }
+function DetalleRopa({producto}) {
 
     return (
         <div className='principal-ropa-detalle mt-4 mb-4'>
