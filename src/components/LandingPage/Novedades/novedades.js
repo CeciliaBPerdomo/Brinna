@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -21,9 +22,11 @@ import NuevoEtiqueta from "@/components/Catalogos/nuevoEtiqueta";
 //Favorito corazon
 import FavoritosCorazon from "@/components/Catalogos/favoritosCorazon";
 
+// Loading
+import LoadingWash from "@/components/Catalogos/loading";
+
 //Fuentes
 import { Jost } from "next/font/google"
-import LoadingWash from "@/components/Catalogos/loading";
 
 const jost = Jost({
     weight: "500",
@@ -64,6 +67,7 @@ let settings = {
 
 const Novedades = () => {
     const dispatch = useDispatch();
+    const router = useRouter();
     const { items: productos, loading, error } = useSelector((state) => state.productos);
 
     useEffect(() => {
@@ -124,15 +128,18 @@ const Novedades = () => {
             <div className="tarjetas_novedades">
                 <Slider {...settings}>
                     {productosRecientes.map((novedades, index) => (
+
                         <div className="max-w-sm rounded overflow-hidden shadow-md mt-4 card_individual_novedades"
-                            key={index}>
+                            key={index}
+                            onClick={() => router.push(`/detalle-ropa/${novedades.id}`)}
+
+                        >
 
                             {novedades.estado == "nuevo-con-etiqueta" ? <NuevoEtiqueta /> : null}
                             <FavoritosCorazon
                                 index={index}
                                 claseCSS={"corazon_favoritos"}
                             />
-
                             <Image
                                 src={novedades.file}
                                 alt={novedades.nombre}
@@ -150,7 +157,6 @@ const Novedades = () => {
                                 </p>
                             </div>
                         </div>
-
                     ))}
                 </Slider>
             </div>
