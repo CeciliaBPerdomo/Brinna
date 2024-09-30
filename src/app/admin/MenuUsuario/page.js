@@ -15,7 +15,7 @@ const MenuUsuario = () => {
             <HeaderHome />
 
             <div className="flex">
-                <div className="w-1/4 bg-gray-100 p-4">
+                <div className="pt-4 contenedor_menu_lateral">
                     {/* Menu vertical */}
                     <MenuLateral />
                 </div>
