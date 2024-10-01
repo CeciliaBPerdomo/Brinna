@@ -48,13 +48,10 @@ export const agregarProducto = createAsyncThunk(
         fileURL = await getDownloadURL(storageRef);
       }
 
-      //    console.log("google: ", currentUser.userGoogle.id)
-      //console.log("comun: ", currentUser.id)
-
       let vendedor = 0
-      if (currentUser.id != "") {
+      if (currentUser.id) {
         vendedor = currentUser.id
-      } else if (currentUser.userGoogle.id != "") {
+      } else if (currentUser.userGoogle.id) {
         vendedor = currentUser.userGoogle.id
       }
 

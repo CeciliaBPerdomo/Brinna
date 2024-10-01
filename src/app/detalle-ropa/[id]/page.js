@@ -1,6 +1,6 @@
 'use client'
 import { useParams } from 'next/navigation'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,22 +23,23 @@ import ContenedorEl from '@/components/Catalogos/ParaEl/ContenedorPrincipalEl';
 function RopaIndividual() {
   const { id } = useParams()
   const dispatch = useDispatch();
+  const [categoria, setCategoria] = useState('');
 
-  // Obtener los productos desde el estado de Redux
-  const { items: productos, loading } = useSelector((state) => state.productos);
+  const { items: productos, loading, error } = useSelector((state) => state.productos);
 
-  // Cargar los productos si no están cargados
   useEffect(() => {
-    if (productos.length === 0) {
       dispatch(fetchProductos());
-    }
-  }, [dispatch, productos.length]);
+  }, [dispatch]);
 
+  const producto = productos.find((producto) => producto.id === id);
+// let categoria = producto.categoria
 
-  // Usar el selector para obtener el producto por su ID
-  const producto = useSelector((state) => (id ? selectProductoById(state, id) : null));
-  console.log(producto?.categoria)
-  console.log(loading)
+ // useEffect para actualizar la categoría cuando el producto cambia
+ useEffect(() => {
+  if (producto) {
+    setCategoria(producto.categoria);
+  }
+}, [producto]);
 
   // Si el producto no está disponible o si aún se están cargando los productos
   if (loading) {
@@ -58,7 +59,6 @@ function RopaIndividual() {
     );
   }
 
-  let categoria = producto?.categoria
 
   return (
     <div>
@@ -81,7 +81,7 @@ function RopaIndividual() {
       <Barra />
 
 
-      {categoria == "mujer" ? (
+      {/* {categoria == "mujer" ? (
         <ContenedorEllas />
       ) : categoria === "hombre" ? (
         <ContenedorEl />
@@ -89,7 +89,7 @@ function RopaIndividual() {
         <ContenedorChicos />
       ) : (
         null
-      )}
+      )} */}
 
 
       {/* Muestra los demas catalagos segun el producto que se selecciono */}
