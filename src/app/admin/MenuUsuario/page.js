@@ -13,6 +13,10 @@ import Perfil from "@/components/MenuUsuario/Perfil/perfil";
 import "../MenuUsuario/menuUsuario.css"
 import Prendas from "@/components/MenuUsuario/TusPrendas/Prendas";
 import Ventas from "@/components/MenuUsuario/Ventas/ventas";
+import Favoritos from "@/components/MenuUsuario/Favoritos/favoritos";
+import Carrito from "@/components/MenuUsuario/Carrito/Carrito";
+import Compras from "@/components/MenuUsuario/Compras/compras";
+import Mensajes from "@/components/MenuUsuario/Mensajes/mensajes";
 
 const MenuUsuario = () => {
     const [selectedMenu, setSelectedMenu] = useState('Menu 1');
@@ -34,10 +38,10 @@ const MenuUsuario = () => {
                     {selectedMenu === 'Menu 2' && <AgregarProductos />}
                     {selectedMenu === 'Menu 3' && <div><Prendas/></div>}
                     {selectedMenu === 'Menu 4' && <div><Ventas /></div>}
-                    {selectedMenu === 'Menu 5' && <div>Favoritos</div>}
-                    {selectedMenu === 'Menu 6' && <div>Carrito</div>}
-                    {selectedMenu === 'Menu 7' && <div>Mis Compras</div>}
-                    {selectedMenu === 'Menu 8' && <div>Mensajes Nuevos</div>}
+                    {selectedMenu === 'Menu 5' && <div><Favoritos /></div>}
+                    {selectedMenu === 'Menu 6' && <div><Carrito /></div>}
+                    {selectedMenu === 'Menu 7' && <div><Compras /></div>}
+                    {selectedMenu === 'Menu 8' && <div><Mensajes /></div>}
                 </div>
             </div>
         </div>
