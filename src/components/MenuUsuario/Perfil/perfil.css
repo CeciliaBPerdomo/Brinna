@@ -5,18 +5,65 @@
     line-height: 40px;
 }
 
+.foto_perfil {
+    width: 140px;
+    height: 140px;
+    border-radius: 140px;
+    border: 2px solid #CA4E3C;
+}
+
+.cargar_foto_perfil {
+    color: #000;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    line-height: normal;
+}
+
+.texto_etiqueta_perfil {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+}
+
+.campo_mi_perfil {
+    display: flex;
+    width: 493px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.grid_perfil {
+    margin-left: -310px;
+}
+
+.boton_perfil {
+    display: flex;
+    height: 42px;
+    padding: 11px 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 25px;
+    background: #CA4E3C;
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    line-height: normal;
+}
 
 /* Para dispositivos móviles */
-@media screen and (max-width: 350px) {
-
-}
+@media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
-@media screen and (min-width: 351px) and (max-width: 600px) {
-
-}
+@media screen and (min-width: 351px) and (max-width: 600px) {}
 
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
-@media screen and (min-width: 901px) and (max-width: 1023px) {
-    
-}
+@media screen and (min-width: 901px) and (max-width: 1023px) {}
