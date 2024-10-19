@@ -10,6 +10,7 @@
     height: 140px;
     border-radius: 140px;
     border: 2px solid #CA4E3C;
+    padding-top: 6px;
 }
 
 .cargar_foto_perfil {
