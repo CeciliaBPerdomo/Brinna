@@ -12,6 +12,7 @@ import { db } from '../app/firebase/config';
 
 // Encriptacion de contraseña 
 import bcrypt from 'bcryptjs';
+// import { user } from '@nextui-org/react';
 // import next from 'next';
 
 // Thunk para agregar un usuario con ID secuencial y verificación de email
@@ -98,9 +99,17 @@ export const loginUsuario = createAsyncThunk(
 
       // Recuperación del usuario
       const user = { 
+        id: userData.id,
         usuario: userData.usuario, 
         email: userData.email, 
-        id: userData.id
+        nombre: userData.nombre || userData.name,
+        //password: userData.password, //esta hasheada
+        celular: userData.celular,
+        cumpleanos: userData.cumpleanos, 
+        genero: userData.genero, 
+        deparamento: userData.deparamento, 
+        ciudad: userData.ciudad,
+        direccion: userData.direccion
       };
 
       localStorage.setItem('currentUser', JSON.stringify(user));
@@ -179,6 +188,47 @@ export const loginWithGoogle = createAsyncThunk(
   }
 );
 
+export const actualizarUsuario = createAsyncThunk(
+  'usuarios/actualizarUsuario',
+  async (values, { getState, rejectWithValue }) => {
+    try {
+      // Obtener el estado actual de usuarios para acceder al usuario actual
+      const state = getState();
+      const currentUser = state.usuarios.currentUser;
+
+      if (!currentUser) {
+        return rejectWithValue("No se encontró un usuario autenticado.");
+      }
+
+      // Crear un objeto con la nueva información a actualizar
+      const usuarioActualizado = {
+        ...currentUser,
+        nombre: values.nombre,
+        usuario: values.usuario,
+        email: values.email,
+        celular: values.celular,
+        cumpleanos: values.cumpleanos,
+        genero: values.genero,
+        departamento: values.departamento,
+        ciudad: values.ciudad,
+        direccion: values.direccion,
+      };
+
+      // Referencia al documento del usuario en Firestore
+      const docRef = doc(db, "usuarios", String(currentUser.id));
+
+      // Actualizar el documento en Firestore
+      await setDoc(docRef, usuarioActualizado, { merge: true });
+
+      // Retornar el usuario actualizado
+      return usuarioActualizado;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+
 // Crear el slice de usuarios
 const usuariosSlice = createSlice({
   name: 'usuarios',
@@ -229,7 +279,23 @@ const usuariosSlice = createSlice({
       .addCase(loginWithGoogle.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-      });
+      })
+
+      // Actualizar usuario
+    .addCase(actualizarUsuario.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    })
+    .addCase(actualizarUsuario.fulfilled, (state, action) => {
+      state.loading = false;
+      state.currentUser = action.payload;
+      localStorage.setItem('currentUser', JSON.stringify(action.payload));
+    })
+    .addCase(actualizarUsuario.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    });
+
   },
 });
 
