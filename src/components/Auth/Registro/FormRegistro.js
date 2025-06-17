@@ -290,6 +290,7 @@ function FormRegistro() {
                             </Link>
                         </div>
 
+                        {/*
                         <div className='flex items-center justify-center div_crear_cuenta_con_google'>
                             <button className='boton_crear_cuenta_con_google' onClick={handleGoogleSignIn}>
                                 <Image
@@ -304,7 +305,8 @@ function FormRegistro() {
                                 </span>
                             </button>
                         </div>
-
+                        */}
+                        
                     </div>
                 </div>
             </div>

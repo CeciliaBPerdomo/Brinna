@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentUser, actualizarUsuario } from "../../../lib/usuariosSlice"
+import { setCurrentUser, actualizarUsuario, subirImagenPerfil } from "../../../lib/usuariosSlice"
 import Image from 'next/image';
 
 // CSS
@@ -38,10 +38,12 @@ function Perfil() {
     departamento: currentUser?.userGoogle?.departamento || currentUser?.departamento || 'sin datos',
     ciudad: currentUser?.userGoogle?.ciudad || currentUser?.ciudad || 'sin datos',
     direccion: currentUser?.userGoogle?.direccion || currentUser?.direccion || 'sin datos',
+    foto: currentUser?.userGoogle?.photoURL || currentUser?.foto || ''
   }
 
   const [formData, setFormData] = useState(initialValues);
-  const [foto, setFoto] = useState(currentUser?.userGoogle?.photoURL || currentUser?.foto || '')
+  const [modalOpen, setModalOpen] = useState(false)
+  const [file, setFile] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -50,20 +52,28 @@ function Perfil() {
     });
   };
 
-  console.log(currentUser)
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    if(selectedFile){
+      // Despacha la acción para subir la imagen
+      setFile(selectedFile); 
+    }
+  };
+
+
 
   const handleSubmit = () => {
-    console.log(formData)
+    //console.log(formData)
     dispatch(actualizarUsuario(formData))
-    .unwrap()
-    .then((updatedUser) => {
-      console.log("Información actualizada exitosamente:", updatedUser);
-      alert("Datos actualizados correctamente");
-    })
-    .catch((error) => {
-      console.error("Error al actualizar la información:", error);
-      alert("Hubo un problema al actualizar los datos.");
-    });
+      .unwrap()
+      .then((updatedUser) => {
+        console.log("Información actualizada exitosamente:", updatedUser);
+        alert("Datos actualizados correctamente");
+      })
+      .catch((error) => {
+        console.error("Error al actualizar la información:", error);
+        alert("Hubo un problema al actualizar los datos.");
+      });
   };
 
 
@@ -84,20 +94,54 @@ function Perfil() {
     }
   }, [currentUser]);
 
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const handleConfirmFile = () => {
+    if (file) {
+      // Despacha la acción para subir la imagen
+      dispatch(subirImagenPerfil(file))
+        .unwrap()
+        .then(() => {
+          closeModal(); // Cierra el modal después de que la imagen se haya subido exitosamente
+        })
+        .catch((error) => {
+          console.error("Error al subir la imagen:", error);
+        });
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className={`${jost} tu_info_perfil`}>
-        Tu info
-      </h1>
+      <h1 className={`${jost} tu_info_perfil`}>Tu info</h1>
       <div className="foto_perfil mt-4 p-1">
         <Image
-          src={foto ? foto : "/images/default-image.png"}
+          src={formData.foto ? formData.foto : "/images/default-image.png"}
           width={160}
           height={140}
           alt={formData.nombre}
         />
       </div>
-      <p className={`${sub_jost} cargar_foto_perfil m-3`}>Cargar foto</p>
+      <p onClick={openModal} className={`${sub_jost} cargar_foto_perfil m-3`}>Cargar foto</p>
+
+      {/* Modal */}
+     {modalOpen && (
+        <div className="modal_container">
+          <div className="modal_content">
+            <h2 className={`${jost} modal_title`}>Seleccionar nueva imagen</h2>
+            <input type="file" onChange={handleFileChange} />
+            <div className="modal_buttons">
+              <button onClick={handleConfirmFile} className={`${sub_jost} modal_confirm_btn`}>Confirmar</button>
+              <button onClick={closeModal} className={`${sub_jost} modal_cancel_btn`}>Cancelar</button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-2 gap-4 m-2 grid_perfil">
         <label htmlFor="nombre" className={`${p_jost} text-right texto_etiqueta_perfil mt-2`}>Nombre completo:</label>

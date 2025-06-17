@@ -121,11 +121,12 @@ function FormInicioSesion() {
             tostada(error);
         }
     }
-    
+
     return (
         <>
             <div className="fixed inset-0 flex justify-center items-center">
                 <div className='div_formulario_iniciosesion_principal flex'>
+
                     {/* Imagen logueo */}
                     <div className="w-1/2 div_formulario_iniciosesion_imagen">
                         <Image
@@ -139,7 +140,25 @@ function FormInicioSesion() {
                         />
                     </div>
 
-                    <div className="w-1/2 p-6 div_iniciosesion_registro">
+                    <div className="w-1/2 p-6 div_iniciosesion_registro relative">
+
+                        {/* Botón de cerrar */}
+                        <Link href={"/"} passHref>
+                            <button
+                                className="boton_cerrar_form"
+                                aria-label="Cerrar formulario">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
+                                    width="18"
+                                    height="18"
+                                    fill="#900"  // color rojo oscuro
+                                    style={{ display: "block" }} // para evitar espacio extra en línea
+                                >
+                                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                                </svg>
+                            </button>
+                        </Link>
+
+
                         <h2 className={`iniciar_sesion ${jost}`}>Iniciar sesión</h2>
                         <p className={`completa_tus_datos_sesion ${jost}`}>Completa tus datos para ingresar a tu cuenta.</p>
 
@@ -173,7 +192,9 @@ function FormInicioSesion() {
                                 />
                             </div>
 
+                            {/* Olvidaste tu contraseña */}
                             <p className={`olvidaste_contra ${olvidaste_jost}`}>¿Olvidaste tu contraseña?</p>
+
 
                             {/* Boton de iniciar sesion */}
                             <div className='flex justify-center'>
@@ -182,7 +203,7 @@ function FormInicioSesion() {
                                         className="text-white font-bold py-2 px-4 rounded focus:outline-none 
                                     focus:shadow-outline botonGuardar_ingresar"
                                         type="submit"
-                                        // onClick={(e) => handleSubmit(e)}
+                                    // onClick={(e) => handleSubmit(e)}
                                     >
                                         Ingresar
                                     </button>
@@ -196,10 +217,12 @@ function FormInicioSesion() {
                             </Link>
                         </div>
 
+                        {/*
                         <div className='flex items-center justify-center'>
                             <p className={`ingresar_o ${jost}`}> ______________ o ______________ </p>
                         </div>
 
+    
                         <div className='flex items-center justify-center div_iniciar_con_google'>
                             <button 
                             className='boton_iniciarsesion_con_google'
@@ -217,6 +240,8 @@ function FormInicioSesion() {
                                 </span>
                             </button>
                         </div>
+                        */}
+
 
                     </div>
                 </div>
