@@ -1,13 +1,12 @@
-/* principal */
 .div_formulario_iniciosesion_principal {
     width: 960px;
     height: 680px;
     border-radius: 100px;
-    background: #DAEBEB;
-    display: flex;
-
     background: rgba(218, 235, 235, 0.65);
     backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .div_formulario_iniciosesion_imagen {
@@ -23,9 +22,14 @@
 .div_iniciosesion_registro {
     width: 618px;
     height: 680px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* centra verticalmente el contenido */
+    position: relative;
 }
 
-/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------- */
 /* Titulos */
 
 .iniciar_sesion {
@@ -33,8 +37,8 @@
     font-size: 28px;
     font-style: normal;
     line-height: 40px;
-    padding-top: 92px;
     padding-left: 32px;
+    /* padding-top: 92px;   <-- eliminar */
 }
 
 .completa_tus_datos_sesion {
@@ -54,7 +58,7 @@
     line-height: normal;
 }
 
-/* -------------------------------------------------------- */
+/* ------------------------------------------------------------- */
 /* Inputs */
 
 .formulario_iniciarsesion_inputs {
@@ -76,23 +80,36 @@
     margin-bottom: 15px;
 }
 
-.no_tengo_cuenta {
-    color: #5D717C;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 40px;
+/* ------------------------------------------------------------- */
+/* Botón cerrar */
+
+.boton_cerrar_form {
+    position: absolute;
+    top: 2.5rem;
+    right: 3.5rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 150, 150, 0.4);
+    color: #900;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    z-index: 10;
 }
 
-.ingresar_o {
-    color: #888;
-    text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 40px;
+.boton_cerrar_form:hover {
+    background-color: rgba(255, 99, 99, 0.8);
+    color: white;
 }
 
-/* -------------------------------------------------------- */
-/* Botones */
+/* ------------------------------------------------------------- */
+/* Botón ingresar */
 
 .div_botonGuardar_ingresar {
     border-radius: 100px;
@@ -108,8 +125,8 @@
     padding-top: 5px;
 }
 
-/* -------------------------------------------------------- */
-/* Google */
+/* ------------------------------------------------------------- */
+/* Google login */
 
 .boton_iniciarsesion_con_google {
     display: flex;
@@ -117,11 +134,9 @@
     height: 54px;
     padding: 10px;
     flex-direction: row;
-
     justify-content: center;
     align-items: center;
     gap: 10px;
-
     border-radius: 100px;
     background: #FFF;
 }
@@ -142,165 +157,105 @@
     line-height: 40px;
 }
 
-/* -------------------------------------------------------- */
-/* Loader */
+/* ------------------------------------------------------------- */
+/* Responsive: Celulares (menor a 768px) */
 
-.loader-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.6);
-    /* Fondo semi-transparente */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-.loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
-    border-radius: 50%;
-    border: 1px solid #000;
-    height: 150px;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(#ddd 50%, #bbb 51%),
-        linear-gradient(#ddd, #ddd), linear-gradient(#ddd, #ddd),
-        radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%),
-        radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%),
-        radial-gradient(ellipse at center, #aaa 25%, #eee 26%, #eee 50%, #0000 55%);
-    background-position: 0 20px, 45px 0, 8px 6px, 55px 3px, 75px 3px, 95px 3px;
-    background-size: 100% 4px, 1px 23px, 30px 8px, 15px 15px, 15px 15px, 15px 15px;
-    position: relative;
-    border-radius: 6%;
-    animation: shake 3s ease-in-out infinite;
-    transform-origin: 60px 180px;
-    border: 1px solid #000;
-}
-
-/* Para dispositivos móviles */
-@media screen and (max-width: 350px) {}
-
-/* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
-@media screen and (min-width: 351px) and (max-width: 600px) {
-
-    /* ------------------------------------------------------------------ */
-    /*Div principal*/
+@media (max-width: 767px) {
     .div_formulario_iniciosesion_principal {
+        width: 95%;
+        height: auto;
         flex-direction: column;
-        width: 320px;
-        height: 520px;
         border-radius: 50px;
+        padding: 20px;
     }
 
     .div_formulario_iniciosesion_imagen {
-        width: 100%;
-        height: 180px;
-        position: relative;
-    }
-
-    .formulario_iniciosesion_imagen {
-        border-radius: 50px 50px 0px 0px;
-        position: relative !important;
+        display: none;
     }
 
     .div_iniciosesion_registro {
-        width: 320px;
-        height: 520px;
+        width: 100%;
+        height: auto;
+        padding: 20px 10px;
     }
 
-    /* ------------------------------------------------------------------ */
-    /* Titulos */
-    .iniciar_sesion {
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 20px;
-        padding-top: 4px;
-        padding-left: 6px;
-    }
-
+    .iniciar_sesion,
     .completa_tus_datos_sesion {
-        font-size: 16px;
-        line-height: 20px;
-        padding-left: 6px;
+        padding-left: 10px;
     }
 
-    .olvidaste_contra {
-        text-align: right;
-        padding-right: 6px;
-        font-size: 10px;
-    }
-
-    .no_tengo_cuenta {
-        font-size: 12px;
-        font-style: normal;
-        line-height: 25px;
-    }
-
-    .ingresar_o {
-        font-size: 12px;
-        line-height: 10px;
-    }
-
-    /* -------------------------------------------------------- */
-    /* Inputs */
     .formulario_iniciarsesion_inputs {
-        padding-left: 6px;
-        padding-top: 10px;
+        padding-left: 10px;
+        padding-top: 20px;
     }
 
     .iniciosesion_inputs {
-        width: 443px;
-        height: 35px;
-        gap: 5px;
-
-        border-radius: 50px;
-        margin-bottom: 8px;
+        width: 100%;
     }
 
-    /* -------------------------------------------------------- */
-    /* Botones */
+    .olvidaste_contra {
+        padding-right: 20px;
+    }
+
     .div_botonGuardar_ingresar {
-        border-radius: 50px;
-        width: 110px;
-        height: 35px;
-        gap: 1px;
-        margin-top: 8px;
-        margin-left: 0px;
+        margin-left: 0;
+        align-self: center;
     }
 
-    .botonGuardar_ingresar {
-        padding-top: 5px;
-    }
-
-    /* -------------------------------------------------------- */
-    /* Google */
     .boton_iniciarsesion_con_google {
-        width: 309px;
-        height: 40px;
-        padding: 5px;
-        gap: 1px;
-        border-radius: 100px;
+        width: 90%;
     }
 
-    .div_iniciar_con_google {
-        padding-top: 10px;
+    .boton_cerrar_form {
+        top: 1rem;
+        right: 1rem;
     }
-
-    .icono_google_iniciarsesion {
-        width: 25px;
-        height: 27px;
-    }
-
-    .texto_iniciarsesion_google {
-        font-size: 14px;
-        line-height: 20px;
-    }
-
 }
 
-/* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
-@media screen and (min-width: 901px) and (max-width: 1023px) {}
+/* ------------------------------------------------------------- */
+/* Responsive: Tablets (768px a 1024px) */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .div_formulario_iniciosesion_principal {
+        width: 90%;
+        height: auto;
+        border-radius: 70px;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .div_formulario_iniciosesion_imagen {
+        display: none;
+    }
+
+    .div_iniciosesion_registro {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        align-items: center;
+    }
+
+    .formulario_iniciarsesion_inputs {
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 20px;
+    }
+
+    .iniciosesion_inputs {
+        width: 100%;
+    }
+
+    .div_botonGuardar_ingresar {
+        margin-left: 0;
+    }
+
+    .boton_iniciarsesion_con_google {
+        width: 80%;
+    }
+
+    .boton_cerrar_form {
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+}
+/* ------------------------------------------------------------- */

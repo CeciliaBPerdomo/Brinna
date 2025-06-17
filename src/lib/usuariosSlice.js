@@ -212,6 +212,49 @@ export const actualizarUsuario = createAsyncThunk(
         departamento: values.departamento,
         ciudad: values.ciudad,
         direccion: values.direccion,
+        photoURL: values.photoURL || currentUser.photoURL 
+      };
+
+      // Referencia al documento del usuario en Firestore
+      const docRef = doc(db, "usuarios", String(currentUser.id));
+
+      // Actualizar el documento en Firestore
+      await setDoc(docRef, usuarioActualizado, { merge: true });
+
+      // Retornar el usuario actualizado
+      return usuarioActualizado;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+
+export const subirImagenPerfil = createAsyncThunk(
+  'usuarios/subirImagenPerfil',
+  async (imagen, { getState, rejectWithValue }) => {
+    try {
+      const state = getState();
+      const currentUser = state.usuarios.currentUser;
+
+      if (!currentUser) {
+        return rejectWithValue("No se encontró un usuario autenticado.");
+      }
+
+      // Referencia al storage de Firebase
+      const storage = getStorage();
+      const storageRef = ref(storage, `fotos-perfil/${currentUser.id}/${imagen.name}`);
+
+      // Subir la imagen al storage de Firebase
+      await uploadBytes(storageRef, imagen);
+
+      // Obtener la URL de descarga de la imagen subida
+      const urlImagen = await getDownloadURL(storageRef);
+
+      // Actualizar el usuario con la URL de la imagen
+      const usuarioActualizado = {
+        ...currentUser,
+        photoURL: urlImagen, // Guardar la URL de la nueva imagen
       };
 
       // Referencia al documento del usuario en Firestore
@@ -294,7 +337,23 @@ const usuariosSlice = createSlice({
     .addCase(actualizarUsuario.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload;
-    });
+    })
+
+
+    // Subir imagen de perfil
+    .addCase(subirImagenPerfil.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    })
+    .addCase(subirImagenPerfil.fulfilled, (state, action) => {
+      state.loading = false;
+      state.currentUser = action.payload;
+      localStorage.setItem('currentUser', JSON.stringify(action.payload));
+    })
+    .addCase(subirImagenPerfil.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    })
 
   },
 });

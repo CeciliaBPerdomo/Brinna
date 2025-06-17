@@ -16,12 +16,12 @@ function MenuBotones() {
         <div className="menuopciones_navbar_generico">
             {/* Registro */}
             <Link href={"/admin/Registro"}>
-                <button className={`botones_registro ${jost}`}>Registrarte</button>
+                <button className={`botones_registro ${jost.className}`}>Registrarte</button>
             </Link>
 
             {/* Inicio de sesion */}
             <Link href={"/admin/IniciarSesion"}>
-                <button className={`botones_iniciar_sesion ${jost}`}>
+                <button className={`botones_iniciar_sesion ${jost.className}`}>
                     <svg xmlns="http://www.w3.org/2000/svg"
                         width="30"
                         height="30"
