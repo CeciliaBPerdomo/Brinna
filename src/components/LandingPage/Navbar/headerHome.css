@@ -35,7 +35,17 @@
     .headerHome {
         & .banner_portada {
             min-height: 60vh;
-            /* en móviles más chico */
+        }
+    }
+}
+
+
+@media (min-width: 250px) and (max-width: 499px) {
+    .headerHome {
+        & .banner_portada {
+            min-width: 250px;
+            max-width: 499px;
+            min-height: 30vh;
         }
     }
 }

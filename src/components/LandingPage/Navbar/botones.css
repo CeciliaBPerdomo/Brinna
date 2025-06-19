@@ -3,7 +3,7 @@
 /* Div principal */
 .barraBotones_menuHeaderHome {
     padding-top: 100px;
-    /* margin-right: 100px; */
+    margin-right: 100px;
 }
 
 .botonera_menuHeaderHome {
@@ -78,10 +78,37 @@
 
 /* Para dispositivos móviles */
 @media (min-width: 250px) and (max-width: 500px) {
-    .botonera_menuHeaderHome {
-        margin-top: 100px;
+    .menuopciones_navbar_generico {
+        padding-top: -60px;
+        width: 100%;
+        max-width: 500px;
+        padding-right: 0px;
+        display: flex;
+        flex-direction: column-reverse;
         justify-content: center;
+        gap: 4px;
+        margin: 0 auto;
+        align-items: center;
     }
+
+     .botonera_menuHeaderHome {
+        display: flex;
+        flex-direction: column; /* Botones uno arriba del otro */
+        justify-content: center;
+        align-items: center;
+        gap: 12px; /* Espacio entre los botones */
+        width: 100%;
+    }
+
+
+    .botones_iniciar_sesion,
+    .botones_registro {
+        width: 120px;
+        margin-right: 0;
+        font-size: 12px;
+        height: 30px;
+    }
+
 }
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
