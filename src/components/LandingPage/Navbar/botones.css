@@ -83,8 +83,6 @@
         width: 100%;
         max-width: 500px;
         padding-right: 0px;
-        display: flex;
-        flex-direction: column-reverse;
         justify-content: center;
         gap: 4px;
         margin: 0 auto;
