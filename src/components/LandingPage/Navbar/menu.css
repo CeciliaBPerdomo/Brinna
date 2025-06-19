@@ -25,10 +25,10 @@
     align-items: center;
   }
 
-  .menuNav_menuHomePrincipal {
+  /* .menuNav_menuHomePrincipal {
     flex-direction: column-reverse;
     gap: 8px;
-  }
+  } */
 
   .menuInicio_menuHomePrincipal {
     font-size: 14px;
