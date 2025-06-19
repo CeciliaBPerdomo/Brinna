@@ -79,10 +79,11 @@
 /* Para dispositivos móviles */
 @media (min-width: 250px) and (max-width: 500px) {
     .menuopciones_navbar_generico {
-        padding-top: -60px;
+        padding-top: -80px;
         width: 100%;
         max-width: 500px;
         padding-right: 0px;
+        display: flex;
         justify-content: center;
         gap: 4px;
         margin: 0 auto;
