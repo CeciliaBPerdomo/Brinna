@@ -3,7 +3,7 @@
 /* Div principal */
 .barraBotones_menuHeaderHome {
     padding-top: 100px;
-    margin-right: 100px;
+    /* margin-right: 100px; */
 }
 
 .botonera_menuHeaderHome {
@@ -16,7 +16,7 @@
     padding-right: 10px;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: left;
+    align-items: flex-end;
 }
 
 
@@ -67,7 +67,7 @@
     line-height: normal;
 }
 
-.div_nombre_usuario_botones{
+.div_nombre_usuario_botones {
     display: flex;
     width: 188px;
     height: 34px;
@@ -77,21 +77,25 @@
 }
 
 /* Para dispositivos móviles */
-@media screen and (max-width: 350px) {}
+@media (min-width: 350px) and (max-width: 500px) {
+    .botonera_menuHeaderHome {
+        margin-top: 100px;
+        justify-content: center;
+    }
+}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
-@media screen and (min-width: 351px) and (max-width: 600px) {
+@media (min-width: 501px) and (max-width: 600px) {
     .botonera_menuHeaderHome {
         align-items: end;
     }
 
     /* Div principal */
     .barraBotones_menuHeaderHome {
-        width: 351px;
-        margin-right: 1px;
+        min-width: 351px;
+        margin-right: 20px;
         padding-top: 30px;
     }
-
 
     /*Botones*/
     .botones_registro {

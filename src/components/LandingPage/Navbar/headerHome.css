@@ -1,0 +1,41 @@
+.headerHome {
+    width: 100%;
+
+    & .banner_portada {
+        width: 100%;
+        min-height: 140vh;
+        padding: 0;
+        background-image: url('/images/banner_home.png');
+        background-size: cover;
+        background-position: left center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1022px) {
+    .headerHome {
+        & .banner_portada {
+            min-height: 85vh;
+            /* en pantallas medianas */
+        }
+    }
+}
+
+@media (min-width: 750px) and (max-width: 900px) {
+    .headerHome {
+        & .banner_portada {
+            min-height: 77vh;
+            /* en móviles más chico */
+        }
+    }
+}
+
+@media (min-width: 500px) and (max-width: 749px) {
+    .headerHome {
+        & .banner_portada {
+            min-height: 60vh;
+            /* en móviles más chico */
+        }
+    }
+}
