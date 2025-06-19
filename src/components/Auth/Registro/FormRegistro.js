@@ -205,7 +205,7 @@ function FormRegistro() {
 
                     <div className="w-1/2 p-6 div_formulario_registro">
 
- {/* Botón de cerrar */}
+                        {/* Botón de cerrar */}
                         <Link href={"/"} passHref>
                             <button
                                 className="boton_cerrar_form"
@@ -323,7 +323,7 @@ function FormRegistro() {
                             </button>
                         </div>
                         */}
-                        
+
                     </div>
                 </div>
             </div>

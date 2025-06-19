@@ -228,6 +228,10 @@
     padding-left: 10px;
   }
 
+  .formulario_registro_inputs {
+    padding-left: 0px;
+
+}
   .registro_inputs {
     width: 100%;
     height: 40px;

@@ -1,6 +1,20 @@
+/* navbar.css */
 .bannerHome_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center;     /* Centra horizontalmente */
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100%;
+    min-height: 120px; /* Altura mínima */
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.bg-portada {
+    width: 100%;
+    height: 100%;
 }
 
 .barraNavegacion {
@@ -9,9 +23,7 @@
 
 
 /* Para dispositivos móviles */
-@media screen and (max-width: 350px) {
-
-}
+@media screen and (max-width: 350px) {}
 
 /* Para dispositivos medianos a grandes (por ejemplo, tablets pequeñas) */
 @media screen and (min-width: 351px) and (max-width: 600px) {
@@ -27,20 +39,22 @@
     }
 }
 
+@media (min-width: 768px) {
+    .bannerHome_header {
+        min-height: 180px;
+    }
+}
+
 /* Para dispositivos grandes (por ejemplo, tablets grandes o pantallas pequeñas de computadoras) */
 @media screen and (min-width: 901px) and (max-width: 1023px) {
     .bannerHome_header {
-        height: 1350px;
+        height: 100%;
         width: 100%;
     }
 }
 
-
-
-/* Para pantallas de TV a partir de 1024px */
 @media (min-width: 1024px) {
     .bannerHome_header {
-        height: 1350px;
-        width: 100%;
+        min-height: 220px;
     }
-} 
+}
