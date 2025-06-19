@@ -45,7 +45,8 @@
         & .banner_portada {
             min-width: 250px;
             max-width: 499px;
-            min-height: 30vh;
+            min-height: 38vh;
+            margin-bottom: 5px;
         }
     }
 }
