@@ -19,7 +19,7 @@ const ComprarVender = () => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <Link href="/comprar">
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 rounded-lg cursor-pointer">
+                    <div className="absolute inset-0 flex items-center justify-center rounded-lg cursor-pointer">
                         <span
                             style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}
                             className={`border-4 border-white text-white uppercase px-6 py-3 text-3xl md:text-5xl font-extrabold ${jost.className}`}
@@ -38,7 +38,7 @@ const ComprarVender = () => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <Link href="/vender">
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 rounded-lg cursor-pointer">
+                    <div className="absolute inset-0 flex items-center justify-center rounded-lg cursor-pointer">
                         <span
                             style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}
                             className={`border-4 border-white text-white uppercase px-6 py-3 text-3xl md:text-5xl font-extrabold ${jost.className}`}
