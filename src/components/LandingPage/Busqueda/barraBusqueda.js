@@ -1,9 +1,7 @@
 import { Search } from "lucide-react";
 
-// import "../Busqueda/barra.css"
-
+// Tipografía
 import { Jost } from "next/font/google"
-
 const jost = Jost({
     weight: "700",
     subsets: ['latin'],
@@ -17,40 +15,10 @@ const jost_barra = Jost({
 const Barra = () => {
 
     return (
-        // <div className="barra_busqueda_contenedor">
-
-        //     {/* Encabezado */}
-        //     <div className="texto_barra">
-        //         <h1 className={`titulo_barra ${jost}`}>¿Qué estás buscando?</h1>
-        //     </div>
-
-        //     {/* Barra de busqueda */}
-        //     <div className="barra_busqueda">
-        //         <div className="input_container_barra">
-        //             <input
-        //                 type="text"
-        //                 placeholder="Busca una prenda"
-        //                 className={`input_barra ${jost_barra}`}
-        //             />
-        //             <button className="boton_lupa_barra">
-        //                 <svg className="text-white svg_boton_lupa_barra"
-        //                     fill="none"
-        //                     viewBox="0 0 24 24"
-        //                     stroke="currentColor"
-        //                 >
-        //                     <path strokeLinecap="round"
-        //                         strokeLinejoin="round"
-        //                         strokeWidth="2"
-        //                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        //                 </svg>
-        //             </button>
-        //         </div>
-        //     </div>
-
-        // </div>
         <div className="max-w-[90%] mx-auto py-8 flex flex-col gap-6 items-center">
             {/* Título */}
-            <h2 className={`text-2xl md:text-3xl font-bold text-center ${jost.className}`}
+            <h2
+                className={`text-2xl md:text-3xl font-bold text-center ${jost.className}`}
                 style={{ color: "#CA4E3C" }} >
                 ¿Qué estás buscando?
             </h2>
@@ -64,11 +32,11 @@ const Barra = () => {
                     style={{ color: "#757575" }}
                     className={`w-full rounded-full border border-gray-300 border-r-0 px-6 py-3 pr-14 text-lg focus:outline-none bg-gray-100 cursor-not-allowed ${jost_barra.className}`}
                 />
+
                 <button
                     className="absolute top-0 right-0 h-full w-12 rounded-r-full border border-gray-300 border-l-0 bg-[#CA4E3C] text-white flex items-center justify-center hover:bg-red-700"
                     disabled
-                >
-                    <Search className="w-6 h-6" />
+                > <Search className="w-6 h-6" />
                 </button>
             </div>
         </div>
