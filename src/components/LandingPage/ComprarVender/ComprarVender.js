@@ -11,7 +11,7 @@ const jost = Jost({
 const ComprarVender = () => {
     return (
         <div className="max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-            {/* Imagen 1 con texto "COMPRAR" */}
+            {/* COMPRAR */}
             <div className="relative w-full h-72 md:h-96 overflow-hidden group rounded-lg">
                 <img
                     src="/images/fondos/FondoComprar.png"
@@ -30,7 +30,7 @@ const ComprarVender = () => {
                 </Link>
             </div>
 
-            {/* Imagen 2 con texto "VENDER" */}
+            {/* VENDER */}
             <div className="relative w-full h-72 md:h-96 overflow-hidden group rounded-lg">
                 <img
                     src="/images/fondos/FondoVender.png"
