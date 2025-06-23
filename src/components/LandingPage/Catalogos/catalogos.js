@@ -64,12 +64,12 @@ const Catalogo = () => {
         {/* Imagen 3 - chicos */}
         <div
           className="relative h-96 md:h-[720px] bg-contain bg-center bg-no-repeat mb-4 md:mb-0"
-          style={{backgroundImage: "url('/images/fondos/chicos.png')"}}
+          style={{ backgroundImage: "url('/images/fondos/chicos.png')" }}
         >
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-0">
             <p className="text-white text-xl md:text-2xl font-bold w-full max-w-[90%] text-center break-words mx-auto">
-  Ropa para los más chicos
-</p>
+              Ropa para los más chicos
+            </p>
             <a
               href="/catalogo-chicos"
               className="px-4 py-2 border border-white text-white hover:bg-white hover:text-[#CA4E3C] transition"
