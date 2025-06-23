@@ -34,7 +34,7 @@ const MasCatalogos = () => {
 
                 {/* Columna 2 */}
                 <div
-                    className="relative h-96 md:h-[720px] bg-cover bg-center overflow-hidden"
+                    className="relative h-[720px] bg-cover bg-center overflow-hidden"
                     style={{ backgroundImage: "url('/images/fondos/el.png')" }}
                 >
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-4">
@@ -50,7 +50,7 @@ const MasCatalogos = () => {
 
                 {/* Columna 3 */}
                 <div
-                    className="relative h-96 md:h-[720px] bg-cover bg-center overflow-hidden"
+                    className="relative h-[720px] bg-cover bg-center overflow-hidden"
                     style={{ backgroundImage: "url('/images/fondos/chicos.png')" }}
                 >
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-4">
