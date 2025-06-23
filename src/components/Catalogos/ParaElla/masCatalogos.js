@@ -68,8 +68,6 @@ const MasCatalogos = () => {
 
             </div>
         </section>
-
-
     )
 }
 
