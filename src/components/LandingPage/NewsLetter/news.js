@@ -38,20 +38,22 @@ const News = () => {
                     </div>
 
                     {/* Columna 2 - formulario */}
-                    <form className="flex flex-col gap-4 w-4/5 mx-auto md:mx-0 md:w-4/5">
+                    <form className="flex flex-col items-center gap-4 w-full md:items-start md:w-4/5">
                         <input
                             type="email"
                             placeholder="Tu correo electrónico"
-                            className="px-4 py-3 rounded-full border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#CA4E3C]"
+                            disabled
+                            className="w-4/5 px-4 py-3 rounded-full border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#CA4E3C]"
                             required
                         />
                         <button
                             type="submit"
-                            className={`bg-[#CA4E3C] hover:bg-[#a73b2d] transition text-white font-semibold py-3 rounded-full mx-auto md:mx-0 ${sub_jost.className}`}
+                            className={`w-4/5 bg-[#CA4E3C] hover:bg-[#a73b2d] transition text-white font-semibold py-3 rounded-full ${sub_jost.className}`}
                         >
                             Suscribirme!
                         </button>
                     </form>
+
                 </div>
             </div>
         </section>
