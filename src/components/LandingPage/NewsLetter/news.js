@@ -1,5 +1,4 @@
-// CSS 
-// import "../NewsLetter/newsLetter.css"
+// Tipografia
 import { Jost } from "next/font/google"
 
 const jost = Jost({
@@ -14,7 +13,7 @@ const sub_jost = Jost({
 
 const News = () => {
     return (
-                <section
+        <section
             className="w-full bg-cover bg-center py-16 px-6"
             style={{ backgroundImage: "url('/images/fondos/newsletter.png')" }}
         >
@@ -32,7 +31,7 @@ const News = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Columna 1 - texto */}
                     <div className="text-center md:text-right">
-                       <p className={`text-gray-600 text-xl md:text-2xl lg:text-3xl ${sub_jost.className}`}>
+                        <p className={`text-gray-600 text-xl md:text-2xl lg:text-3xl ${sub_jost.className}`}>
                             Suscríbite a nuestro newsletter y entérate de las últimas
                             novedades.
                         </p>
@@ -47,9 +46,9 @@ const News = () => {
                             required
                         />
                         <button
-    type="submit"
-    className={`bg-[#CA4E3C] hover:bg-[#a73b2d] transition text-white font-semibold py-3 rounded-full w-1/2 mx-auto md:mx-0 ${sub_jost.className}`}
->
+                            type="submit"
+                            className={`bg-[#CA4E3C] hover:bg-[#a73b2d] transition text-white font-semibold py-3 rounded-full mx-auto md:mx-0 ${sub_jost.className}`}
+                        >
                             Suscribirme!
                         </button>
                     </form>
