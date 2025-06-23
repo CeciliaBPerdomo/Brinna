@@ -1,20 +1,12 @@
-import React from "react";
-
 // Fuente
 import { Jost } from "next/font/google"
-
-// Componente
-import CatalagoPara from "@/components/LandingPage/Catalogos/catalogo_para";
-
-//CSS 
-import "./masCatalogosChicos.css"
 
 const jost = Jost({
     weight: "400",
     subsets: ['latin'],
 })
 
-const subjost = Jost({
+const sub_jost = Jost({
     weight: "600",
     subsets: ['latin'],
 })
@@ -22,23 +14,58 @@ const subjost = Jost({
 
 const MasCatalogosChicos = () => {
     return (
-        <div>
-            <div className="w-full grid grid-cols-3 mas_catalogos_chicos">
-                <div className="fondoPrincipal_catalogo mas_catalogos">
-                    <p className={`mira_otros_catalogos ${jost}`}>¡Mirá otros catálogos!</p>
-                    <p className={`explora_otros_catalogos ${subjost}`}>Explora en otras categorías.</p>
+        <section className="w-full py-12 px-3">
+            <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+
+                {/* Columna 1 - Texto */}
+                <div className="text-center md:text-left bg-[#DAEBEB] p-8 flex flex-col justify-center">
+                    <h2
+                        className={`text-3xl md:text-4xl font-extrabold mb-4 ${jost.className}`}
+                        style={{ color: "#CA4E3C" }}
+                    >
+                        ¡Mirá otros catálogos!
+                    </h2>
+                    <p
+                        className={`text-gray-600 mb-4 text-lg md:text-xl ${sub_jost.className}`}
+                    >
+                        Explora en otras categorías.
+                    </p>
                 </div>
 
-                <div className="bg-el fondoPrincipal_catalogo">
-                    <CatalagoPara para={"él"} targetPage="/catalogo-el" />
+                {/* Columna 2 */}
+                <div
+                    className="relative h-[720px] bg-cover bg-center overflow-hidden"
+                    style={{ backgroundImage: "url('/images/fondos/ella.png')" }}
+                >
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-4">
+                        <p className="text-white text-2xl font-bold">Ropa para ella</p>
+                        <a
+                            href="/catalogo-ella"
+                            className="px-4 py-2 border border-white text-white hover:bg-white hover:text-[#CA4E3C] transition"
+                        >
+                            Ver catálogo
+                        </a>
+                    </div>
                 </div>
 
-                <div className="bg-ella fondoPrincipal_catalogo">
-                    <CatalagoPara para={"ella"} targetPage="/catalogo-ella"  />
+                {/* Columna 3 */}
+               <div
+                    className="relative h-[720px] bg-cover bg-center overflow-hidden"
+                    style={{ backgroundImage: "url('/images/fondos/el.png')" }}
+                >
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-4">
+                        <p className="text-white text-2xl font-bold">Ropa para él</p>
+                        <a
+                            href="/catalogo-el"
+                            className="px-4 py-2 border border-white text-white hover:bg-white hover:text-[#CA4E3C] transition"
+                        >
+                            Ver catálogo
+                        </a>
+                    </div>
                 </div>
 
             </div>
-        </div>
+        </section>
     )
 }
 
