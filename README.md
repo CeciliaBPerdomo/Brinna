@@ -29,7 +29,7 @@
 - Firebase, GoogleAuth
 
 ## 🧑‍💻 Developers
-Realizado por <a href="https://www.linkedin.com/in/cecilia-perdomo/" style="text-decoration: none; color: inherit;">Cecilia Perdomo</a> y <a href="https://www.linkedin.com/in/danieljmartinezdev/" style="text-decoration: none; color: inherit;">Daniel Martinez</a>, primera versión desde el 02 de Abril.
+Realizado por <a href="https://www.linkedin.com/in/cecilia-perdomo/" style="text-decoration: none; color: inherit;">Cecilia Perdomo</a> y <a href="https://www.linkedin.com/in/danieljmartinezdev/" style="text-decoration: none; color: inherit;">Daniel Martinez</a>, primera versión desde el 02 de Abril 2024.
 
 ## 👩‍🎨 Diseñadora UX/UI
 Realizado por <a href="https://www.linkedin.com/in/noeliaperdomo/" style="text-decoration: none; color: inherit;">Noelia Perdomo</a>
