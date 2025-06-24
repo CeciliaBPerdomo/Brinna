@@ -1,30 +1,29 @@
-import React from "react";
-
-// Componenetes
-import MenuOpciones from "../Catalogos/MenuOpciones";
-import MenuCatalogos from "../Catalogos/menu";
+'use client';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import Menu from '@/components/LandingPage/Navbar/menu';
 import LogoWhatsappCatalogos from "@/components/LandingPage/Navbar/what";
 
-// CSS
-import "../Terminos/headerTerminos.css"
-
 const HeaderTerminos = () => {
+    const pathname = usePathname();
+
     return (
-        <header className="bg-bannerterminos banner_terminos_principal ">
-            {/* Menu de opciones */}
-            <div className="barraBotones_menuBotones_terminos">
-                <div className="botonera_menuBotones">
-                    <MenuOpciones />
-                </div>
-            </div>
+        <div className="relative w-full">
+            <Image
+                src="/images/fondos/banner_terminos_y_condiciones_con logo.png"
+                alt="Banner de fondo"
+                width={1920}
+                height={1080}
+                className="w-full h-auto"
+                priority
+            />
 
-            {/* Menu de navegacion */}
-            <MenuCatalogos />
+            {/* Navbar */}
+            <Menu pathname={pathname} />
 
-            {/* Logo de whatsapp */}
+            {/* Ícono WhatsApp */}
             <LogoWhatsappCatalogos />
-
-        </header>
+        </div>
     )
 }
 

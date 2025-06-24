@@ -6,6 +6,7 @@ import LogoWhatsappCatalogos from "@/components/LandingPage/Navbar/what";
 
 const HeaderParaChicos = () => {
     const pathname = usePathname();
+    
     return (
          <div className="relative w-full">
             <Image

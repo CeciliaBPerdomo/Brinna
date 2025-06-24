@@ -1,30 +1,29 @@
-import React from "react";
-
-//CSS 
-import "../Contacto/headercontacto.css"
-
-//Componentes
-import MenuOpciones from "../Catalogos/MenuOpciones";
-import MenuCatalogos from "../Catalogos/menu";
+'use client';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import Menu from '@/components/LandingPage/Navbar/menu';
 import LogoWhatsappCatalogos from "@/components/LandingPage/Navbar/what";
 
 const HeaderContacto = () => {
+    const pathname = usePathname();
+
     return (
-        <header className="bg-bannercontacto contacto_header_principal">
-            {/* Menu de opciones */}
-            <div className="barraBotones_menuBotones">
-                <div className="botonera_menuBotones">
-                    <MenuOpciones />
-                </div>
-            </div>
+         <div className="relative w-full">
+            <Image
+                src="/images/fondos/banner_contacto_con_logo.png"
+                alt="Banner de fondo"
+                width={1920}
+                height={1080}
+                className="w-full h-auto"
+                priority
+            />
 
-            {/* Menu de navegacion */}
-            <MenuCatalogos />
+            {/* Navbar */}
+            <Menu pathname={pathname} />
 
-            {/* WhatsApp */}
-                    <LogoWhatsappCatalogos />
-
-        </header>
+            {/* Ícono WhatsApp */}
+            <LogoWhatsappCatalogos />
+        </div>
     )
 }
 
