@@ -6,7 +6,7 @@ import "../General/headerGeneral.css"
 //Componentes
 import MenuOpciones from "../MenuOpciones";
 import MenuCatalogos from "../menu";
-import LogoWhatsappCatalogos from "../LogoWhatsApp";
+import LogoWhatsapp from "@/components/LandingPage/Navbar/what";
 
 const CatalogoGeneral = () => {
     return (
@@ -23,9 +23,7 @@ const CatalogoGeneral = () => {
             <MenuCatalogos />
 
             {/* LogoWhatsapp */}
-            <div className="header_general_logoWA">
-            <LogoWhatsappCatalogos />
-            </div>
+            <LogoWhatsapp />
         </div>
     )
 }

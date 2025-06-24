@@ -6,7 +6,7 @@ import "../SobreNosotros/headernosotros.css"
 // Componentes
 import MenuOpciones from "../Catalogos/MenuOpciones";
 import MenuCatalogos from "../Catalogos/menu";
-import LogoWhatsappCatalogos from "../Catalogos/LogoWhatsApp";
+import LogoWhatsappCatalogos from "@/components/LandingPage/Navbar/what";
 
 const HeaderNosotros = () => {
     return (

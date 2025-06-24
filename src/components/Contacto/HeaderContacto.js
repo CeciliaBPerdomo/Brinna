@@ -6,7 +6,7 @@ import "../Contacto/headercontacto.css"
 //Componentes
 import MenuOpciones from "../Catalogos/MenuOpciones";
 import MenuCatalogos from "../Catalogos/menu";
-import LogoWhatsappCatalogos from "../Catalogos/LogoWhatsApp";
+import LogoWhatsappCatalogos from "@/components/LandingPage/Navbar/what";
 
 const HeaderContacto = () => {
     return (
@@ -22,9 +22,7 @@ const HeaderContacto = () => {
             <MenuCatalogos />
 
             {/* WhatsApp */}
-            <div className="header_contacto_logoWA">
                     <LogoWhatsappCatalogos />
-                </div>
 
         </header>
     )

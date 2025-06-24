@@ -6,7 +6,7 @@ import "../Vender/headerVendedor.css"
 //Menus
 import MenuOpciones from '@/components/Catalogos/MenuOpciones'
 import MenuCatalogos from '@/components/Catalogos/menu'
-import LogoWhatsappCompraVenta from '../LogoWhatsApp'
+import LogoWhatsappCompraVenta from '@/components/LandingPage/Navbar/what'
 
 function HeaderVendedor() {
   return (
@@ -22,9 +22,7 @@ function HeaderVendedor() {
       <MenuCatalogos />
 
       {/* Logo de whatsapp */}
-      <div className='logoWA_comprarvender'>
         <LogoWhatsappCompraVenta />
-      </div>
     </div>
   )
 }

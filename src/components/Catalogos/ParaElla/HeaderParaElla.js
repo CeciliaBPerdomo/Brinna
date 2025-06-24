@@ -6,7 +6,7 @@ import "../ParaElla/headerparaella.css"
 // Componentes
 import MenuCatalogos from "../menu";
 import MenuOpciones from "../MenuOpciones";
-import LogoWhatsappCatalogos from "../LogoWhatsApp";
+import LogoWhatsappCatalogos from "@/components/LandingPage/Navbar/what";
 
 const HeaderParaElla = () => {
     return (
@@ -25,9 +25,7 @@ const HeaderParaElla = () => {
                     <MenuCatalogos />
 
                     {/* WhatsApp */}
-                    <div className="header_paraella_logoWA">
-                        <LogoWhatsappCatalogos />
-                    </div>
+                    <LogoWhatsappCatalogos />
                 </div>
             </header>
         </>

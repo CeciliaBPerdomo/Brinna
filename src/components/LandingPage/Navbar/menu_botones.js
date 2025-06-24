@@ -1,9 +1,6 @@
 import Link from 'next/link'
 
-// CSS
-import "../Navbar/botones.css"
-
-//Fuente
+// Fuente
 import { Jost } from "next/font/google"
 const jost = Jost({
     weight: "400",
@@ -12,21 +9,19 @@ const jost = Jost({
 
 function MenuBotones() {
     return (
-        <div className="menuopciones_navbar_generico">
-            {/* Registro */}
-            <Link href={"/admin/Registro"}>
-                <button className={`botones_registro ${jost.className}`}>Registrarte</button>
-            </Link>
-
-            {/* Inicio de sesion */}
+        <div className={`flex gap-4 items-center ${jost.className}`}>
             <Link href={"/admin/IniciarSesion"}>
-                <button className={`botones_iniciar_sesion ${jost.className}`}>
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        width="30"
-                        height="30"
+                <button
+                    type="button"
+                    className="flex items-center justify-center min-w-[180px] px-5 py-2 rounded-full bg-[#CA4E3C] hover:bg-[#b54332] text-white font-medium transition-colors"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
                         viewBox="0 0 30 30"
                         fill="none"
-                        className="icono_botones_iniciar_sesion"
+                        className="mr-2"
                     >
                         <path d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
                             stroke="white" strokeWidth="1.5" />
@@ -36,6 +31,15 @@ function MenuBotones() {
                             stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                     Iniciar sesión
+                </button>
+            </Link>
+
+            <Link href={"/admin/Registro"}>
+                <button
+                    type="button"
+                    className="min-w-[180px] px-5 py-2 rounded-full border border-white text-white font-medium bg-transparent transition-colors hover:border-[#CA4E3C] hover:text-[#CA4E3C]"
+                >
+                    Regístrate
                 </button>
             </Link>
         </div>
