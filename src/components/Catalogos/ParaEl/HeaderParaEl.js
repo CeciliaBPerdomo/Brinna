@@ -1,33 +1,29 @@
-import React from "react";
-
-// CSS
-import "../ParaEl/headerparael.css"
-
-// Componentes
-import MenuOpciones from "../MenuOpciones";
-import MenuCatalogos from "../menu";
+'use client';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import Menu from '@/components/LandingPage/Navbar/menu';
 import LogoWhatsappCatalogos from "@/components/LandingPage/Navbar/what";
 
 const HeaderParaEl = () => {
+    const pathname = usePathname();
+
     return (
-        <>
-            <header className="bg-bannerel principal_catalago_el">
+        <div className="relative w-full">
+            <Image
+                src="/images/fondos/banner_para_el_logo.jpg"
+                alt="Banner de fondo"
+                width={1920}
+                height={1080}
+                className="w-full h-auto"
+                priority
+            />
 
-                {/* Menu de opciones */}
-                <div className="barraBotones_menuBotones_paraEl">
-                    <div className="botonera_menuBotones">
-                        <MenuOpciones />
-                    </div>
-                </div>
+            {/* Navbar */}
+            <Menu pathname={pathname} />
 
-                {/* Menu */}
-                <MenuCatalogos />
-
-                {/* WhatsApp */}
-                <LogoWhatsappCatalogos />
-
-            </header>
-        </>
+            {/* Ícono WhatsApp */}
+            <LogoWhatsappCatalogos />
+        </div>
     )
 }
 
