@@ -1,29 +1,29 @@
-import React from 'react'
-
-// CSS
-import "../Vender/headerVendedor.css"
-
-//Menus
-import MenuOpciones from '@/components/Catalogos/MenuOpciones'
-import MenuCatalogos from '@/components/Catalogos/menu'
-import LogoWhatsappCompraVenta from '@/components/LandingPage/Navbar/what'
+'use client';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import Menu from '@/components/LandingPage/Navbar/menu';
+import LogoWhatsappCatalogos from "@/components/LandingPage/Navbar/what";
 
 function HeaderVendedor() {
+  const pathname = usePathname();
+
   return (
-    <div className='bg-bannercomovender'>
-      {/* Menu de opciones */}
-      <div className="barraBotones_menuBotones_vender">
-        <div className="botonera_menuBotones_vender">
-          <MenuOpciones />
+     <div className="relative w-full">
+            <Image
+                src="/images/fondos/Banner_como_vender_con_logo.png"
+                alt="Banner de fondo"
+                width={1920}
+                height={1080}
+                className="w-full h-auto"
+                priority
+            />
+
+            {/* Navbar */}
+            <Menu pathname={pathname} />
+
+            {/* Ícono WhatsApp */}
+            <LogoWhatsappCatalogos />
         </div>
-      </div>
-
-      {/* Menu de navegacion */}
-      <MenuCatalogos />
-
-      {/* Logo de whatsapp */}
-        <LogoWhatsappCompraVenta />
-    </div>
   )
 }
 

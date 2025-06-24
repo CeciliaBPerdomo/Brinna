@@ -1,29 +1,29 @@
-import React from 'react'
+'use client';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import Menu from '@/components/LandingPage/Navbar/menu';
+import LogoWhatsappCatalogos from "@/components/LandingPage/Navbar/what";
 
-// CSS
-import "../Comprar/HeaderCompar.css"
-
-//Menus
-import MenuOpciones from '@/components/Catalogos/MenuOpciones'
-import MenuCatalogos from '@/components/Catalogos/menu'
-import LogoWhatsappCompraVenta from '@/components/LandingPage/Navbar/what'
 
 function HeaderComprar() {
+    const pathname = usePathname();
+
     return (
-        <div className="bg-bannercomocomprar bannerComoComprar_header">
-            {/* Menu de opciones */}
-            <div className="barraBotones_menuBotones_comprar">
-                <div className="botonera_menuBotones_comprar">
-                    <MenuOpciones />
-                </div>
-            </div>
+        <div className="relative w-full">
+            <Image
+                src="/images/fondos/Banner_como_comprar_con_logo.png"
+                alt="Banner de fondo"
+                width={1920}
+                height={1080}
+                className="w-full h-auto"
+                priority
+            />
 
-            {/* Menu de navegacion */}
-            <MenuCatalogos />
+            {/* Navbar */}
+            <Menu pathname={pathname} />
 
-            {/* Logo de whatsapp */}
-                <LogoWhatsappCompraVenta />
-
+            {/* Ícono WhatsApp */}
+            <LogoWhatsappCatalogos />
         </div>
     )
 }
