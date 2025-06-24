@@ -26,21 +26,19 @@ const BotonesSesion = () => {
     }, [dispatch]);
 
     return (
-        <div className='barraBotones_menuHeaderHome'>
-            <nav className="botonera_menuHeaderHome">
-                {currentUser ? (
-                    // Mostrar el nombre del usuario autenticado
-                    <div>
-                        <MenuOpciones />
-                    </div>
-                ) : (
-                    // Mostrar botones de registro e inicio de sesión si no está autenticado
-                    <>
-                       <MenuBotones />
-                    </>
-                )}
-            </nav>
-        </div>
+        <>
+            {currentUser ? (
+                // Mostrar el nombre del usuario autenticado
+                <div>
+                    <MenuOpciones />
+                </div>
+            ) : (
+                // Mostrar botones de registro e inicio de sesión si no está autenticado
+                <>
+                    <MenuBotones />
+                </>
+            )}
+        </>
     )
 }
 

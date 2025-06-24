@@ -3,7 +3,7 @@ import React from "react";
 // Componenetes
 import MenuOpciones from "../Catalogos/MenuOpciones";
 import MenuCatalogos from "../Catalogos/menu";
-import LogoWhatsappCatalogos from "../Catalogos/LogoWhatsApp";
+import LogoWhatsappCatalogos from "@/components/LandingPage/Navbar/what";
 
 // CSS
 import "../Terminos/headerTerminos.css"
@@ -22,9 +22,7 @@ const HeaderTerminos = () => {
             <MenuCatalogos />
 
             {/* Logo de whatsapp */}
-            <div className="logo_whatsapp_terminos">
-            <LogoWhatsappCatalogos/>
-            </div>
+            <LogoWhatsappCatalogos />
 
         </header>
     )

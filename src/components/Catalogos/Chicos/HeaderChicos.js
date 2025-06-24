@@ -4,7 +4,7 @@ import React from "react";
 import "../Chicos/headerchicos.css"
 
 // Componentes
-import LogoWhatsappCatalogos from "../LogoWhatsApp";
+import LogoWhatsappCatalogos from "@/components/LandingPage/Navbar/what";
 import MenuCatalogos from "../menu";
 import MenuOpciones from "../MenuOpciones";
 
@@ -24,9 +24,7 @@ const HeaderParaChicos = () => {
                 <MenuCatalogos />
 
                 {/* WhatsApp */}
-                <div className="header_parachicos_logoWA">
-                    <LogoWhatsappCatalogos />
-                </div>
+                <LogoWhatsappCatalogos />
             </header>
         </>
     )
