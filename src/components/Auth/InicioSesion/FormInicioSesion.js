@@ -1,7 +1,6 @@
 "use client"
 import React, { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 //Redux
@@ -34,7 +33,7 @@ const olvidaste_jost = Jost({
 })
 
 
-function FormInicioSesion() {
+function FormInicioSesion({ onClose }) {
     const router = useRouter();
     const dispatch = useDispatch();
 
@@ -124,7 +123,7 @@ function FormInicioSesion() {
 
     return (
         <>
-            <div className="fixed inset-0 flex justify-center items-center">
+            <div className="fixed inset-0 flex justify-center items-center z-50">
                 <div className='div_formulario_iniciosesion_principal flex'>
 
                     {/* Imagen logueo */}
@@ -143,21 +142,20 @@ function FormInicioSesion() {
                     <div className="w-1/2 p-6 div_iniciosesion_registro relative">
 
                         {/* Botón de cerrar */}
-                        <Link href={"/"} passHref>
-                            <button
-                                className="boton_cerrar_form"
-                                aria-label="Cerrar formulario">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
-                                    width="18"
-                                    height="18"
-                                    fill="#900"  // color rojo oscuro
-                                    style={{ display: "block" }} // para evitar espacio extra en línea
-                                >
-                                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-                                </svg>
-                            </button>
-                        </Link>
-
+                        <button
+                            className="boton_cerrar_form"
+                            aria-label="Cerrar formulario"
+                            onClick={onClose}
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
+                                width="18"
+                                height="18"
+                                fill="#900"
+                                style={{ display: "block" }}
+                            >
+                                <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                            </svg>
+                        </button>
 
                         <h2 className={`iniciar_sesion ${jost}`}>Iniciar sesión</h2>
                         <p className={`completa_tus_datos_sesion ${jost}`}>Completa tus datos para ingresar a tu cuenta.</p>
@@ -170,7 +168,7 @@ function FormInicioSesion() {
                             <div className="flex items-center">
                                 <input
                                     className="shadow appearance-none border focus:outline-none focus:shadow-outline 
-                                    iniciosesion_inputs"
+                                iniciosesion_inputs"
                                     type="email"
                                     placeholder="Correo electrónico"
                                     name="email"
@@ -183,7 +181,7 @@ function FormInicioSesion() {
                             <div className="flex items-center">
                                 <input
                                     className="shadow appearance-none border focus:outline-none focus:shadow-outline 
-                                    iniciosesion_inputs"
+                                iniciosesion_inputs"
                                     type="password"
                                     placeholder="Contraseña"
                                     name="password"
@@ -195,7 +193,6 @@ function FormInicioSesion() {
                             {/* Olvidaste tu contraseña */}
                             <p className={`olvidaste_contra ${olvidaste_jost}`}>¿Olvidaste tu contraseña?</p>
 
-
                             {/* Boton de iniciar sesion */}
                             <div className='flex justify-center'>
                                 <div className="flex items-center justify-center div_botonGuardar_ingresar">
@@ -203,7 +200,6 @@ function FormInicioSesion() {
                                         className="text-white font-bold py-2 px-4 rounded focus:outline-none 
                                     focus:shadow-outline botonGuardar_ingresar"
                                         type="submit"
-                                    // onClick={(e) => handleSubmit(e)}
                                     >
                                         Ingresar
                                     </button>
@@ -212,36 +208,16 @@ function FormInicioSesion() {
                         </form>
 
                         <div className='flex items-center justify-center'>
-                            <Link href="/admin/Registro">
-                                <p className={`no_tengo_cuenta ${ya_jost}`}>Aún no tengo cuenta.</p>
-                            </Link>
-                        </div>
-
-                        {/*
-                        <div className='flex items-center justify-center'>
-                            <p className={`ingresar_o ${jost}`}> ______________ o ______________ </p>
-                        </div>
-
-    
-                        <div className='flex items-center justify-center div_iniciar_con_google'>
-                            <button 
-                            className='boton_iniciarsesion_con_google'
-                            onClick={handleGoogleLogin}
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    onClose();
+                                }}
+                                className={`no_tengo_cuenta ${ya_jost}`}
                             >
-                                <Image
-                                    src={"/images/icono_google.png"}
-                                    width={29}
-                                    height={33}
-                                    alt="Google"
-                                    className='icono_google_iniciarsesion'
-                                />
-                                <span className='texto_iniciarsesion_google'>
-                                    Iniciar sesión con Google
-                                </span>
+                                Aún no tengo cuenta.
                             </button>
                         </div>
-                        */}
-
 
                     </div>
                 </div>

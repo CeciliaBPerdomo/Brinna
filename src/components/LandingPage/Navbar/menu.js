@@ -1,60 +1,81 @@
-"use client"
+'use client';
+import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'
-import Image from 'next/image';
+import BotonesSesion from './botones';
 
-// CSS
-//import "../Navbar/menu.css"
+const Menu = ({ pathname }) => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-const Menu = () => {
-  const pathname = usePathname()
-  const links = [
-    {
-      label: "CONTACTO",
-      href: "/contacto"
-    },
-    {
-      label: "NOSOTROS",
-      href: "/nosotros"
-    },
-    {
-      label: "CATÁLOGO",
-      href: "/catalogo"
-    },
-    {
-      label: "INICIO",
-      href: "/"
-    },
-  ]
+    const links = [
+        { label: 'Inicio', href: '/' },
+        { label: 'Catálogo', href: '/catalogo' },
+        { label: 'Nosotros', href: '/nosotros' },
+        { label: 'Contacto', href: '/contacto' },
+    ];
 
-  return (
-    // // <div className='menuHeader_menuHomePrincipal'>
-    // //   <nav className="menuNav_menuHomePrincipal">
-    // //     {links.map(link => {
-    // //       return (
-    // //         <Link
-    // //           key={link.label}
-    // //           href={link.href}
-    // //           className={`${pathname === link.href ?
-    // //             'font-bold underline underline-offset-8 decoration-red-600' : ''} text-base p-3 menuInicio_menuHomePrincipal`}>
-    // //           {link.label}
-    // //         </Link>
-    // //       )
-    // //     })}
-    // //   </nav>
-    // </div>
-    <div className="relative h-screen w-full">
-      {/* Imagen de fondo */}
-      <Image
-        src="/images/banner_home.png" // Reemplaza con tu imagen en /public o URL externa
-        alt="Banner de fondo"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        priority
-      />
-    </div>
-  )
-}
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
 
-export default Menu
+    return (
+        <>
+            {/* Navbar */}
+            <nav className="absolute top-0 left-0 w-full flex flex-col px-6 py-4 z-20">
+                {/* Primera fila: botones de sesión */}
+                <div className="hidden md:flex w-full justify-end space-x-4 mb-2 mt-5">
+                    <BotonesSesion />
+                </div>
+
+                {/* Segunda fila: menú desktop */}
+                <div className="hidden md:flex w-full justify-end space-x-6 text-white text-lg">
+                    {links.map((link) => (
+                        <Link
+                            key={link.label}
+                            href={link.href}
+                            className={`p-3 ${pathname === link.href
+                                ? 'font-bold underline underline-offset-8 decoration-red-600'
+                                : ''
+                                } hover:text-gray-300`}
+                        >
+                            {link.label.toUpperCase()}
+                        </Link>
+                    ))}
+                </div>
+
+                {/* Mobile: hamburguesa + icono usuario */}
+                <div className="md:hidden w-full flex justify-end items-center mt-2 gap-x-4">
+                    <button
+                        type="button"
+                        className="text-white text-3xl cursor-pointer focus:outline-none"
+                        onClick={toggleMobileMenu}
+                        aria-label="Abrir menú"
+                    >
+                        ☰
+                    </button>
+                    <BotonesSesion />
+                </div>
+            </nav>
+
+            {/* Menú Mobile */}
+            {isMobileMenuOpen && (
+                <div className="absolute top-16 right-4 w-52 bg-black bg-opacity-90 flex flex-col items-end py-4 px-4 rounded-lg z-30 md:hidden shadow-lg">
+                    {links.map((link) => (
+                        <Link
+                            key={link.label}
+                            href={link.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className={`p-2 text-white text-base ${pathname === link.href
+                                ? 'font-bold underline underline-offset-8 decoration-red-600'
+                                : ''
+                                } hover:text-gray-300`}
+                        >
+                            {link.label.toUpperCase()}
+                        </Link>
+                    ))}
+                </div>
+            )}
+        </>
+    );
+};
+
+export default Menu;
