@@ -18,7 +18,7 @@ const Barra = () => {
         <div className="max-w-[90%] mx-auto py-8 flex flex-col gap-6 items-center">
             {/* Título */}
             <h2
-                className={`text-2xl md:text-3xl font-bold text-center ${jost.className}`}
+                className={`md:text-3xl sm:text-2xl font-bold text-center ${jost.className}`}
                 style={{ color: "#CA4E3C" }} >
                 ¿Qué estás buscando?
             </h2>

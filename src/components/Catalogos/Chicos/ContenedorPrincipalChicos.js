@@ -30,7 +30,7 @@ const ContenedorChicos = () => {
             </h1>
 
             {/* Barra de busqueda */}
-            <div className="mt-6 mb-8">
+            <div className="md:mt-2 mb-8">
                 <Barra />
             </div>
 
