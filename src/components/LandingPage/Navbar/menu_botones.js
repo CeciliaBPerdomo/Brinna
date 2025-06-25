@@ -3,6 +3,8 @@ import { useState } from 'react';
 import FormInicioSesion from '../../Auth/InicioSesion/FormInicioSesion';
 import FormRegistro from '../../Auth/Registro/FormRegistro';
 
+import { User, UserCircle } from "lucide-react";
+
 // Fuente
 import { Jost } from "next/font/google";
 const jost = Jost({
@@ -10,17 +12,18 @@ const jost = Jost({
     subsets: ['latin']
 });
 
+
 function MenuBotones() {
     const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [modalType, setModalType] = useState(null); 
+    const [modalType, setModalType] = useState(null);
 
     const toggleUserMenu = () => {
         setIsUserMenuOpen(!isUserMenuOpen);
     };
 
     const openModal = (type) => {
-        setModalType(type);  
+        setModalType(type);
         setIsModalOpen(true);
         setIsUserMenuOpen(false);
     };
@@ -37,23 +40,9 @@ function MenuBotones() {
                 <button
                     type="button"
                     onClick={() => openModal('login')}
-                    className="flex items-center justify-center min-w-[180px] px-5 py-2 rounded-full bg-[#CA4E3C] hover:bg-[#b54332] text-white font-medium transition-colors"
+                    className="flex items-center justify-center min-w-[180px] px-5 py-2 rounded-full bg-[#CA4E3C] hover:bg-[#a43c2a] text-white font-medium transition-colors"
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 30 30"
-                        fill="none"
-                        className="mr-2"
-                    >
-                        <path d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
-                            stroke="white" strokeWidth="1.5" />
-                        <path d="M15 15C17.3197 15 19.2 13.1196 19.2 10.8C19.2 8.48039 17.3197 6.59998 15 6.59998C12.6804 6.59998 10.8 8.48039 10.8 10.8C10.8 13.1196 12.6804 15 15 15Z"
-                            stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M8 23.4V22C8 18.134 11.134 15 15 15C18.866 15 22 18.134 22 22V23.4"
-                            stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-                    </svg>
+                    <User className="mr-2 w-5 h-5 stroke-white" />
                     Iniciar sesión
                 </button>
 
@@ -74,32 +63,7 @@ function MenuBotones() {
                     onClick={toggleUserMenu}
                     aria-label="Abrir menú usuario"
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 30 30"
-                        fill="none"
-                    >
-                        <path
-                            d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
-                            stroke="white"
-                            strokeWidth="1.5"
-                        />
-                        <path
-                            d="M15 15C17.3197 15 19.2 13.1196 19.2 10.8C19.2 8.48039 17.3197 6.59998 15 6.59998C12.6804 6.59998 10.8 8.48039 10.8 10.8C10.8 13.1196 12.6804 15 15 15Z"
-                            stroke="white"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M8 23.4V22C8 18.134 11.134 15 15 15C18.866 15 22 18.134 22 22V23.4"
-                            stroke="white"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                        />
-                    </svg>
+                    <UserCircle className="w-7 h-7 stroke-white" />
                 </button>
 
                 {isUserMenuOpen && (
@@ -108,22 +72,25 @@ function MenuBotones() {
                             className="fixed inset-0 bg-black bg-opacity-50 z-30"
                             onClick={() => setIsUserMenuOpen(false)}
                         ></div>
-                        <div className="absolute right-0 mt-2 w-40 bg-black bg-opacity-90 rounded-lg shadow-lg py-2 z-40">
-                            <button
+                        <ul
+                            className="fixed right-0 top-12 w-52 bg-[#CA4E3C] rounded-lg shadow-lg py-2 z-40 flex flex-col text-white"
+                        >
+                            <li
                                 onClick={() => openModal('login')}
-                                className="block w-full px-4 py-2 text-sm text-white hover:bg-gray-700 text-right uppercase"
+                                className="px-4 py-3 cursor-pointer hover:bg-[#a43c2a] transition-colors text-md flex items-center gap-2 font-semibold"
                             >
                                 Iniciar sesión
-                            </button>
-                            <button
+                            </li>
+                            <li
                                 onClick={() => openModal('register')}
-                                className="block w-full px-4 py-2 text-sm text-white hover:bg-gray-700 text-right uppercase"
+                                className="px-4 py-3 cursor-pointer hover:bg-[#a43c2a] transition-colors text-md flex items-center gap-2 font-semibold"
                             >
                                 Regístrate
-                            </button>
-                        </div>
+                            </li>
+                        </ul>
                     </>
                 )}
+
             </div>
 
             {/* Modal */}

@@ -58,22 +58,25 @@ const Menu = ({ pathname }) => {
 
             {/* Menú Mobile */}
             {isMobileMenuOpen && (
-                <div className="absolute top-16 right-4 w-52 bg-black bg-opacity-90 flex flex-col items-end py-4 px-4 rounded-lg z-30 md:hidden shadow-lg">
+                <div className="absolute top-16 right-0 w-52 bg-[#CA4E3C] flex flex-col items-end py-4 px-4 rounded-lg z-30 md:hidden shadow-lg">
                     {links.map((link) => (
                         <Link
                             key={link.label}
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className={`p-2 text-white text-base ${pathname === link.href
-                                ? 'font-bold underline underline-offset-8 decoration-red-600'
-                                : ''
-                                } hover:text-gray-300`}
+                            className={`w-full text-white text-base px-3 py-2 rounded-md transition-colors duration-200
+                    ${pathname === link.href
+                                    ? 'font-bold underline underline-offset-8 decoration-white'
+                                    : 'hover:bg-[#a43c2a]'
+                                }`}
                         >
-                            {link.label.toUpperCase()}
+                            {link.label}
                         </Link>
                     ))}
                 </div>
             )}
+
+
         </>
     );
 };
