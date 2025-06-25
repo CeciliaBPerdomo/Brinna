@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 //Componentes
 import Card from "../ParaElla/CardElla";
@@ -12,13 +12,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchProductos } from "../../../lib/productosSlice";
 
 // Fuente
-import { Jost } from "next/font/google"
 import LoadingWash from "../loading";
 
-const jost = Jost({
-    weight: "600",
-    subsets: ['latin'],
-})
 
 const RopaParaEl = () => {
     const dispatch = useDispatch();
@@ -35,7 +30,6 @@ const RopaParaEl = () => {
     if (loading) {
         return (
             <>
-                <h1 className={`mb-4  ropaEl_h1 ${jost}`}>Ropa para él</h1>
                 <LoadingWash />
             </>
         )
@@ -45,7 +39,6 @@ const RopaParaEl = () => {
     if (error) {
         return (
             <>
-                <h1 className={`mb-4 ropaEl_h1 ${jost}`}>Ropa para él</h1>
                 <div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
                     <p className="font-bold">Error al actualizar los productos</p>
                     <p className="text-sm">El catálogo no se puede actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
@@ -58,7 +51,6 @@ const RopaParaEl = () => {
     if (productosHombres.length === 0) {
         return (
             <>
-                <h1 className={`mb-4 ropaEl_h1 ${jost}`}>Ropa para él</h1>
                 <div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
                     <p className="font-bold">No hay ropa para hombres disponible</p>
                     <p className="text-sm">El catálogo de ropa para él aún no tiene ropa para mostrar.</p>
@@ -71,17 +63,16 @@ const RopaParaEl = () => {
 
     return (
         <div>
-            <h1 className={`ropaEl_h1 ${jost}`}>Ropa para él</h1>
             <div className="grid grid-cols-1 sm:grid md:grid-cols-4 ropaEl_cardEl">
                 {productosHombres.map((card) => (
-                    <Card 
+                    <Card
                         key={card.id}
                         imageSrc={card.file}
                         text={card.nombre}
                         talle={card.talle}
                         precio={card.precio}
-                        marca={card.marca} 
-                        esNuevoConEtiqueta={card.estado === "nuevo-con-etiqueta"} 
+                        marca={card.marca}
+                        esNuevoConEtiqueta={card.estado === "nuevo-con-etiqueta"}
                     />
                 ))}
             </div>
