@@ -1,4 +1,5 @@
 "use client"
+import { useEffect } from "react";
 //Componentes
 import Card from "./CardElla";
 import LoadingWash from "../loading";
