@@ -1,6 +1,4 @@
 "use client"
-import React, { useEffect } from "react";
-
 //Componentes
 import Card from "./CardElla";
 import LoadingWash from "../loading";
@@ -10,7 +8,7 @@ import "./ropaElla.css"
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
-import { fetchProductos } from "../../../lib/productosSlice"; 
+import { fetchProductos } from "../../../lib/productosSlice";
 
 // Fuente
 import { Jost } from "next/font/google"
@@ -35,7 +33,6 @@ const RopaParaElla = () => {
     if (loading) {
         return (
             <>
-                <h1 className={`mb-4 ropaElla_h1 ${jost}`}>Ropa para ella</h1>
                 <LoadingWash />
             </>
         )
@@ -45,7 +42,6 @@ const RopaParaElla = () => {
     if (error) {
         return (
             <>
-                <h1 className={`mb-4 ropaElla_h1 ${jost}`}>Ropa para ella</h1>
                 <div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
                     <p className="font-bold">Error al actualizar los productos</p>
                     <p className="text-sm">El catálogo no se puede actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
@@ -58,7 +54,6 @@ const RopaParaElla = () => {
     if (productosMujer.length === 0) {
         return (
             <>
-                <h1 className={`mb-4  ropaElla_h1 ${jost}`}>Ropa para ella</h1>
                 <div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
                     <p className="font-bold">No hay productos disponibles en este catálogo</p>
                     <p className="text-sm">El catálogo de ropa para ella aún no tiene ropa para mostrar.</p>
@@ -71,19 +66,18 @@ const RopaParaElla = () => {
 
     return (
         <div>
-            <h1 className={`ropaElla_h1 ${jost}`}>Ropa para ella</h1>
             <div className="grid grid-cols-1 sm:grid md:grid-cols-4 ropaElla_cardElla">
 
                 {productosMujer.map((card, index) => (
-                    <Card 
+                    <Card
                         key={card.id}
                         index={index}
                         imageSrc={card.file}
                         text={card.nombre}
                         talle={card.talle}
                         precio={card.precio}
-                        marca={card.marca} 
-                        esNuevoConEtiqueta={card.estado === "nuevo-con-etiqueta"} 
+                        marca={card.marca}
+                        esNuevoConEtiqueta={card.estado === "nuevo-con-etiqueta"}
                     />
                 ))}
             </div>
