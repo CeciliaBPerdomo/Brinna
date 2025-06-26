@@ -36,7 +36,6 @@ const RopaParaChicos = () => {
     if (loading) {
         return (
             <>
-                <h1 className={`mb-4 ropaChicos_h1 ${jost}`}>Ropa para chicos</h1>
                 <LoadingWash />
             </>
         )
@@ -45,7 +44,6 @@ const RopaParaChicos = () => {
     if (error) {
         return (
             <>
-                <h1 className={`mb-4 ropaChicos_h1 ${jost}`}>Ropa para chicos</h1>
                 <div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
                     <p className="font-bold">Error al actualizar los productos</p>
                     <p className="text-sm">El catálogo no se puede actualizar, {error}. Pruebe de nuevo en algunos minutos</p>
@@ -57,7 +55,6 @@ const RopaParaChicos = () => {
     if (productosChicos.length === 0) {
         return (
             <>
-                <h1 className={`mb-4 ropaChicos_h1 ${jost}`}>Ropa para chicos</h1>
                 <div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
                     <p className="font-bold">No hay ropa para chicos disponibles</p>
                     <p className="text-sm">El catálogo de chicos aún no tiene ropa disponible.</p>
@@ -71,7 +68,6 @@ const RopaParaChicos = () => {
 
     return (
         <div>
-            <h1 className={`ropaChicos_h1 ${jost}`}>Ropa para chicos</h1>
             <div className="grid grid-cols-1 sm:grid md:grid-cols-4 ropaChicos_cardChicos">
                 {productosChicos.map((card) => (
                     <Card key={card.id}

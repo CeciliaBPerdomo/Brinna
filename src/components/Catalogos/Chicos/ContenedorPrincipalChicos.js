@@ -24,7 +24,7 @@ const ContenedorChicos = () => {
     return (
         <div className="mt-6">
             <h1
-                className={`sm:text-4xl, md:text-5xl font-bold text-center ${h1_jost.className}`}
+                className={`text-5xl font-bold text-center ${h1_jost.className}`}
                 style={{ color: "#CA4E3C" }} >
                 Ropa para los más chicos
             </h1>
