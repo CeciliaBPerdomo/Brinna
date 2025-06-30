@@ -40,61 +40,63 @@ const MenuOpciones = () => {
             {currentUser ? (
                 <>
                     {/* Saludo y íconos visibles solo en md+ */}
-                    <div className="hidden md:flex md:items-center md:justify-end md:gap-6 md:pr-5">
-                        <p className={`text-white text-2xl pb-4 pr-5 ${jost.className}`}>
-                            ¡Hola {currentUser.usuario || currentUser.userGoogle.usuario}!
+                    <div className="hidden md:flex md:flex-col md:items-end md:pr-5 gap-2">
+                        {/* Saludo arriba */}
+                        <p className={`text-white text-xl pr-1 ${jost.className}`}>
+                            ¡Hola 👋🏽 {currentUser.usuario || currentUser.userGoogle.usuario}!
                         </p>
 
-                        <Heart className="w-8 h-8 text-white hover:text-[#CA4E3C] transition-colors duration-200 cursor-pointer" />
-                        <ShoppingCart className="w-8 h-8 text-white hover:text-[#CA4E3C] transition-colors duration-200 cursor-pointer" />
-                        <Mail className="w-8 h-8 text-white hover:text-[#CA4E3C] transition-colors duration-200 cursor-pointer" />
+                        <div className="flex items-center gap-6">
+                            <Heart className="w-8 h-8 text-white hover:text-[#CA4E3C] transition-colors duration-200 cursor-pointer" />
+                            <ShoppingCart className="w-8 h-8 text-white hover:text-[#CA4E3C] transition-colors duration-200 cursor-pointer" />
+                            <Mail className="w-8 h-8 text-white hover:text-[#CA4E3C] transition-colors duration-200 cursor-pointer" />
 
-                        {/* Perfil - botón */}
-                        <div className="relative">
-                            <button
-                                type="button"
-                                aria-expanded={menuOpen}
-                                onClick={toggleMenu}
-                                className="w-8 h-8 rounded-full border-2 border-white hover:border-[#CA4E3C] transition-colors duration-200 overflow-hidden"
-                            >
-                                <Image
-                                    src={
-                                        (currentUser && (currentUser.photoURL || currentUser.userGoogle?.photoURL))
-                                        || "/images/default-image.png"
-                                    }
-                                    width={32}
-                                    height={32}
-                                    alt="Foto de perfil"
-                                    className="w-full h-full object-cover"
-                                />
-                            </button>
+                            {/* Botón de perfil */}
+                            <div className="relative">
+                                <button
+                                    type="button"
+                                    aria-expanded={menuOpen}
+                                    onClick={toggleMenu}
+                                    className="w-8 h-8 rounded-full border-2 border-white hover:border-[#CA4E3C] transition-colors duration-200 overflow-hidden"
+                                >
+                                    <Image
+                                        src={
+                                            (currentUser && (currentUser.photoURL || currentUser.userGoogle?.photoURL))
+                                            || "/images/default-image.png"
+                                        }
+                                        width={32}
+                                        height={32}
+                                        alt="Foto de perfil"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </button>
 
-                            <ul
-                                aria-labelledby="perfil"
-                                className={`absolute top-12 right-0 flex flex-col items-start w-[180px] pt-4 pl-2 rounded-[10px] bg-[#CA4E3C] shadow ${menuOpen ? "block" : "hidden"
-                                    }`}
-                            >
-                                <Link href={"/admin/MenuUsuario"}>
+                                <ul
+                                    aria-labelledby="perfil"
+                                    className={`absolute top-12 right-0 flex flex-col items-start w-[180px] pt-1 pl-2 rounded-[10px] bg-[#CA4E3C] shadow ${menuOpen ? "block" : "hidden"}`}
+                                >
+                                    <Link href={"/admin/MenuUsuario"}>
+                                        <li
+                                            className={`text-white text-[18px] py-3 flex items-center gap-2 cursor-pointer ${jost.className}`}
+                                        >
+                                            <UserCircle className="w-5 h-5 text-white" />
+                                            Mi cuenta
+                                        </li>
+                                    </Link>
+
+                                    <li className="w-full">
+                                        <hr className="border-white" />
+                                    </li>
+
                                     <li
+                                        onClick={handleLogout}
                                         className={`text-white text-[18px] py-3 flex items-center gap-2 cursor-pointer ${jost.className}`}
                                     >
-                                        <UserCircle className="w-5 h-5 text-white" />
-                                        Mi cuenta
+                                        <LogOut className="w-5 h-5 text-white" />
+                                        Cerrar sesión
                                     </li>
-                                </Link>
-
-                                <li className="w-full">
-                                    <hr className="border-white" />
-                                </li>
-
-                                <li
-                                    onClick={handleLogout}
-                                    className={`text-white text-[18px] py-3 flex items-center gap-2 cursor-pointer ${jost.className}`}
-                                >
-                                    <LogOut className="w-5 h-5 text-white" />
-                                    Cerrar sesión
-                                </li>
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 

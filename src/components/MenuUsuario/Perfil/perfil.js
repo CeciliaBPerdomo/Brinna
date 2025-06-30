@@ -1,27 +1,14 @@
+// Componente Perfil completo con Tailwind sin sombra
+
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentUser, actualizarUsuario, subirImagenPerfil } from "../../../lib/usuariosSlice"
+import { actualizarUsuario, subirImagenPerfil } from "../../../lib/usuariosSlice";
 import Image from 'next/image';
+import { Jost } from "next/font/google";
 
-// CSS
-import "./perfil.css"
-
-//Fuente
-import { Jost } from "next/font/google"
-const jost = Jost({
-  weight: "600",
-  subsets: ['latin']
-})
-
-const p_jost = Jost({
-  weight: "500",
-  subsets: ['latin']
-})
-
-const sub_jost = Jost({
-  weight: "400",
-  subsets: ['latin']
-})
+const jost = Jost({ weight: "600", subsets: ['latin'] });
+const p_jost = Jost({ weight: "500", subsets: ['latin'] });
+const sub_jost = Jost({ weight: "400", subsets: ['latin'] });
 
 function Perfil() {
   const dispatch = useDispatch();
@@ -39,240 +26,138 @@ function Perfil() {
     ciudad: currentUser?.userGoogle?.ciudad || currentUser?.ciudad || 'sin datos',
     direccion: currentUser?.userGoogle?.direccion || currentUser?.direccion || 'sin datos',
     foto: currentUser?.userGoogle?.photoURL || currentUser?.foto || ''
-  }
+  };
 
   const [formData, setFormData] = useState(initialValues);
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false);
   const [file, setFile] = useState(null);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
-    if(selectedFile){
-      // Despacha la acción para subir la imagen
-      setFile(selectedFile); 
-    }
+    if (selectedFile) setFile(selectedFile);
   };
-
-
 
   const handleSubmit = () => {
-    //console.log(formData)
     dispatch(actualizarUsuario(formData))
       .unwrap()
-      .then((updatedUser) => {
-        console.log("Información actualizada exitosamente:", updatedUser);
-        alert("Datos actualizados correctamente");
-      })
-      .catch((error) => {
-        console.error("Error al actualizar la información:", error);
-        alert("Hubo un problema al actualizar los datos.");
-      });
-  };
-
-
-  useEffect(() => {
-    if (currentUser) {
-      setFormData({
-        nombre: currentUser?.userGoogle?.nombre || currentUser?.nombre || 'sin datos',
-        usuario: currentUser?.userGoogle?.usuario || currentUser?.usuario || 'sin datos',
-        password: currentUser?.userGoogle?.password || currentUser?.password || 'sin datos',
-        email: currentUser?.userGoogle?.email || currentUser?.email || 'sin datos',
-        celular: currentUser?.userGoogle?.celular || currentUser?.celular || 'sin datos',
-        cumpleanos: currentUser?.userGoogle?.cumpleanos || currentUser?.cumpleanos || 'sin datos',
-        genero: currentUser?.userGoogle?.genero || currentUser?.genero || 'sin datos',
-        departamento: currentUser?.userGoogle?.departamento || currentUser?.departamento || 'sin datos',
-        ciudad: currentUser?.userGoogle?.ciudad || currentUser?.ciudad || 'sin datos',
-        direccion: currentUser?.userGoogle?.direccion || currentUser?.direccion || 'sin datos',
-      });
-    }
-  }, [currentUser]);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
+      .then(() => alert("Datos actualizados correctamente"))
+      .catch(() => alert("Hubo un problema al actualizar los datos."));
   };
 
   const handleConfirmFile = () => {
     if (file) {
-      // Despacha la acción para subir la imagen
       dispatch(subirImagenPerfil(file))
         .unwrap()
-        .then(() => {
-          closeModal(); // Cierra el modal después de que la imagen se haya subido exitosamente
-        })
-        .catch((error) => {
-          console.error("Error al subir la imagen:", error);
-        });
+        .then(() => setModalOpen(false))
+        .catch((error) => console.error("Error al subir la imagen:", error));
     }
   };
 
+  useEffect(() => {
+    if (currentUser) setFormData(initialValues);
+  }, [currentUser]);
+
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className={`${jost} tu_info_perfil`}>Tu info</h1>
-      <div className="foto_perfil mt-4 p-1">
+      <h1 className={`${jost.className} text-[#CA4E3C] text-[30px] leading-[40px]`}>Tu info</h1>
+
+      <div className="w-[140px] h-[140px] rounded-full border-2 border-[#CA4E3C] mt-4 p-1">
         <Image
           src={formData.foto ? formData.foto : "/images/default-image.png"}
-          width={160}
+          width={140}
           height={140}
           alt={formData.nombre}
+          className="rounded-full"
         />
       </div>
-      <p onClick={openModal} className={`${sub_jost} cargar_foto_perfil m-3`}>Cargar foto</p>
 
-      {/* Modal */}
-     {modalOpen && (
-        <div className="modal_container">
-          <div className="modal_content">
-            <h2 className={`${jost} modal_title`}>Seleccionar nueva imagen</h2>
+      <p
+        onClick={() => setModalOpen(true)}
+        className={`${sub_jost.className} text-black text-center text-[12px] my-3 cursor-pointer`}
+      >
+        Cargar foto
+      </p>
+
+      {modalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-md w-[300px] text-center">
+            <h2 className={`${jost.className} text-lg mb-4`}>Seleccionar nueva imagen</h2>
             <input type="file" onChange={handleFileChange} />
-            <div className="modal_buttons">
-              <button onClick={handleConfirmFile} className={`${sub_jost} modal_confirm_btn`}>Confirmar</button>
-              <button onClick={closeModal} className={`${sub_jost} modal_cancel_btn`}>Cancelar</button>
+            <div className="flex justify-between mt-4">
+              <button
+                onClick={handleConfirmFile}
+                className={`${sub_jost.className} bg-green-600 text-white px-4 py-2 rounded`}
+              >Confirmar</button>
+              <button
+                onClick={() => setModalOpen(false)}
+                className={`${sub_jost.className} bg-red-600 text-white px-4 py-2 rounded`}
+              >Cancelar</button>
             </div>
           </div>
         </div>
       )}
 
-      <div className="grid grid-cols-2 gap-4 m-2 grid_perfil">
-        <label htmlFor="nombre" className={`${p_jost} text-right texto_etiqueta_perfil mt-2`}>Nombre completo:</label>
-        <input
-          id="nombre"
-          name="nombre"
-          type="text"
-          value={formData.nombre}
-          onChange={handleChange}
-          className="border p-2 campo_mi_perfil"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl mt-6">
+        {["nombre","usuario","email","celular","cumpleanos","ciudad","direccion"].map((name) => (
+          <div key={name} className="flex flex-col">
+            <label htmlFor={name} className={`${p_jost.className} text-black text-lg mb-1 capitalize`}>
+              {name === "cumpleanos" ? "Cumpleaños" : name.charAt(0).toUpperCase() + name.slice(1)}:
+            </label>
+            <input
+              id={name}
+              name={name}
+              type={name === "cumpleanos" ? "date" : name === "email" ? "email" : "text"}
+              value={formData[name]}
+              onChange={handleChange}
+              className="border border-gray-300 p-2 rounded"
+            />
+          </div>
+        ))}
 
-        <label htmlFor="usuario" className={`${p_jost} text-right texto_etiqueta_perfil mt-2`}>Usuario:</label>
-        <input
-          id="usuario"
-          name="usuario"
-          type="text"
-          value={formData.usuario}
-          onChange={handleChange}
-          className="border p-2 campo_mi_perfil"
-        />
+        <div className="flex flex-col">
+          <label htmlFor="genero" className={`${p_jost.className} text-black text-lg mb-1`}>Género:</label>
+          <select
+            id="genero"
+            name="genero"
+            value={formData.genero}
+            onChange={handleChange}
+            className="border border-gray-300 p-2 rounded"
+          >
+            <option value="">Selecciona tu género</option>
+            <option value="Mujer">Mujer</option>
+            <option value="Hombre">Hombre</option>
+          </select>
+        </div>
 
-        {/* <label htmlFor="password" className={`${p_jost} text-right texto_etiqueta_perfil mt-2`}>Contraseña:</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          value={formData.password}
-          onChange={handleChange}
-          className="border p-2 campo_mi_perfil"
-        /> */}
-
-        <label htmlFor="email" className={`${p_jost} text-right texto_etiqueta_perfil mt-2`}>Correo electrónico:</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="border p-2 campo_mi_perfil"
-        />
-
-        <label htmlFor="celular" className={`${p_jost} text-right texto_etiqueta_perfil mt-2`}>Número de celular:</label>
-        <input
-          id="celular"
-          name="celular"
-          type="text"
-          value={formData.celular}
-          onChange={handleChange}
-          className="border p-2 campo_mi_perfil"
-        />
-
-        <label htmlFor="cumpleanos" className={`${p_jost} text-right texto_etiqueta_perfil mt-2`}>Cumpleaños:</label>
-        <input
-          id="cumpleanos"
-          name="cumpleanos"
-          type="date"
-          value={formData.cumpleanos}
-          onChange={handleChange}
-          className="border p-2 campo_mi_perfil"
-        />
-
-        <label htmlFor="genero" className={`${p_jost} text-right texto_etiqueta_perfil mt-2`}>Género:</label>
-        <select
-          id="genero"
-          name="genero"
-          value={formData.genero}
-          onChange={handleChange}
-          className="border p-2 campo_mi_perfil"
-        >
-          <option value="">Selecciona tu género</option>
-          <option value="Mujer">Mujer</option>
-          <option value="Hombre">Hombre</option>
-        </select>
-
-        <label htmlFor="departamento" className={`${p_jost} text-right texto_etiqueta_perfil mt-2`}>Departamento:</label>
-        <select
-          id="departamento"
-          name="departamento"
-          value={formData.departamento}
-          onChange={handleChange}
-          className="border p-2 campo_mi_perfil"
-        >
-          <option value="">Selecciona tu departamento</option>
-          <option value="Artigas">Artigas</option>
-          <option value="Canelones">Canelones</option>
-          <option value="Cerro Largo">Cerro Largo</option>
-          <option value="Colonia">Colonia</option>
-          <option value="Durazno">Durazno</option>
-          <option value="Flores">Flores</option>
-          <option value="Florida">Florida</option>
-          <option value="Lavalleja">Lavalleja</option>
-          <option value="Maldonado">Maldonado</option>
-          <option value="Montevideo">Montevideo</option>
-          <option value="Paysandú">Paysandú</option>
-          <option value="Río Negro">Río Negro</option>
-          <option value="Rivera">Rivera</option>
-          <option value="Rocha">Rocha</option>
-          <option value="Salto">Salto</option>
-          <option value="San José">San José</option>
-          <option value="Soriano">Soriano</option>
-          <option value="Tacuarembó">Tacuarembó</option>
-          <option value="Treinta y Tres">Treinta y Tres</option>
-        </select>
-
-        <label htmlFor="ciudad" className={`${p_jost} text-right texto_etiqueta_perfil mt-2`}>Ciudad:</label>
-        <input
-          id="ciudad"
-          name="ciudad"
-          type="text"
-          value={formData.ciudad}
-          onChange={handleChange}
-          className="border p-2 campo_mi_perfil"
-        />
-
-
-        <label htmlFor="direccion" className={`${p_jost} text-right texto_etiqueta_perfil mt-2`}>Dirección:</label>
-        <input
-          id="direccion"
-          name="direccion"
-          type="text"
-          value={formData.direccion}
-          onChange={handleChange}
-          className="border p-2 campo_mi_perfil"
-        />
+        <div className="flex flex-col">
+          <label htmlFor="departamento" className={`${p_jost.className} text-black text-lg mb-1`}>Departamento:</label>
+          <select
+            id="departamento"
+            name="departamento"
+            value={formData.departamento}
+            onChange={handleChange}
+            className="border border-gray-300 p-2 rounded"
+          >
+            <option value="">Selecciona tu departamento</option>
+            {["Artigas","Canelones","Cerro Largo","Colonia","Durazno","Flores","Florida","Lavalleja","Maldonado","Montevideo","Paysandú","Río Negro","Rivera","Rocha","Salto","San José","Soriano","Tacuarembó","Treinta y Tres"].map(dep => (
+              <option key={dep} value={dep}>{dep}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
-      <button onClick={handleSubmit} className={`${sub_jost} boton_perfil`}>Actualizar datos</button>
-
+      <button
+        onClick={handleSubmit}
+        className={`${sub_jost.className} mt-8 bg-[#CA4E3C] text-white text-[20px] px-6 py-2 rounded-full`}
+      >
+        Actualizar datos
+      </button>
     </div>
-  )
+  );
 }
 
-export default Perfil
+export default Perfil;
